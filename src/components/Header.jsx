@@ -1,5 +1,7 @@
-import "../styles/Header.css"
-import logo from "../assets/logo.png"
+import "../styles/Header.css";
+import logo from "../"
+import { Link } from "react-router-dom";
+
 const Header = () => {
     return (
         <div className="header">
@@ -11,19 +13,19 @@ const Header = () => {
             <nav className="navbar">
                 <ul>
                     <li>
-                        <a>Home</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <a>Equipo</a>
+                        <Link to="/especialistas">Especialistas</Link>
                     </li>
                     <li>
-                        <a>Servicios</a>
+                        <Link to="/servicios">Servicios</Link>
                     </li>
                     <li>
-                        <a>Convenios</a>
+                        <Link to="/convenios">Convenios</Link>
                     </li>
                     <li>
-                        <a>Catalogos</a>
+                        <Link to="/catalogo">Catálogo</Link>
                     </li>
                 </ul>
             </nav>

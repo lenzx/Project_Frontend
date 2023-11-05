@@ -1,0 +1,20 @@
+.catalogo-titulo{
+    font-size: 7rem;
+}
+
+.catalogo-card{
+    background-color: var(--card-gray-bg);
+    border-radius: 10px;
+}
+
+.catalogo-product{
+    border: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: var(--header-box-shadow);
+    border-radius: 10px;
+}
+
+.catalogo-title{
+    text-align: center;
+}

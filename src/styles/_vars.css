@@ -1,3 +1,7 @@
 :root {
     --white: blue;
+    --header-background: white;
+    --header-box-shadow: #FC4F4F;
+
+    --card-gray-bg:rgb(244, 233, 233);
 }
