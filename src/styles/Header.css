@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
-    height: 10vh;
+    padding: 0 1.6rem;
+    min-height: 10vh;
     box-shadow: 0 0 1rem var(--header-box-shadow);
     border-radius: 0 0 1rem 1rem;
 }

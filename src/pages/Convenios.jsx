@@ -1,10 +1,12 @@
 import ConvenioList from "../containers/ConvenioList";
+import "../styles/Convenios.css";
 const Convenios = () => { 
     return (
-        <div>
-            <div className="convenio-titulo">Nuestros Servicios</div>
+        <div className="convenio-container">
+            <div className="convenio-titulo">Nuestros Convenios</div>
             <ConvenioList/>
         </div>
+        
     );
 }
 

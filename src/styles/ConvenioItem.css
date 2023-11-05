@@ -1,0 +1,35 @@
+.convenio-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.convenio-img {
+    width: 32rem;
+    height: 20rem;
+    margin: 1rem 4rem;
+    border-radius: 10px;
+}
+
+.convenio-card-texto {
+    font-size: 4rem;
+    font-style: italic;
+    margin: 0 1.6rem;
+    color: rgba(253, 126, 8, 0.938);
+    font-weight: 900;
+    font-style: italic;
+}
+
+.convenio-descripcion {
+    font-size: 2rem;
+    padding: 0.2rem 1.6rem;
+}
+
+.convenio-card {
+    background-color: var(--card-gray-bg);
+    border-radius: 10px;
+    border: 0.2rem solid var(--card-lighter-orange);
+    padding: 3.6rem 0;
+    margin: 0 2.4rem;
+    
+}

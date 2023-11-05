@@ -13,3 +13,22 @@
     width: 300px;
     height:40px
 }
+.btn-primary {
+    background-color: var(--header-box-shadow);
+    border-radius: 100px;
+    color: aliceblue;
+    font-size: 2rem;
+    font-style: italic;
+    box-shadow: 0px 5px 10px rgba(252, 91, 91, 0.1);
+    border: none;
+    text-align: center;
+}
+
+.img-fluid {
+    width: 300px;
+    height:250px
+}
+
+.especialistas-card{
+    background-color:  var(--card-gray-bg);
+}

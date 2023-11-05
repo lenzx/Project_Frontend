@@ -1,4 +1,5 @@
 import Especialistas from "../components/EspecialistasItem.jsx"
+import marcos from "../assets/Especialistas/doctor.webp"
 
 const EspecialistasList = () => {  
     return (
@@ -6,18 +7,18 @@ const EspecialistasList = () => {
             <div className="row">
                 <div className="col-md-12">
                     <Especialistas
-                    imagen={""}
+                    imagen={marcos}
                     nombre={"Marcos Diaz"}
                     descripcion={"Las especialidades del kinesiólogo se desempeña en el área de traumatología"}
                     lugar={"- Centro Médico Diagnosalud"}
                     />
                 </div>
             </div>
-           
+
             <div className="row">
             <div className="col-md-12">
                     <Especialistas
-                    imagen={""}
+                    imagen={marcos}
                     nombre={"Kelly Rivera"}
                     descripcion={"Las especialidades del kinesiólogo se desempeña en el área de neurologia"}
                     lugar={"- Centro Médico Moneda"}

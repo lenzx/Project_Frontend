@@ -6,8 +6,8 @@ const Especialistas = () => {
         
         <div className="container">
             <br />
-            <h2 className="especialista-titulo">Nuestros Especialistas</h2>
-            <EspecialistasList/>
+            <h2 className="especialista-titulo text-center">Nuestros Especialistas</h2>
+            <EspecialistasList />
         </div>
     );
 }

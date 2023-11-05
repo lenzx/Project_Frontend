@@ -11,10 +11,33 @@
     border: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: var(--header-box-shadow);
+    background-color: var(--card-lighter-orange);
     border-radius: 10px;
 }
 
 .catalogo-title{
     text-align: center;
+}
+
+.btn-primary{
+    width: 20rem;
+    height:40px;
+    background-color: var(--header-box-shadow);
+    border-radius: 100px;
+    color: aliceblue;
+    font-size: 2rem;
+    font-style: italic;
+    box-shadow: 0px 5px 10px rgba(252, 91, 91, 0.1);
+    border: none;
+    text-align: center;
+}
+
+.img-expanded{
+    height: 100%;
+    width: 100%;
+}
+
+.contacto-icon{
+    height: 10rem;
+    width: 10rem;
 }
