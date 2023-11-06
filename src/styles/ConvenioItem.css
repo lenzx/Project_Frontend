@@ -40,6 +40,7 @@
 
 .convenio-card:nth-child(2n) > .convenio-card-texto  {
     text-align: end;
+    color: white;
 }
 
 .convenio-card:nth-child(2n) > .convenio-card-container{
