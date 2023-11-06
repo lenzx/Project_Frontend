@@ -29,7 +29,19 @@
     background-color: var(--card-gray-bg);
     border-radius: 10px;
     border: 0.2rem solid var(--card-lighter-orange);
-    padding: 3.6rem 0;
+    padding: 1.6rem 0 2.8rem 0;
     margin: 0 2.4rem;
     
+}
+
+.convenio-card:nth-child(2n)  {
+    background-color: var(--card-lighter-orange);
+}
+
+.convenio-card:nth-child(2n) > .convenio-card-texto  {
+    text-align: end;
+}
+
+.convenio-card:nth-child(2n) > .convenio-card-container{
+    flex-direction: row-reverse;
 }
