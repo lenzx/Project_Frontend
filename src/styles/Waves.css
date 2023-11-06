@@ -1,0 +1,15 @@
+.wave-footer{
+    background-color: var(--header-box-shadow);
+
+}
+
+.footer-title{
+    color: var(--header-background);
+}
+.footer-content{
+    color: var(--header-background);
+    font-size: 3rem;
+    margin-top: 3rem;
+    text-decoration: none;
+}
+

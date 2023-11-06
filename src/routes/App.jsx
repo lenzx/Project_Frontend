@@ -4,8 +4,9 @@ import NavBar from '../containers/Layout';
 import Convenio from '../pages/Convenios';
 import Especialistas from '../pages/Especialistas';
 import Catalogo from '../pages/Catalogo';
-
-import '../styles/Globals.css'
+import Servicio from '../pages/Servicio';
+import ProductoExpanded from '../components/CatalogoItemExpanded';
+import '../styles/Globals.css';
 
 
 const App = () => {
@@ -17,6 +18,8 @@ const App = () => {
 						<Route exact path="/especialistas" element={<Especialistas/>} />
 						<Route exact path="/convenios" element={<Convenio/>} />
 						<Route exact path="/catalogo" element={<Catalogo/>} />
+						<Route exact path="/servicios" element={<Servicio/>} />
+						<Route exact path="/expanded" element={<ProductoExpanded/>} />
 					</Routes>
 				</NavBar>
 			</BrowserRouter>

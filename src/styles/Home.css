@@ -1,2 +1,34 @@
 @import '_vars';
 
+body{
+    background-image: url('/src/assets/Design/waveOrange.svg');
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-attachment: fixed;
+}
+
+.main-home{
+    margin-top: 9rem;
+}
+
+
+.btn-home {
+    width: 500px;
+    height: 150px;
+    margin-left: 10rem;
+    margin-top: 15rem;
+    position: relative;
+    background-color: var(--card-lighter-orange);
+    color: white;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    font-size: 5rem;
+    font-style: italic;
+}
+
+.icon-social{
+    height: 10rem;
+    width: 10rem;
+    
+}
+

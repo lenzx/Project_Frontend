@@ -1,0 +1,17 @@
+.servicio-titulo{
+    font-size: 7rem;
+    font-style: italic;
+}
+.card-servicio1{
+    margin: 30px;
+    background-color:rgb(255, 126, 66);
+    color: white;
+    border: 2px solid white;
+}
+.card-servicio2{
+    margin: 30px;
+    border-color: var(--card-lighter-orange);
+    color:black;
+    background-color: var(--card-gray-bg);
+    
+}

@@ -1,5 +1,6 @@
 import "../styles/Header.css";
 import logo from "../assets/logomarkay.png"
+import user from "../assets/user.png"
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -26,6 +27,10 @@ const Header = () => {
                     </li>
                     <li>
                         <Link to="/catalogo">Catálogo</Link>
+                    </li>
+                    <li>
+                    <img src={user} alt="Iniciar sesión" className="user-icon" />
+
                     </li>
                 </ul>
             </nav>

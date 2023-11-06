@@ -1,5 +1,7 @@
 .catalogo-titulo{
     font-size: 7rem;
+    font-style: italic;
+    font-weight: 500;
 }
 
 .catalogo-card{
@@ -15,9 +17,7 @@
     border-radius: 10px;
 }
 
-.catalogo-title{
-    text-align: center;
-}
+
 
 .btn-primary{
     width: 20rem;
@@ -31,13 +31,65 @@
     border: none;
     text-align: center;
 }
-
-.img-expanded{
-    height: 100%;
-    width: 100%;
+.text-valor{
+    color:white
+}
+.img-catalogo{
+    min-height: 20rem;
+    min-width: 100%;
 }
 
+/* ################ */
+
+.img-expanded{
+    height: 50rem;
+    width: 50rem;
+
+}
+.bg-expanded{
+    border-radius: 3rem;
+    border: 2px;
+    border-style: double;
+    border-color: var(--card-lighter-orange);
+    margin-top: 5rem;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--card-gray-bg);
+}
+.content-expanded{
+    margin-top: 5rem;
+
+}
 .contacto-icon{
-    height: 10rem;
-    width: 10rem;
+    height: 12rem;
+    width: 12rem;
+    margin-left: 10rem;
+
+}
+
+
+.text-product-title{
+    font-weight: 700;
+    font-size: 4rem;
+
+}
+
+.text-product-price{
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.card-telefono{
+    font-style: italic;
+    margin-left: 10rem;
+    margin-top: 3rem;
+}
+
+.card-bg{
+    background-color: var(--card-gray-bg);
+}
+.btn-volver{
+    background-color:var(--card-lighter-orange);
+    color: white;
+    border: 2px solid white;
 }
