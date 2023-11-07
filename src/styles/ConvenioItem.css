@@ -26,16 +26,19 @@
 }
 
 .convenio-card {
+
     background-color: var(--card-gray-bg);
     border-radius: 10px;
     border: 0.2rem solid var(--card-lighter-orange);
     padding: 1.6rem 0 2.8rem 0;
     margin: 0 2.4rem;
+    margin-top: 1rem;
     
 }
 
 .convenio-card:nth-child(2n)  {
     background-color: var(--card-lighter-orange);
+    border: 0.2rem solid white;
 }
 
 .convenio-card:nth-child(2n) > .convenio-card-texto  {
@@ -45,4 +48,23 @@
 
 .convenio-card:nth-child(2n) > .convenio-card-container{
     flex-direction: row-reverse;
+}
+
+.btn-convenios{
+    width: 200px;
+    height: 50px;
+    position: relative;
+    background-color: var(--card-lighter-orange);
+    color: white;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50rem;
+    font-size: 3rem;
+    font-style: italic;
+    
+    
+}
+.btn-convenio1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

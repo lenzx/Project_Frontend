@@ -16,7 +16,10 @@ const Producto = ({ imagen , nombre,precio,descripcion}) => {
                         <div className="card-body catalogo-title">
                             <h5 className="card-title">{nombre}</h5>
                             <p className="card-text">{descripcion}</p>
-                            <Link to="/expanded"><button type="button" className="btn-primary btn-lg">Ver más</button></Link>
+                            <div className="btn-producto">
+                                <Link to="/expanded"><button type="button" className="btn-primary btn-lg">Ver más</button></Link>
+                            </div>
+                            
 
                         </div>
                     </div>

@@ -8,7 +8,7 @@ const Especialistas = ({imagen, nombre, descripcion,lugar}) => {
             <div className="card mb-3 especialistas-card" style={{ maxWidth: '800px' }}>
                 <div className="row g-0">
                     <div className="col-md-4">
-                        <img src={imagen} className="img-fluid rounded-start" alt="..." />
+                        <img src={imagen} className="img-fluid rounded-start img-especialista" alt="..." />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
@@ -16,7 +16,10 @@ const Especialistas = ({imagen, nombre, descripcion,lugar}) => {
                             <p className="card-text">{descripcion}</p>
                             <p className="card-text"><small className="text-muted">Disponibilidad en:</small></p>
                             <p className="card-text"><small className="text-muted">{lugar}</small></p>
+                            <div className="btn-especialista">
                             <button type="button" className="btn-primary btn-lg">Solicitar Hora</button>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

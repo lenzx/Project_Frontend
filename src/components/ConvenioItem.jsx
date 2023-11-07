@@ -1,6 +1,7 @@
 import "../styles/ConvenioItem.css";
+import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
-const ConvenioItem = ({nombreConvenio, descripcionConvenio, imagenConvenio }) => {
+const ConvenioItem = ({nombreConvenio, descripcionConvenio, imagenConvenio,linkConvenio }) => {
     return (
         <div className="convenio-card">
             <div className="convenio-card-texto">{nombreConvenio}</div>
@@ -13,6 +14,9 @@ const ConvenioItem = ({nombreConvenio, descripcionConvenio, imagenConvenio }) =>
                 <div className="convenio-descripcion">
                     {descripcionConvenio}
                 </div>
+            </div>
+            <div className="btn-convenio1">
+                <Link to={linkConvenio} target="_blank"><button type="button" className="btn-convenios" >Agendar Hora</button></Link>
             </div>
         </div>
     );

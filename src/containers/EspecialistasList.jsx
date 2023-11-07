@@ -1,16 +1,16 @@
 import Especialistas from "../components/EspecialistasItem.jsx"
 import marcos from "../assets/Especialistas/doctor.webp"
-
+import especialista from "../assets/Especialistas/especialista.png"
 const EspecialistasList = () => {  
     return (
         <>
             <div className="row">
                 <div className="col-md-12">
                     <Especialistas
-                    imagen={marcos}
-                    nombre={"Marcos Diaz"}
-                    descripcion={"Las especialidades del kinesiólogo se desempeña en el área de traumatología"}
-                    lugar={"- Centro Médico Diagnosalud"}
+                    imagen={especialista}
+                    nombre={"Ks. Jason Rojo Valenzuela"}
+                    descripcion={"Especialista en: Kinesiología en Traumatología, Kinesiología en Fisioterapia, Neurorehabilitación en Adultos, Kinesiología Respiratoria."}
+                    lugar={"- Clínica del Mirador"}
                     />
                 </div>
             </div>
@@ -19,9 +19,9 @@ const EspecialistasList = () => {
             <div className="col-md-12">
                     <Especialistas
                     imagen={marcos}
-                    nombre={"Kelly Rivera"}
-                    descripcion={"Las especialidades del kinesiólogo se desempeña en el área de neurologia"}
-                    lugar={"- Centro Médico Moneda"}
+                    nombre={"Ana Belén Miranda cuevas"}
+                    descripcion={"Especialista en: Terapia Manual Ortopédica, Kinesiología en Fisioterapia."}
+                    lugar={"- Farfalla Medica"}
                     />
                 </div>
             </div>

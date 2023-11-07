@@ -1,5 +1,4 @@
 import ServiciosList from "../containers/ServicioList.jsx";
-import '../styles/Servicio.css'
 import FooterWave from "../components/FooterWave.jsx";
 const Servicios = () => { 
     return (

@@ -9,8 +9,8 @@ const ProductoExpanded = ({imagen,imagenWhatsapp,imagenCodigoQr,nombre,precio,de
         <>
         <div className="container">
         <div className="container expanded bg-expanded">
-            <div className="row g-0">
-                <div className="col-md-4 catalogo-product card-bg">
+            <div className="row display-item-expanded">
+                <div className="col-md-4">
                     <img src={imagen} className="img-fluid rounded-start img-expanded" alt="..." />
                 </div>
                 <div className="col-md-8">
@@ -30,12 +30,13 @@ const ProductoExpanded = ({imagen,imagenWhatsapp,imagenCodigoQr,nombre,precio,de
 
 
                         <div className="row">
-                            <div className="col-md-2">
+                            <div className="col-md-4">
                                 <img src={imagenWhatsapp} className="img-fluid rounded-start contacto-icon" alt="..." />
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-md-2">
                                 <br/>
-                                <p className="card-text card-telefono"><b>{telefono}</b></p>
+                                <Link to="https://api.whatsapp.com/send?phone=56982954572" className="footer-content card-text card-telefono" target="_blank"><p>+56982954572</p></Link>
+                                
                             </div>
                             <div className="col-md-6">
                                 <img src={imagenCodigoQr} className="img-fluid rounded-start contacto-icon" alt="..." />

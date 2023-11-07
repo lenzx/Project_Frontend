@@ -11,7 +11,7 @@ const Home = () => {
                         <img src={logoMarkay} alt="" />
                     </div>
                     <div className="col-md-6">
-                    <Link to="/especialistas"><button type="button" className=" btn-home">Solicita Tu atención</button></Link>
+                    <Link to="/especialistas"><button type="button" className=" btn-home">Solicita tu atención</button></Link>
 
                     </div>
 
