@@ -3,8 +3,12 @@ import delmirador from "../assets/delmirador.png"
 import "../styles/ConvenioList.css";
 import farfalla from "../assets/farfalla.webp"
 import diagno from "../assets/diagnoSalud.jpg"
+import useGetConvenios from "../hooks/useGetConvenios.jsx";
 
 const ConvenioList = () => {
+    const convenios = useGetConvenios();
+     
+
     return (
         <div className="convenio-list-contenedor">
             <Convenio
@@ -25,8 +29,19 @@ const ConvenioList = () => {
             imagenConvenio={diagno}
             linkConvenio={"https://www.diagno.cl/agenda-tu-hora"}
             />
+
+            {convenios.map(convenio => (
+                <Convenio
+                nombreConvenio={convenio.title}
+                descripcionConvenio={convenio.description}
+                imagenConvenio={convenio.images[0]}
+                linkConvenio={convenio.price}
+                key={convenio.id}
+                />
+            ))}
+
         </div>
     );
-  }
-  
-  export default ConvenioList;
+}
+
+export default ConvenioList;
