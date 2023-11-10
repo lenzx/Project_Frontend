@@ -6,7 +6,7 @@ const useGetConvenios = () => {
 
     useEffect(() => {
         const getConvenios = async () => {
-            const { data } = await axios.get(`https://api.escuelajs.co/api/v1/products`);
+            const { data } = await axios.get(`http://54.94.65.18:8000/api/v1/convenios/`);
             setConvenios(data);
         }
         getConvenios();

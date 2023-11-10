@@ -7,7 +7,7 @@ import useGetConvenios from "../hooks/useGetConvenios.jsx";
 
 const ConvenioList = () => {
     const convenios = useGetConvenios();
-     
+
 
     return (
         <div className="convenio-list-contenedor">
@@ -32,10 +32,10 @@ const ConvenioList = () => {
 
             {convenios.map(convenio => (
                 <Convenio
-                nombreConvenio={convenio.title}
-                descripcionConvenio={convenio.description}
-                imagenConvenio={convenio.images[0]}
-                linkConvenio={convenio.price}
+                nombreConvenio={convenio.nombre}
+                descripcionConvenio={convenio.descripcion}
+                imagenConvenio={convenio.imagen}
+                linkConvenio={convenio.link}
                 key={convenio.id}
                 />
             ))}
