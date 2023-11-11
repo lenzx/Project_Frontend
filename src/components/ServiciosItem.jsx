@@ -1,6 +1,7 @@
 
 
 import '../styles/Servicio.css'
+// eslint-disable-next-line react/prop-types
 const Servicio = ({servicio,descripcion}) => {
     return (
         <div className="card-servicio">
