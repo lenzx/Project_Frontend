@@ -6,6 +6,7 @@ import Especialistas from '../pages/Especialistas';
 import Catalogo from '../pages/Catalogo';
 import Servicio from '../pages/Servicio';
 import ProductoExpanded from '../components/CatalogoItemExpanded';
+import TestPostConvenios from '../pages/testpostconvenios';
 import '../styles/Globals.css';
 
 
@@ -20,6 +21,7 @@ const App = () => {
 						<Route exact path="/catalogo" element={<Catalogo/>} />
 						<Route exact path="/servicios" element={<Servicio/>} />
 						<Route exact path="/expanded" element={<ProductoExpanded/>} />
+						<Route exact path="/test" element={<TestPostConvenios/>} />
 					</Routes>
 				</NavBar>
 			</BrowserRouter>
