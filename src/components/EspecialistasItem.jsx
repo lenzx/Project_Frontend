@@ -3,6 +3,7 @@ import '../styles/Especialistas.css'
 
 // eslint-disable-next-line react/prop-types
 const Especialistas = ({imagen, nombre, descripcion,lugar}) => {
+    
     return (
         <div className=' d-flex justify-content-center'>
             <div className="card mb-3 especialistas-card" style={{ maxWidth: '800px' }}>
@@ -19,7 +20,6 @@ const Especialistas = ({imagen, nombre, descripcion,lugar}) => {
                             <div className="btn-especialista">
                             <button type="button" className="btn-primary btn-lg">Solicitar Hora</button>
                             </div>
-                            
                         </div>
                     </div>
                 </div>

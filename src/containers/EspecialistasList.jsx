@@ -1,7 +1,9 @@
 import Especialistas from "../components/EspecialistasItem.jsx"
 import marcos from "../assets/Especialistas/doctor.webp"
 import especialista from "../assets/Especialistas/especialista.png"
+import useGetEspecialista from "../hooks/useGetEspecialista.jsx"
 const EspecialistasList = () => {  
+
     return (
         <>
             <div className="row">
@@ -16,7 +18,7 @@ const EspecialistasList = () => {
             </div>
 
             <div className="row">
-            <div className="col-md-12">
+                <div className="col-md-12">
                     <Especialistas
                     imagen={marcos}
                     nombre={"Ana Belén Miranda cuevas"}
@@ -25,6 +27,7 @@ const EspecialistasList = () => {
                     />
                 </div>
             </div>
+
         </>
     );
 }
