@@ -17,7 +17,7 @@ const Home = () => {
                 />
 
                 <ServiciosCaroussel
-                tipo='Servicios Markay'
+                tipo='Servicios'
                 imagen={camara}/>
                 
             </div>

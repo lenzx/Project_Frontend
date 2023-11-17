@@ -5,41 +5,52 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <div className="header">
-            <div>
+        <div className="container">
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
                 <figure>
                     <img src={logo} alt="logo" />
                 </figure>
-            </div>
-            <nav className="navbar">
-                <ul>
-                    <li>
-                        <Link to="/">Inicio</Link>
-                    </li>
-                    <li>
-                        <Link to="/especialistas">Especialistas</Link>
-                    </li>
-                    <li>
-                        <Link to="/servicios">Servicios</Link>
-                    </li>
-                    <li>
-                        <Link to="/convenios">Convenios</Link>
-                    </li>
-                    <li>
-                        <Link to="/catalogo">Catálogo</Link>
-                    </li>
-                    
-                    <li>
-                        <Link to="/login">
-                            <img src={user} alt="Iniciar sesión" className="user-icon"/>
-                        </Link>
-                    </li>
-                    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      
+        <li class="nav-item">
+            <Link to="/">Inicio</Link>
+        </li>
+        <li class="nav-item">
+            <Link to="/servicios">Servicios</Link>
+        </li>
+        <li class="nav-item">
+            <Link to="/especialistas">Especialistas</Link>
+        </li>
+        <li class="nav-item">
+            <Link to="/convenios">Convenios</Link>
+        </li>
+        <li class="nav-item">
+            <Link to="/catalogo">Catálogo</Link>
+        </li>
+        
+        <li class="nav-item">
+            <Link to="/login">Iniciar sesión</Link>
+        </li>
+        <li class="nav-item">
+                <Link to="/login">
+                    <img src={user} alt="Iniciar sesión" className="user-icon"/>
+                </Link>
+        </li>
 
-                    
-                </ul>
-            </nav>
-        </div>
+
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+</div>
+        
     );
 }
 
