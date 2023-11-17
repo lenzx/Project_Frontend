@@ -3,27 +3,36 @@
 body{
     background-image: url('/src/assets/Design/waveOrange.svg');
     background-repeat: no-repeat;
-    background-position-y: bottom;
+    background-position-y: 120%;
     background-attachment: fixed;
 }
 
 .main-home{
     margin-top: 9rem;
+    margin-bottom: 25rem;
 }
 
 
 .btn-home {
-    width: 500px;
-    height: 150px;
+    width: fit-content;
+    height: fit-content;
     margin-left: 10rem;
     margin-top: 15rem;
     position: relative;
-    background-color: var(--card-lighter-orange);
+    background-color: var(--naranjo-secondary);
     color: white;
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid var(--gris-oscuro);
     border-radius: 50%;
-    font-size: 5rem;
+    font-size: 4rem;
     font-style: italic;
+    
+    padding: 20px;
+
+}
+
+.descripcion-item{
+    text-align: center;
+    font-size: 6rem;
 }
 
 

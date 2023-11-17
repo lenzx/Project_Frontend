@@ -4,7 +4,7 @@
     align-items: center;
     padding: 0 1.6rem;
     min-height: 10vh;
-    box-shadow: 0 0 1rem var(--header-box-shadow);
+    box-shadow: 0 0 1rem var(--naranjo-main);
     border-radius: 0 0 1rem 1rem;
 }
 .navbar {
@@ -22,7 +22,7 @@ nav > ul {
 li > a {
     margin: 0 1.6rem;
     font-size: 2.4rem;
-    color: var(--header-box-shadow);
+    color: var(--naranjo-main);
     font-weight: 900;
     font-style: italic;
     

@@ -1,24 +1,28 @@
 import '../styles/Home.css';
-import logoMarkay from '../assets/logomarkay.png'
 import FooterWave from '../components/FooterWave';
-import { Link } from 'react-router-dom';
+import HomeMain from '../components/HomeMain';
+import ServiciosCaroussel from '../containers/ServiciosCaroussel';
+import camara from "../assets/Productos/camara hiperbarica.png"
+import DescripcionItem from '../components/DescripcionItem';
+
 const Home = () => {
     return (<>
 
             <div className="container">
-                <div className="row main-home">
-                    <div className="col-md-6">
-                        <img src={logoMarkay} alt="" />
-                    </div>
-                    <div className="col-md-6">
-                    <Link to="/especialistas"><button type="button" className=" btn-home">Solicita tu atención</button></Link>
 
-                    </div>
+                <HomeMain/>
+                <DescripcionItem
+                contenido={"Somos especialistas en rehabilitación"}
+                
+                />
 
-                    
-                </div>
+                <ServiciosCaroussel
+                tipo='Servicios Markay'
+                imagen={camara}/>
+                
             </div>
             <FooterWave/>
+
         </>
     );
 }

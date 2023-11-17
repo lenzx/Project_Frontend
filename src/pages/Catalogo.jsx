@@ -11,8 +11,6 @@ const Catalogo = () => {
             <ProductoList/>
         </div>
         <FooterWave/>
-
-
         </>
     );
 }

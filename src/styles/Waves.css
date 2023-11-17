@@ -1,6 +1,5 @@
 .wave-footer{
-    background-color: var(--header-box-shadow);
-
+    background-color: var(--naranjo-main);
 }
 
 footer{
@@ -10,10 +9,10 @@ footer{
 .footer-title{
     font-size: 5rem;
     font-style: italic;
-    color: var(--header-background);
+    color: var(--blanco);
 }
 .footer-content{
-    color: var(--header-background);
+    color: var(--blanco);
     font-size: 3rem;
     text-decoration: none;
     text-align: center;

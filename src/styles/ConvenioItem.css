@@ -27,9 +27,9 @@
 
 .convenio-card {
 
-    background-color: var(--card-gray-bg);
+    background-color: var(--crema);
     border-radius: 10px;
-    border: 0.2rem solid var(--card-lighter-orange);
+    border: 0.2rem solid var(--naranjo-secondary);
     padding: 1.6rem 0 2.8rem 0;
     margin: 0 2.4rem;
     margin-top: 1rem;
@@ -37,7 +37,7 @@
 }
 
 .convenio-card:nth-child(2n)  {
-    background-color: var(--card-lighter-orange);
+    background-color: var(--naranjo-secondary);
     border: 0.2rem solid white;
 }
 
@@ -54,7 +54,7 @@
     width: 200px;
     height: 50px;
     position: relative;
-    background-color: var(--card-lighter-orange);
+    background-color: var(--naranjo-secondary);
     color: white;
     border: 2px solid rgb(255, 255, 255);
     border-radius: 50rem;

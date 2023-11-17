@@ -3,6 +3,8 @@ import bota from "../assets/Productos/bota ortop.jpg";
 import whatsapp from "../assets/WhatsApp.svg.webp";
 import qr from "../assets/QRplaceholder.jpeg";
 import { Link } from "react-router-dom";
+import FooterWave from "../components/FooterWave.jsx";
+
 
 const ProductoExpanded = ({imagen,imagenWhatsapp,imagenCodigoQr,nombre,precio,descripcion,telefono,}) => {
     return (
@@ -52,6 +54,7 @@ const ProductoExpanded = ({imagen,imagenWhatsapp,imagenCodigoQr,nombre,precio,de
         <br />
         <Link to="/catalogo"><button type="button" className="btn-primary btn-lg btn-volver">Volver</button></Link>
         </div>
+        <FooterWave/>
             </>
     );
 };

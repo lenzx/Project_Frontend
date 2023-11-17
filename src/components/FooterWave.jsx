@@ -8,7 +8,7 @@ import "../styles/Waves.css"
 const FooterWave= () => {
     return (<>
         <div>
-        <img src={wave} alt=""/>
+        <img src={wave} alt="" className="wave-image"/>
         </div>
         <footer className="wave-footer">
             <br /><br /><br /><br />

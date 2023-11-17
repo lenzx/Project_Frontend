@@ -10,8 +10,8 @@ const EspecialistasList = () => {
                 <div className="col-md-12">
                     <Especialistas
                     imagen={especialista}
-                    nombre={"Ks. Jason Rojo Valenzuela"}
-                    descripcion={"Especialista en: Kinesiología en Traumatología, Kinesiología en Fisioterapia, Neurorehabilitación en Adultos, Kinesiología Respiratoria."}
+                    nombre={"Ulises Williams Castro Carvajal                    "}
+                    descripcion={"Kinesiólogo – Licenciado en kinesiología - Técnica en Punción Seca – Masoterapeuta Deportivo – Trainfes - Especialista en rehabilitación traumatológica y respiratoria"}
                     lugar={"- Clínica del Mirador"}
                     />
                 </div>
@@ -21,8 +21,30 @@ const EspecialistasList = () => {
                 <div className="col-md-12">
                     <Especialistas
                     imagen={marcos}
-                    nombre={"Ana Belén Miranda cuevas"}
-                    descripcion={"Especialista en: Terapia Manual Ortopédica, Kinesiología en Fisioterapia."}
+                    nombre={"Jhonny Cristopher Castillo Parra"}
+                    descripcion={"Kinesiólogo – Especialista entrenamiento deportivo – Manejo en Columna Vertebral – Rehabilitación respiratoria"}
+                    lugar={"- Farfalla Medica"}
+                    />
+                </div>
+            </div>
+
+            <div className="row">
+                <div className="col-md-12">
+                    <Especialistas
+                    imagen={marcos}
+                    nombre={"Rafael Alejandro Silva Valenzuela"}
+                    descripcion={"Doctor en Quiropraxia – Master en técnicas osteopáticas del aparato locomotor – Osteópata de Academía Latinoamericana de Osteopatía"}
+                    lugar={"- Farfalla Medica"}
+                    />
+                </div>
+            </div>
+
+            <div className="row">
+                <div className="col-md-12">
+                    <Especialistas
+                    imagen={marcos}
+                    nombre={"Jeremy Andres Zambrano Encalada"}
+                    descripcion={"kinesiologo- diplomado en neurorrehabilitación- especialista en rehabilitación traumatologica y respiratoria- entrenamiento deportivo"}
                     lugar={"- Farfalla Medica"}
                     />
                 </div>

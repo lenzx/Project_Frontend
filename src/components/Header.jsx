@@ -28,10 +28,15 @@ const Header = () => {
                     <li>
                         <Link to="/catalogo">Catálogo</Link>
                     </li>
+                    
                     <li>
-                    <img src={user} alt="Iniciar sesión" className="user-icon" />
-
+                        <Link to="/login">
+                            <img src={user} alt="Iniciar sesión" className="user-icon"/>
+                        </Link>
                     </li>
+                    
+
+                    
                 </ul>
             </nav>
         </div>

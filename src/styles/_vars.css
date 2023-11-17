@@ -1,12 +1,14 @@
 :root {
-    --white: blue;
-    --header-background: white;
-    --header-box-shadow: #FE7E38;
+    --blanco: white;
+    --crema:#fae9e0;
 
-    --main-black-markay: #373435;
+    --naranjo-main:#FF7E38;
+    --amarillo-naranjo:#FFA138;
+    --amarillo:#FFBC38;
+    --naranjo-secondary:#FF5B38;
+    --rojo-anaranjado: #FF3838;
 
 
-    --card-lighter-orange: #FE7E38;
-    --card-gray-bg:#fae9e0;
+    --gris-oscuro: #373435;
 
 }

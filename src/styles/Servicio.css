@@ -4,15 +4,20 @@
     margin-bottom: 5rem;
 }
 .card-servicio {
-    border: 3px solid var(--main-black-markay);
-    background-color: var(--card-gray-bg);
-    width: 50%;
+    width: 100%;
 }
 
 
 .card-servicio:nth-child(2n){
-    background-color: rgb(255, 126, 66);
+    background-color: var(--amarillo-naranjo);
     color: white;
+}
+
+.servicio-title{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
 }
 
 
