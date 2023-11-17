@@ -7,6 +7,10 @@
     box-shadow: 0 0 1rem var(--naranjo-main);
     border-radius: 0 0 1rem 1rem;
 }
+
+.logo{
+    max-width: 10rem;
+}
 .navbar {
     display: flex;
     justify-content: space-around;
