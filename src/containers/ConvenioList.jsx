@@ -13,8 +13,8 @@ const ConvenioList = () => {
                 nombreConvenio={convenio.nombre}
                 descripcionConvenio={convenio.descripcion}
                 imagenConvenio={convenio.imagen}
-                linkConvenio={convenio.link}
-                key={convenio.id}
+                enlaceConvenio={convenio.enlace}
+                key={convenio.convenio_id}
                 />
             ))}
         </div>

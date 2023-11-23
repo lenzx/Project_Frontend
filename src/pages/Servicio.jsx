@@ -10,15 +10,8 @@ const Servicios = () => {
         <div className="container">
             <br />
             <h2 className="servicio-titulo text-center">Servicios</h2>
-            <ServiciosCaroussel
-            tipo="Médicos"
-            imagen={camara}/>
-            <ServiciosCaroussel
-            tipo="Recreativos"
-            imagen={natacion}/>
-            <ServiciosCaroussel
-            tipo="Productos"
-            imagen={plantilla}/>
+            <ServiciosCaroussel/>
+            
         </div>
         <FooterWave/>
         </>

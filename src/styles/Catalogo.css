@@ -84,14 +84,18 @@
 .text-product-price{
     font-weight: 700;
     font-size: 3rem;
+    
 }
 
 .card-telefono{
+    margin-top: 100px;
     font-style: italic;
-    margin-left: 10rem;
-    margin-top: 3rem;
     color: var(--gris-oscuro);
-    font-size: 2.5rem;
+    font-size: 2rem;
+    
+}
+.text-number{
+    margin-top: 2.5rem;
 }
 
 .card-bg{
@@ -105,4 +109,32 @@
 
 .display-item-expanded{
     padding-bottom: 5rem;
+}
+
+.text-expanded{
+    text-align: center;
+    
+}
+
+.icon-social{
+    height: 7rem;
+    width: 7rem;
+    
+}
+
+
+
+.catalogo-card.expanded {
+    width: 1000px; 
+    margin-bottom: 20px;
+}
+.catalogo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+
+.catalogo-card {
+    flex: 0 0 calc(33.333% - 20px); 
+    margin-bottom: 200px;
 }

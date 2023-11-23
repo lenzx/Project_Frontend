@@ -37,11 +37,7 @@ const Header = () => {
         <li class="nav-item">
             <Link to="/login">Iniciar sesión</Link>
         </li>
-        <li class="nav-item">
-                <Link to="/login">
-                    <img src={user} alt="Iniciar sesión" className="user-icon"/>
-                </Link>
-        </li>
+        
 
 
       </ul>

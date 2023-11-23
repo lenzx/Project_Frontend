@@ -3,20 +3,24 @@ import marcos from "../assets/Especialistas/doctor.webp"
 import especialista from "../assets/Especialistas/especialista.png"
 import useGetEspecialista from "../hooks/useGetEspecialista.jsx"
 const EspecialistasList = () => {  
+    const especialistas = useGetEspecialista();
 
     return (
         <>
-            <div className="row">
-                <div className="col-md-12">
-                    <Especialistas
-                    imagen={especialista}
-                    nombre={"Patricio Andres Donoso Pinto"}
-                    descripcion={"kinesiologo- Representante 3DPRO plantillas ortopédicas- Trainfes- Terapeuta Puncion seca"}
-                    lugar={"- Farfalla Medica"}
-                    />
+            
+                {especialistas.map(especialista =>(
+                    <div className="row">
+                        <div className="col-md-12">
+                        <Especialistas
+                        especialista={especialista}
+                        />
+                    </div>
+
                 </div>
-            </div>
-            <div className="row">
+
+                ))}
+                
+            {/* <div className="row">
                 <div className="col-md-12">
                     <Especialistas
                     imagen={especialista}
@@ -59,7 +63,7 @@ const EspecialistasList = () => {
                     />
                 </div>
             </div>
-            
+             */}
             
 
         </>

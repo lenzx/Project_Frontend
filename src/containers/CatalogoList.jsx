@@ -4,25 +4,23 @@ import ProductoExpanded from "../components/CatalogoItemExpanded.jsx"
 
 import rodillera from "../assets/Productos/rodillera.jpg"
 import bota from "../assets/Productos/bota ortop.jpg"
+import useGetCatalogo from "../hooks/useGetCatalogo.jsx";
 
-const ProductoList = () => {  
+const ProductoList = () => { 
+    const catalogos = useGetCatalogo(); 
     return (
         <div className="row">
-            <div className="col-md-6">
-                <Producto 
-                imagen = {bota} 
-                nombre="Bota ortpédica"
-                precio="2000"
-                descripcion="Bota ortopédica para lesiones"
-                />
-            </div>
-            <div className="col-md-6">
-                <Producto 
-                imagen = {rodillera} 
-                nombre = "Rodillera ortopédica"
-                precio="2000"
-                descripcion="Rodillera ortopédica para lesiones"/>
-            </div>
+            {catalogos.map(producto =>(
+                        <div className="col-md-6">
+                        <Producto 
+                            item = {producto}
+                        />
+
+                </div>
+
+                ))}
+
+
             
         </div>
 

@@ -8,8 +8,8 @@ body{
 }
 
 .main-home{
-    margin-top: 9rem;
-    margin-bottom: 25rem;
+    margin-top: 8rem;
+    margin-bottom: 5rem;
 }
 
 
@@ -33,6 +33,7 @@ body{
 .descripcion-item{
     text-align: center;
     font-size: 6rem;
+    margin-bottom: 10rem;
 }
 
 
