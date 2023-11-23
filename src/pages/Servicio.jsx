@@ -8,7 +8,6 @@ const Servicios = () => {
     return (
         <>
         <div className="container">
-            <br />
             <h2 className="servicio-titulo text-center">Servicios</h2>
             <ServiciosCaroussel/>
             

@@ -1,6 +1,8 @@
 .servicio-titulo{
+    margin-top: 3rem;
     font-size: 7rem;
     font-style: italic;
+    font-weight: 500;
     margin-bottom: 5rem;
 }
 .card-servicio {

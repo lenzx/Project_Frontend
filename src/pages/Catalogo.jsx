@@ -7,7 +7,7 @@ const Catalogo = () => {
     return (
         <>
         <div className="container">
-            <div className="catalogo-titulo text-center">Nuestros Productos</div>
+            <h2 className="catalogo-titulo text-center">Nuestros Productos</h2>
             <ProductoList/>
         </div>
         <FooterWave/>

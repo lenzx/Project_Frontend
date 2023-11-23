@@ -5,10 +5,10 @@ const Login = () => {
     return (
         <>
         <div className="container">
-            <br />
             <h2 className="servicio-titulo text-center">Inicio de Sesión</h2>
             <LoginList/>
         </div>
+        <FooterWave/>
         </>
     );
 }

@@ -11,8 +11,10 @@ const Producto = ({ item }) => {
     };
 
     return (
-        <div >
-            <div className={`card mb-3 catalogo-card ${mostrarItemExpanded ? 'expanded' : ''}`} style={{ maxWidth: '1040px' }}>
+        <div className={"col-6" + (mostrarItemExpanded ? 'col-12' : '')}>
+
+            <div className="card mb-3 catalogo-card">
+
                 <div className="row g-0">
                     <div className="col-md-4 catalogo-product">
                         <img src={item.imagen} className="img-fluid rounded-start img-catalogo" alt="..." />

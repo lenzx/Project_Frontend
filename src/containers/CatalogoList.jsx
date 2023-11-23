@@ -11,12 +11,11 @@ const ProductoList = () => {
     return (
         <div className="row">
             {catalogos.map(producto =>(
-                        <div className="col-md-6">
                         <Producto 
                             item = {producto}
                         />
 
-                </div>
+                
 
                 ))}
 

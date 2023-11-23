@@ -3,10 +3,9 @@
     flex-direction: column;
 }
 .convenio-titulo {
+    margin-top: 3rem;
     font-size: 7rem;
     font-style: italic;
     font-weight: 500;
-    padding: 0.4rem 8rem;
-    text-align: end;
-    margin-bottom: 2.4rem;
+    margin-bottom: 5rem;
 }

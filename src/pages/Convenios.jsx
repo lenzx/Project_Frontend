@@ -5,7 +5,7 @@ const Convenios = () => {
     return (
         <>
         <div className="convenio-container container">
-            <div className="convenio-titulo text-center">Nuestros Convenios</div>
+            <h2 className="convenio-titulo text-center">Nuestros Convenios</h2>
             <ConvenioList/>
         </div>
         <FooterWave/>

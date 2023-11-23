@@ -6,7 +6,6 @@ const Especialistas = () => {
     return (
         <>
         <div className="container">
-            <br/>
             <h2 className="especialista-titulo text-center">Nuestros Especialistas</h2>
             <EspecialistasList />
         </div>
