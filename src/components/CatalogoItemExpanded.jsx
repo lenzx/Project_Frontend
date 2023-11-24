@@ -8,9 +8,7 @@ const CatalogoItemExpanded = ({item}) => {
     return (
         <>
         
-                <div className="col-md-4">
-                    <img src={item.imagen} className="img-fluid rounded-start img-expanded" alt="..." />
-                </div>
+                
                 <div className="col-md-8">
 
                         <div className="row">
