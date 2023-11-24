@@ -7,12 +7,15 @@
 }
 .card-servicio {
     width: 100%;
+    background-color: var();
+    margin-top: 5rem;
+
 }
 
 
 .card-servicio:nth-child(2n){
-    background-color: var(--amarillo-naranjo);
-    color: white;
+    flex-direction: row-reverse;
+
 }
 
 .servicio-title{
