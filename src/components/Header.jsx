@@ -11,7 +11,7 @@ const Header = () => {
                     <figure>
                         <img src={logo} alt="Markay" className="logo" />
                     </figure>
-                    <h1 class="links-header">Somos especialistas en rehabilitacion</h1>
+                    <h1 class="links-header">Somos especialistas en rehabilitación</h1>
                     <Link to="/login" class="footer-content links-header">Iniciar sesión</Link>
                 </div>
             </nav>
