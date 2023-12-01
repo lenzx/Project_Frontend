@@ -7,6 +7,10 @@ import Catalogo from '../pages/Catalogo';
 import Servicio from '../pages/Servicio';
 import Login from '../pages/Login';
 import Formulario from '../pages/Formulario';
+
+import FormularioServicios from '../pages/FormularioServicios';
+import FormularioProducto from '../pages/FormularioProducto';
+import FormularioConvenio from '../pages/FormularioConvenio';
 import ProductoExpanded from '../components/CatalogoItemExpanded';
 import TestPostConvenios from '../pages/testpostconvenios';
 import '../styles/Globals.css';
@@ -26,6 +30,14 @@ const App = () => {
 						<Route exact path="/test" element={<TestPostConvenios/>} />
 						<Route exact path="/login" element={<Login/>} />
 						<Route exact path="/formulario" element={<Formulario/>} />
+
+
+						<Route exact path="/formularioConvenio" element={<FormularioConvenio/>} />
+						<Route exact path="/formularioProducto" element={<FormularioProducto/>} />
+						<Route exact path="/formularioServicios" element={<FormularioServicios/>} />
+						
+					
+					
 					</Routes>
 				</NavBar>
 			</BrowserRouter>
