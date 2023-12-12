@@ -7,7 +7,7 @@ const useGetCatalogo = () => {
 
     useEffect(() => {
         const getCatalogo = async () => {
-            const { data } = await axios.get(`${API_BASE_URL}/api/v1/producto/`);
+            const { data } = await axios.get(`${API_BASE_URL}/api/v1/producto/producto/`);
             setCatalogo(data);
         }
         getCatalogo();

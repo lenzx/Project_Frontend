@@ -14,7 +14,7 @@ const ConvenioList = () => {
                 descripcionConvenio={convenio.descripcion}
                 imagenConvenio={convenio.imagen}
                 enlaceConvenio={convenio.enlace}
-                key={convenio.convenio_id}
+                key={convenio.id}
                 />
             ))}
         </div>

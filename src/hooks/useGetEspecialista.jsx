@@ -7,7 +7,7 @@ const useGetEspecialista = () => {
 
     useEffect(() => {
         const getEspecialistas = async () => {
-            const { data } = await axios.get(`${API_BASE_URL}/api/v1/especialista/`);
+            const { data } = await axios.get(`${API_BASE_URL}/api/v1/servicio/especialista/`);
             setEspecialistas(data);
         }
         getEspecialistas();

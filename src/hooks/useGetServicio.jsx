@@ -7,7 +7,7 @@ const useGetServicio = () => {
 
     useEffect(() => {
         const getServicios = async () => {
-            const { data } = await axios.get(`${API_BASE_URL}/api/v1/servicio/`);
+            const { data } = await axios.get(`${API_BASE_URL}/api/v1/servicio/servicio/`);
             setServicios(data);
         }
         getServicios();

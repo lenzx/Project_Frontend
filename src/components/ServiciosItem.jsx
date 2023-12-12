@@ -1,6 +1,5 @@
+/* eslint-disable react/prop-types */
 import '../styles/Servicio.css'
-
-// eslint-disable-next-line react/prop-types
 const Servicio = ({item}) => {
     
 
@@ -14,12 +13,7 @@ const Servicio = ({item}) => {
                 <h5 className="card-title">{item.nombre}</h5>
                 <p className="card-text">{item.descripcion}</p>
             </div>
-            
-
-
-
     </div>
-      
     );
 };
 

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+/* eslint-disable react/prop-types */
 import CatalogoItemExpanded from "../components/CatalogoItemExpanded.jsx";
+import { useState } from "react";
 
-// eslint-disable-next-line react/prop-types
+
 const Producto = ({ item }) => {
     const [mostrarItemExpanded, setMostrarItemExpanded] = useState(false);
 

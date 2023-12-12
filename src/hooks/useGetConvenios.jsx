@@ -7,7 +7,7 @@ const useGetConvenios = () => {
 
     useEffect(() => {
         const getConvenios = async () => {
-            const { data } = await axios.get(`${API_BASE_URL}/api/v1/convenios/`);
+            const { data } = await axios.get(`${API_BASE_URL}/api/v1/servicio/convenios/`);
             setConvenios(data);
         }
         getConvenios();

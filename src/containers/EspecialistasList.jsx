@@ -1,6 +1,4 @@
 import Especialistas from "../components/EspecialistasItem.jsx"
-import marcos from "../assets/Especialistas/doctor.webp"
-import especialista from "../assets/Especialistas/especialista.png"
 import useGetEspecialista from "../hooks/useGetEspecialista.jsx"
 const EspecialistasList = () => {  
     const especialistas = useGetEspecialista();
@@ -9,14 +7,12 @@ const EspecialistasList = () => {
         <>
             
                 {especialistas.map(especialista =>(
-                    <div className="row">
-                        <div className="col-md-12">
+                    
                         <Especialistas
                         especialista={especialista}
+                        key={especialista.id}
                         />
-                    </div>
-
-                </div>
+                    
 
                 ))}
                 

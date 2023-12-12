@@ -1,5 +1,4 @@
 import FormularioList from "../containers/FormularioList.jsx";
-import FooterWave from "../components/FooterWave.jsx";
 import '../styles/Formulario.css';
 const Formulario = () => { 
     return (

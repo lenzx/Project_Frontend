@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import Servicio from "../components/ServiciosItem.jsx";
 import useGetServicios from "../hooks/useGetServicio.jsx";
 
@@ -11,6 +10,7 @@ const ServiciosCaroussel = () => {
           {servicios.map(servicio => (
               <Servicio
               item = {servicio}
+              key = {servicio.id}
           
               />
           ))}

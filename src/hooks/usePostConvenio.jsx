@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_BASE_URL } from '../markay/api/endpoint';
@@ -21,7 +22,7 @@ const usePostConvenio = () => {
       data.append("num_telefono", num_telefono);
       data.append("tipo_convenio_id",tipo_convenio_id)
 
-      const response = await axios.post(`${API_BASE_URL}/api/v1/convenios/`, data);
+      const response = await axios.post(`${API_BASE_URL}/api/v1/servicio/convenios/`, data);
       console.log('Datos enviados con éxito:', response.data);
     } catch (error) {
       console.error('Error al enviar datos:', error.response ? error.response.data : error.message);

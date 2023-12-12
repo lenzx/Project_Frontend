@@ -1,6 +1,6 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+
 import whatsapp from "../assets/WhatsApp.svg.webp";
-import qr from "../assets/QRplaceholder.jpeg";
 import { Link } from "react-router-dom";
 
 
@@ -12,7 +12,7 @@ const CatalogoItemExpanded = ({item}) => {
                 <div className="col-md-8">
 
                         <div className="row">
-                            <p className="card-text">{item.descripcion_larga}</p>
+                            <p className="card-text">{item.descripcion}</p>
                         </div>
 
                         <div className="row">

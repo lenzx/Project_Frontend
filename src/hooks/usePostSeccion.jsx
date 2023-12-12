@@ -3,19 +3,18 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_BASE_URL } from '../markay/api/endpoint';
 
-const usePostServicio = () => {
-    const [nombre, setNombre] = useState("");
+const usePostSeccion = () => {
+    const [titulo, setTitulo] = useState(null);
     const [descripcion, setDescripcion] = useState("");
-    const [imagen, setImagen] = useState(null);
     
-  const postData = async (nombre, descripcion,imagen) => {
+    
+  const postData = async (titulo, descripcion) => {
     try {
       const data = new FormData();
-      data.append("nombre", nombre);
+      data.append("titulo", titulo);
       data.append("descripcion", descripcion);
-      data.append("imagen", imagen);
 
-      const response = await axios.post(`${API_BASE_URL}/api/v1/servicio/servicio/`, data);
+      const response = await axios.post(`${API_BASE_URL}/api/v1/web/seccion/`, data);
       console.log('Datos enviados con éxito:', response.data);
     } catch (error) {
       console.error('Error al enviar datos:', error.response ? error.response.data : error.message);
@@ -25,4 +24,4 @@ const usePostServicio = () => {
   return postData;
 };
 
-export default usePostServicio;
+export default usePostSeccion;

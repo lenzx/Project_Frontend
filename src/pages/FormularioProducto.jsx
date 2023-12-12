@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import usePostServicio from "../hooks/usePostServicio";
 import usePostProducto from '../hooks/usePostProducto';
 
 const FormularioProducto = () => {
