@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import SidebarMenu  from 'react-bootstrap-sidebar-menu';
 import "../styles/menu_sidebar.css"
+import { Button } from 'react-bootstrap';
 
-function MenuNavService() {
+function MenuNavService({setSelectedComponent}) {
     return (
         <>
-            <SidebarMenu>
+            <SidebarMenu className='sidebar-menu-list'>
                 <SidebarMenu.Header>
                     <SidebarMenu.Nav.Title className='menu-sidebar-title'>
                         Menu de Servicios
@@ -16,37 +17,42 @@ function MenuNavService() {
                         <ul className='menu-sidebar-ul'>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Link to="/MenuAdministrador/convenios">Convenios</Link>
+                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Citas')}>Citas</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Link to="/MenuAdministrador/Servicios">Servicios</Link>
+                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Convenios')}>Convenios</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Link to="/MenuAdministrador/productos">Productos</Link>
+                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Servicios')}>Servicios</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Link to="/MenuAdministrador/especialistas">Kinesiologos</Link>
+                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Productos')}>Productos</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Link to="/MenuAdministrador/especialidades">Especialidades</Link>
+                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Especialistas')}>Kinesiologos</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Link to="/MenuAdministrador/redesSociales">Redes Sociales</Link>
+                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Especialidades')}>Especialidades</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Link to="/MenuAdministrador/categoriaCatalogo">Categorias de Producto</Link>
+                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Redes Sociales')}>Redes Sociales</Button>
+                                </SidebarMenu.Nav.Title>
+                            </li>
+                            <li>
+                                <SidebarMenu.Nav.Title>
+                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Especialistas')}>Categoria de Productos</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                         </ul>
@@ -58,5 +64,9 @@ function MenuNavService() {
         </>
     );
 }
+
+MenuNavService.propTypes = {
+    setSelectedComponent: PropTypes.func.isRequired,
+};
 
 export default MenuNavService;

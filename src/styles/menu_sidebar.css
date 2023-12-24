@@ -1,4 +1,9 @@
-@import '_vars';
+@import '_vars.css';
+
+.menu-sidebar-ul {
+    margin: 0;
+    padding: 0;
+}
 
 .menu-sidebar-ul > li {
     padding: 0.5rem 0;
@@ -6,13 +11,27 @@
     list-style: none;
 }
 
-.menu-sidebar-ul > li > span> a {
+.menu-sidebar-ul > li > span> .btn {
     color: var(--gris-oscuro);
     text-decoration: none;
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 500;
     transition: all 0.3s ease;
+    border: none;
+    width: 100%;
+    text-align: start;
+    padding: 1rem;
     
+}
+
+.menu-sidebar-ul > li > span> .btn:hover {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    background-color: var(--naranjo-main);
 }
 
 .menu-sidebar-title {
@@ -20,4 +39,11 @@
     font-weight: 500;
     color: var(--gris-oscuro);
     margin-bottom: 0.5rem;
+    text-decoration: none;
+    user-select: none;
+}
+
+.sidebar-menu-header{
+    text-align: start;
+    margin-left: 1rem;
 }

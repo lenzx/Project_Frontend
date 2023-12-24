@@ -26,7 +26,7 @@ import FormularioRedSocial from '../pages/FormularioRedSocial';
 import ProductoExpanded from '../components/CatalogoItemExpanded';
 import TestPostConvenios from '../pages/testpostconvenios';
 import '../styles/Globals.css';
-import MenuAdmin from '../pages/MenuAdminConvenios';
+import MenuAdmin from '../pages/MenuAdmin';
 
 const routes = (
     <Routes>
@@ -55,12 +55,8 @@ const routes = (
         <Route exact path="/MenuAdministrador/formularioMarkay" element={<FormularioMarkay/>} />
         <Route exact path="/MenuAdministrador/formularioRedSocial" element={<FormularioRedSocial/>} />
 
-        <Route exact path='/MenuAdministrador/Convenios' element={<MenuAdmin />} />
-        <Route exact path='/MenuAdministrador/Especialistas' element={<MenuAdmin />} />
-        <Route exact path='/MenuAdministrador/Servicios' element={<MenuAdmin />} />
-        <Route exact path='/MenuAdministrador/Productos' element={<MenuAdmin />} />
-        <Route exact path='/MenuAdministrador/Consultas' element={<MenuAdmin />} />
-        <Route exact path='/MenuAdministrador/Categorias' element={<MenuAdmin />} />
+        <Route exact path='/MenuAdministrador' element={<MenuAdmin />} />
+        
         <Route path="*" element={<h1>404 Not Found</h1>} />
     </Routes>
 );
