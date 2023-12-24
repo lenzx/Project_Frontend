@@ -1,6 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Home from '../pages/Home';
 import NavBar from '../containers/Layout';
+import LayoutMenu from '../components/LayoutMenu';
 import Convenio from '../pages/Convenios';
 import Especialistas from '../pages/Especialistas';
 import Catalogo from '../pages/Catalogo';
@@ -25,47 +26,70 @@ import FormularioRedSocial from '../pages/FormularioRedSocial';
 import ProductoExpanded from '../components/CatalogoItemExpanded';
 import TestPostConvenios from '../pages/testpostconvenios';
 import '../styles/Globals.css';
-import MenuAdmin from '../pages/MenuAdmin';
+import MenuAdmin from '../pages/MenuAdminConvenios';
 
+const routes = (
+    <Routes>
+        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/especialistas" element={<Especialistas/>} />
+        <Route exact path="/convenios" element={<Convenio/>} />
+        <Route exact path="/catalogo" element={<Catalogo/>} />
+        <Route exact path="/servicios" element={<Servicio/>} />
+        <Route exact path="/expanded" element={<ProductoExpanded/>} />
+        <Route exact path="/test" element={<TestPostConvenios/>} />
+        <Route exact path="/login" element={<Login/>} />
+        <Route exact path="/formulario" element={<Formulario/>} />
+        <Route exact path="/MenuAdministrador/convenios/formularioConvenio" element={<FormularioConvenio/>} />
+        <Route exact path="/MenuAdministrador/productos/formularioProducto" element={<FormularioProducto/>} />
+        <Route exact path="/MenuAdministrador/servicios/formularioServicios" element={<FormularioServicios/>} />
+        <Route exact path="/MenuAdministrador/especialista/formularioEspecialista" element={<FormularioEspecialista/>} />
+        <Route exact path="/MenuAdministrador/formularioConsulta/:id" element={<FormularioConsulta/>} />
+        <Route exact path="/MenuAdministrador/categoriaconvenio/formularioCategoriaConvenio" element={<FormularioCategoriaConvenio/>} />
+        <Route exact path="/MenuAdministrador/formularioEspecialidad" element={<FormularioEspecialidad/>} />
+        <Route exact path="/MenuAdministrador/formularioEspecialistaEspecialidad" element={<FormularioEspecialistaEspecialidad/>} />
+        <Route exact path="/MenuAdministrador/formularioEspecialidadServicio" element={<FormularioEspecialidadServicio/>} />
+        <Route exact path="/MenuAdministrador/formularioCategoriaProducto" element={<FormularioCategoriaProducto/>} />
+        <Route exact path="/MenuAdministrador/formularioProductoCategoria" element={<FormularioProductoCategoria/>} />
+        <Route exact path="/MenuAdministrador/formularioEspecialistaConvenio" element={<FormularioEspecialistaConvenio/>} />
+        <Route exact path="/MenuAdministrador/formularioSeccion" element={<FormularioSeccion/>} />
+        <Route exact path="/MenuAdministrador/formularioMarkay" element={<FormularioMarkay/>} />
+        <Route exact path="/MenuAdministrador/formularioRedSocial" element={<FormularioRedSocial/>} />
 
-const App = () => {
-	return (
-			<BrowserRouter>
-				<NavBar>
-					<Routes>
-						<Route exact path="/" element={<Home/>} />
-						<Route exact path="/especialistas" element={<Especialistas/>} />
-						<Route exact path="/convenios" element={<Convenio/>} />
-						<Route exact path="/catalogo" element={<Catalogo/>} />
-						<Route exact path="/servicios" element={<Servicio/>} />
-						<Route exact path="/expanded" element={<ProductoExpanded/>} />
-						<Route exact path="/test" element={<TestPostConvenios/>} />
-						<Route exact path="/login" element={<Login/>} />
-						
-						<Route exact path="/formulario" element={<Formulario/>} />
-						<Route exact path="/formularioConvenio" element={<FormularioConvenio/>} />
-						<Route exact path="/formularioProducto" element={<FormularioProducto/>} />
-						<Route exact path="/formularioServicios" element={<FormularioServicios/>} />
-						<Route exact path="/formularioEspecialista" element={<FormularioEspecialista/>} />
-						<Route exact path="/formularioConsulta" element={<FormularioConsulta/>} />
-						<Route exact path="/formularioCategoriaConvenio" element={<FormularioCategoriaConvenio/>} />
-						<Route exact path="/formularioEspecialidad" element={<FormularioEspecialidad/>} />
-						<Route exact path="/formularioEspecialistaEspecialidad" element={<FormularioEspecialistaEspecialidad/>} />
-						<Route exact path="/formularioEspecialidadServicio" element={<FormularioEspecialidadServicio/>} />
-						<Route exact path="/formularioCategoriaProducto" element={<FormularioCategoriaProducto/>} />
-						<Route exact path="/formularioProductoCategoria" element={<FormularioProductoCategoria/>} />
-						<Route exact path="/formularioEspecialistaConvenio" element={<FormularioEspecialistaConvenio/>} />
-						<Route exact path="/formularioSeccion" element={<FormularioSeccion/>} />
-						<Route exact path="/formularioMarkay" element={<FormularioMarkay/>} />
-						<Route exact path="/formularioRedSocial" element={<FormularioRedSocial/>} />
+        <Route exact path='/MenuAdministrador/Convenios' element={<MenuAdmin />} />
+        <Route exact path='/MenuAdministrador/Especialistas' element={<MenuAdmin />} />
+        <Route exact path='/MenuAdministrador/Servicios' element={<MenuAdmin />} />
+        <Route exact path='/MenuAdministrador/Productos' element={<MenuAdmin />} />
+        <Route exact path='/MenuAdministrador/Consultas' element={<MenuAdmin />} />
+        <Route exact path='/MenuAdministrador/Categorias' element={<MenuAdmin />} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
+    </Routes>
+);
 
+const Navigation = () => {
+    const location = useLocation();
 
-
-						<Route exact path='/MenuAdministrador' element={<MenuAdmin />} />
-						<Route path="*" element={<h1>404 Not Found</h1>} />
-					</Routes>
-				</NavBar>
-			</BrowserRouter>
-	);
+    if (location.pathname.startsWith('/MenuAdministrador')) {
+        return (
+            <LayoutMenu>
+                {routes}
+            </LayoutMenu>
+        );
+		
+    } else {
+        return (
+            <NavBar>
+                {routes}
+            </NavBar>
+        );
+    }
 }
+
+function App() {
+    return (
+        <BrowserRouter>
+            <Navigation />
+        </BrowserRouter>
+    );
+}
+
 export default App;

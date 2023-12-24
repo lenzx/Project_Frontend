@@ -2,6 +2,7 @@
 
 import { Link } from 'react-router-dom';
 const Especialistas = ({especialista}) => {
+  const imagen = `https://res.cloudinary.com/dn1gcn5rm/${especialista.imagen}`
     return (
       <div className="row">
         <div className="col-md-12">
@@ -9,7 +10,7 @@ const Especialistas = ({especialista}) => {
             <div className="row g-0">
               <div className="col-md-4">
                 <img
-                  src={especialista.imagen}
+                  src={imagen}
                   className="img-fluid rounded-start img-especialista"
                 />
               </div>
@@ -26,11 +27,11 @@ const Especialistas = ({especialista}) => {
                   </p>
                   <div className="btn-especialista">
                     <div className="btn-producto">
-                      <Link to="/formulario">
-                        <button type="button" className="btn-primary btn-lg">
-                          Ver más
-                        </button>
-                      </Link>
+                    <Link to={`/formularioConsulta/${especialista.id}`}>
+                      <button type="button" className="btn-primary btn-lg">
+                        Ver más
+                      </button>
+                    </Link>
                     </div>
                   </div>
                 </div>

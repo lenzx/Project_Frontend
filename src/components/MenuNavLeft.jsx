@@ -1,31 +1,61 @@
-import { Nav, Button, Collapse } from 'react-bootstrap';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import SidebarMenu  from 'react-bootstrap-sidebar-menu';
+import "../styles/menu_sidebar.css"
 
 function MenuNavService() {
-    const services = ['Servicio 1', 'Servicio 2', 'Servicio 3']; 
-    const [open, setOpen] = useState(null);
-
     return (
-        <Nav className="flex-column">
-            {services.map((service, index) => (
-                <div key={index}>
-                    <Button
-                        onClick={() => setOpen(open === index ? null : index)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={open === index}
-                    >
-                        {service}
-                    </Button>
-                    <Collapse in={open === index}>
-                        <div id="example-collapse-text">
-                            <div>Subservicio1</div>
-                            <div>SubServicio2</div>
-                            <div>SubServicio3</div>
-                        </div>
-                    </Collapse>
-                </div>
-            ))}
-        </Nav>
+        <>
+            <SidebarMenu>
+                <SidebarMenu.Header>
+                    <SidebarMenu.Nav.Title className='menu-sidebar-title'>
+                        Menu de Servicios
+                    </SidebarMenu.Nav.Title>
+                </SidebarMenu.Header>
+                <SidebarMenu.Body>
+                    <SidebarMenu.Nav>
+                        <ul className='menu-sidebar-ul'>
+                            <li>
+                                <SidebarMenu.Nav.Title>
+                                    <Link to="/MenuAdministrador/convenios">Convenios</Link>
+                                </SidebarMenu.Nav.Title>
+                            </li>
+                            <li>
+                                <SidebarMenu.Nav.Title>
+                                    <Link to="/MenuAdministrador/Servicios">Servicios</Link>
+                                </SidebarMenu.Nav.Title>
+                            </li>
+                            <li>
+                                <SidebarMenu.Nav.Title>
+                                    <Link to="/MenuAdministrador/productos">Productos</Link>
+                                </SidebarMenu.Nav.Title>
+                            </li>
+                            <li>
+                                <SidebarMenu.Nav.Title>
+                                    <Link to="/MenuAdministrador/especialistas">Kinesiologos</Link>
+                                </SidebarMenu.Nav.Title>
+                            </li>
+                            <li>
+                                <SidebarMenu.Nav.Title>
+                                    <Link to="/MenuAdministrador/especialidades">Especialidades</Link>
+                                </SidebarMenu.Nav.Title>
+                            </li>
+                            <li>
+                                <SidebarMenu.Nav.Title>
+                                    <Link to="/MenuAdministrador/redesSociales">Redes Sociales</Link>
+                                </SidebarMenu.Nav.Title>
+                            </li>
+                            <li>
+                                <SidebarMenu.Nav.Title>
+                                    <Link to="/MenuAdministrador/categoriaCatalogo">Categorias de Producto</Link>
+                                </SidebarMenu.Nav.Title>
+                            </li>
+                        </ul>
+                    </SidebarMenu.Nav>
+                    
+                </SidebarMenu.Body>
+
+            </SidebarMenu>
+        </>
     );
 }
 

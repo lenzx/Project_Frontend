@@ -1,0 +1,15 @@
+.panel-convenio-item-btn {
+    background-color: var(--naranjo-secondary);
+    color: var(--crema);
+    border: 2px solid var(--crema);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin: auto;
+    width: 12rem;
+    height: 5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 1rem;
+    transition: all 0.5s ease;
+    text-align: center;
+}

@@ -1,0 +1,6 @@
+.panel-convenio-list-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}

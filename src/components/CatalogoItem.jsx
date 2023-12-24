@@ -4,6 +4,7 @@ import { useState } from "react";
 
 
 const Producto = ({ item }) => {
+    const imagen = `https://res.cloudinary.com/dn1gcn5rm/${item.imagen}`
     const [mostrarItemExpanded, setMostrarItemExpanded] = useState(false);
 
     const handleClick = () => {
@@ -17,7 +18,7 @@ const Producto = ({ item }) => {
 
                 <div className="row g-0">
                     <div className="col-md-4 catalogo-product">
-                        <img src={item.imagen} className="img-fluid rounded-start img-catalogo" alt="..." />
+                        <img src={imagen} className="img-fluid rounded-start img-catalogo" alt="..." />
                         <p className="card-text text-center text-valor"><small>Valor: ${item.valor}</small></p>
                     </div>
                     <div className="col-md-8">

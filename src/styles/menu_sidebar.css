@@ -1,0 +1,23 @@
+@import '_vars';
+
+.menu-sidebar-ul > li {
+    padding: 0.5rem 0;
+    margin: 1.2rem 0rem;
+    list-style: none;
+}
+
+.menu-sidebar-ul > li > span> a {
+    color: var(--gris-oscuro);
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    
+}
+
+.menu-sidebar-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--gris-oscuro);
+    margin-bottom: 0.5rem;
+}

@@ -1,0 +1,40 @@
+@import '_vars';
+
+.menu-administracion-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--naranjo-main);
+    padding: 1.6rem 0;
+}
+
+.menu-administracion-layout-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-administracion-layout-left {
+    display: flex;
+    width: 10rem;
+    justify-content: center;
+}
+
+.menu-administracion-layout-right {
+    width: 10rem;
+    text-align: center;
+}
+
+.menu-administracion-layout-mid {
+    flex-grow: 1;
+    text-align: start;
+}
+.menu-administracion-layout-mid > h1 {
+    font-size: 3.6rem;
+    font-weight: 500;
+    color: var(--gris-oscuro);
+    margin-bottom: 0;
+    
+}
