@@ -35,7 +35,7 @@
 }
 
 .menu-sidebar-title {
-    font-size: 2.4rem;
+    font-size: 3rem;
     font-weight: 500;
     color: var(--gris-oscuro);
     margin-bottom: 0.5rem;
@@ -46,4 +46,9 @@
 .sidebar-menu-header{
     text-align: start;
     margin-left: 1rem;
+}
+
+.sidebar-menu-list {
+    position: sticky;
+    top: 2rem;
 }

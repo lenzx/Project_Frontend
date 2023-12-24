@@ -9,7 +9,7 @@ function MenuNavService({setSelectedComponent}) {
             <SidebarMenu className='sidebar-menu-list'>
                 <SidebarMenu.Header>
                     <SidebarMenu.Nav.Title className='menu-sidebar-title'>
-                        Menu de Servicios
+                        Menu
                     </SidebarMenu.Nav.Title>
                 </SidebarMenu.Header>
                 <SidebarMenu.Body>

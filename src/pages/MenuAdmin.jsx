@@ -12,19 +12,19 @@ const MenuAdmin = () => {
             case 'Convenios':
                 return <Convenios/>;
             case 'Citas':
-                return <Convenios/>;
-            case 'Servicio':
-                return <Convenios/>;
+                return <div/>;
+            case 'Servicios':
+                return <div/>;
             case 'Productos':
-                return <Convenios/>;
+                return <div/>;
             case 'Especialistas':
-                return <Especialistas/>;
+                return <div/>;
             case 'Especialidades':
-                return <Convenios/>;
+                return <div/>;
             case 'Redes Sociales':
-                return <Convenios/>;
+                return <div/>;
             case 'CategoriasCatalogo':
-                return <Convenios/>;
+                return <div/>;
             default:
                 return <Convenios/>;
         }
