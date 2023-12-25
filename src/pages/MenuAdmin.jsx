@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import MenuNavService from "../components/MenuNavLeft";
 import Convenios from "../containers/PanelConvenioList";
+import Especialistas from "../containers/PanelEspecialistaList";
 import '../styles/MenuAdmin.css';
 
 
@@ -18,7 +19,7 @@ const MenuAdmin = () => {
             case 'Productos':
                 return <div/>;
             case 'Especialistas':
-                return <div/>;
+                return <Especialistas/>;
             case 'Especialidades':
                 return <div/>;
             case 'Redes Sociales':

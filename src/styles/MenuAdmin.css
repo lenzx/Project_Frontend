@@ -2,12 +2,11 @@
 .menu-admninistrador-container {
     display: flex;
     min-height: 95vh;
-    width: 100vw;
+    
     
 }
 .menu-admninistrador-container-left {
     width: 26rem;
-    
     background-color: rgba(236, 236, 236, 0.89);
     border-radius: 0.8rem;
     position: sticky;
@@ -16,8 +15,7 @@
 
 .menu-admninistrador-container-right {
     flex: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: top;
     padding: 2rem;
+    
 }

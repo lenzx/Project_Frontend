@@ -20,7 +20,7 @@ const PanelConvenioItem = ({ convenio }) => {
 
     return (
         <Card style={{ width: '32rem' }}>
-            <Card.Img variant="top" src={imagen} />
+            <Card.Img variant="top" src={imagen} style={{height:'20rem'}} />
             <Card.Body>
                 <Card.Title>{convenio.nombre}</Card.Title>
                 <Card.Text>

@@ -1,0 +1,6 @@
+.panel-especialista-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    grid-gap: 2rem;
+    place-items: center;
+}
