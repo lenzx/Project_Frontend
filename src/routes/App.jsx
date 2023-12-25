@@ -39,12 +39,12 @@ const routes = (
         <Route exact path="/test" element={<TestPostConvenios/>} />
         <Route exact path="/login" element={<Login/>} />
         <Route exact path="/formulario" element={<Formulario/>} />
-        <Route exact path="/MenuAdministrador/convenios/formularioConvenio" element={<FormularioConvenio/>} />
-        <Route exact path="/MenuAdministrador/productos/formularioProducto" element={<FormularioProducto/>} />
-        <Route exact path="/MenuAdministrador/servicios/formularioServicios" element={<FormularioServicios/>} />
-        <Route exact path="/MenuAdministrador/especialista/formularioEspecialista" element={<FormularioEspecialista/>} />
+        <Route exact path="/MenuAdministrador/formularioConvenio" element={<FormularioConvenio/>} />
+        <Route exact path="/MenuAdministrador/formularioProducto" element={<FormularioProducto/>} />
+        <Route exact path="/MenuAdministrador/formularioServicios" element={<FormularioServicios/>} />
+        <Route exact path="/MenuAdministrador/formularioEspecialista" element={<FormularioEspecialista/>} />
         <Route exact path="/MenuAdministrador/formularioConsulta/:id" element={<FormularioConsulta/>} />
-        <Route exact path="/MenuAdministrador/categoriaconvenio/formularioCategoriaConvenio" element={<FormularioCategoriaConvenio/>} />
+        <Route exact path="/MenuAdministrador/formularioCategoriaConvenio" element={<FormularioCategoriaConvenio/>} />
         <Route exact path="/MenuAdministrador/formularioEspecialidad" element={<FormularioEspecialidad/>} />
         <Route exact path="/MenuAdministrador/formularioEspecialistaEspecialidad" element={<FormularioEspecialistaEspecialidad/>} />
         <Route exact path="/MenuAdministrador/formularioEspecialidadServicio" element={<FormularioEspecialidadServicio/>} />
@@ -56,7 +56,7 @@ const routes = (
         <Route exact path="/MenuAdministrador/formularioRedSocial" element={<FormularioRedSocial/>} />
 
         <Route exact path='/MenuAdministrador' element={<MenuAdmin />} />
-        
+
         <Route path="*" element={<h1>404 Not Found</h1>} />
     </Routes>
 );

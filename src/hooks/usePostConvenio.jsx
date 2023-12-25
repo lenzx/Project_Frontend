@@ -1,17 +1,10 @@
 /* eslint-disable no-unused-vars */
-import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_BASE_URL } from '../markay/api/endpoint';
 
 const usePostConvenio = () => {
-    const [nombre, setNombre] = useState("");
-    const [descripcion, setDescripcion] = useState("");
-    const [enlace, setEnlace] = useState("")
-    const [imagen, setImagen] = useState(null);
-    const [num_telefono, setNum_telefono]= useState("")
-    const [tipo_convenio_id, setTipo_convenio_id] = useState()
-    
-    
+
+
   const postData = async (nombre, descripcion,enlace,imagen,num_telefono, tipo_convenio_id) => {
     try {
       const data = new FormData();

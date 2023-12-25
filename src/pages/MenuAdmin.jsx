@@ -2,7 +2,7 @@ import { useState } from 'react';
 import MenuNavService from "../components/MenuNavLeft";
 import Convenios from "../containers/PanelConvenioList";
 import '../styles/MenuAdmin.css';
-import Especialistas from '../containers/EspecialistasList';
+
 
 const MenuAdmin = () => {
     const [selectedComponent, setSelectedComponent] = useState('');
