@@ -6,6 +6,8 @@ import iconAgregar from '../assets/icon/boton-agregar.png';
 const PanelEspecialidadList = () => {
     const especialidades = useGetEspecialidades();
 
+
+
     return (
         <div className="panel-convenio-list-container">
             <div className="borde-boton-especialidad">

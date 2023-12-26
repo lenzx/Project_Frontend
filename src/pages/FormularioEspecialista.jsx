@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
-import { useLocation, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import usePostEspecialista from "../hooks/usePostEspecialista";
 import usePutEspecialista from "../hooks/usePutEspecialista";
 import axios from 'axios';
 import {API_BASE_URL} from '../markay/api/endpoint.js';
-
-const FormularioEspecialista = () => {
+import PropTypes from 'prop-types'
+const FormularioEspecialista = ({object}) => {
     
-    const location = useLocation();
     const navigate = useNavigate();
-    const especialista = location.state ? location.state.especialista : null;
+    const especialista = object ? object : null;
 
     const [convenioOptions, setConvenioOptions] = useState([]);
     const [especialidadOptions, setEspecialidadOptions] = useState([]); 
@@ -124,4 +123,7 @@ const FormularioEspecialista = () => {
     );
 };
 
+FormularioEspecialista.propTypes = {
+    object: PropTypes.object
+}
 export default FormularioEspecialista;

@@ -1,4 +1,4 @@
-.panel-producto-item-btn {
+.panel-especialidad-item-descripcion {
     background-color: var(--naranjo-secondary);
     color: var(--crema);
     border: 2px solid var(--crema);
@@ -12,15 +12,16 @@
     border-radius: 1rem;
     transition: all 0.5s ease;
     text-align: center;
+    
 }
 
-.boton-eliminar-redSocial{
+.boton-eliminar-categoriaProducto{
     position: absolute;
     top: 0;
     right: 0;
     padding: 0.5rem;
 }
-.img-eliminar-redSocial{
+.img-eliminar-categoriaProducto{
     width: 30px ;
     height: auto;
 }

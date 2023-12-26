@@ -1,27 +1,36 @@
 
 import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 import '../styles/PanelEspecialistaItem.css';
+import useDeleteEspecialista from '../hooks/useDeleteEspecialista';
+import iconAgregar from '../assets/icon/boton-agregar.png';
 
-
-const PanelEspecialistaItem = ({ especialista }) => {
+const PanelEspecialistaItem = ({ especialista, setSelectedForm,setSelectedEspecialista }) => {
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${especialista.imagen}`
-    const navegador = useNavigate();
-    
+    const eliminarEspecialista = useDeleteEspecialista();
     const handleClick = () => {
-        navegador(`/MenuAdministrador/formularioEspecialista/`,
-        {
-            state: {
-                especialista: especialista
-            }
-        });
-    }
+        setSelectedEspecialista(especialista);
+        setSelectedForm('FormularioEspecialista');
+    
+    };
+
+
+    const handleDelete = async () => {
+        try {
+            await eliminarEspecialista(especialista.id);
+            console.log('Especialista eliminado con éxito');
+        } catch (error) {
+            console.error('Error al eliminar Especialista:', error.message);
+        }
+    };
 
     return (
         
         <Card style={{ width: '32rem' }}>
             <Card.Img variant="top" src={imagen} style={{ height: '20rem' }} />
+            <button className='boton-eliminar-especialista' onClick={handleDelete} >
+                <img className='img-eliminar-especialista' src={iconAgregar} alt="Eliminar" />
+            </button>
             <Card.Body >
                 <Card.Title>{especialista.nombre}</Card.Title>
                 <Card.Text >{especialista.descripcion}</Card.Text>
@@ -35,6 +44,9 @@ const PanelEspecialistaItem = ({ especialista }) => {
 
 PanelEspecialistaItem.propTypes = {
     especialista: PropTypes.object.isRequired,
+    setSelectedEspecialista: PropTypes.func.isRequired,
+    setSelectedForm: PropTypes.func.isRequired,
+
 };
 
 export default PanelEspecialistaItem;

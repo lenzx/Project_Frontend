@@ -1,16 +1,17 @@
+import  PropTypes from 'prop-types'
 import { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import usePostEspecialidad from "../hooks/usePostEspecialidad";
 import usePutEspecialidad from "../hooks/usePutEspecialidad";
 import axios from 'axios';
 import {API_BASE_URL} from '../markay/api/endpoint.js';
 
-const FormularioEspecialidad = () => {
+const FormularioEspecialidad = ({object}) => {
     
-    const location = useLocation();
+    
     const navigate = useNavigate();
-    const especialidad = location.state ? location.state.especialidad : null;
+    const especialidad = object ? object : null;
 
     const [servicioOptions, setServicioOptions] = useState([]);
     const [selectedServicio, setSelectedServicio] = useState([]);
@@ -86,4 +87,7 @@ const FormularioEspecialidad = () => {
     );
 };
 
+FormularioEspecialidad.propTypes = {
+    object: PropTypes.object.isRequired,
+}
 export default FormularioEspecialidad;

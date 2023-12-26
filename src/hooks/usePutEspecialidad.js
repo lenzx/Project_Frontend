@@ -25,3 +25,4 @@ const usePutEspecialidad = () => {
 };
 
 export default usePutEspecialidad;
+

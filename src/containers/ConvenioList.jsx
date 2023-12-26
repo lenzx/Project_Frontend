@@ -10,6 +10,7 @@ const ConvenioList = () => {
         <div className="convenio-list-contenedor">
             {convenios.map(convenio => (
                 <Convenio
+                
                 nombreConvenio={convenio.nombre}
                 descripcionConvenio={convenio.descripcion}
                 imagenConvenio={convenio.imagen}

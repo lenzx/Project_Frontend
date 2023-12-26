@@ -3,7 +3,13 @@ import SidebarMenu  from 'react-bootstrap-sidebar-menu';
 import "../styles/menu_sidebar.css"
 import { Button } from 'react-bootstrap';
 
-function MenuNavService({setSelectedComponent}) {
+function MenuNavService({setSelectedComponent, setSelectedComponent2}) {
+
+    const handleClick = (valor) => {
+        setSelectedComponent(valor);
+        setSelectedComponent2('');
+    }
+    
     return (
         <>
             <SidebarMenu className='sidebar-menu-list'>
@@ -17,42 +23,42 @@ function MenuNavService({setSelectedComponent}) {
                         <ul className='menu-sidebar-ul'>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Citas')}>Citas</Button>
+                                    <Button variant="outline-secondary" size="2" onClick={() => handleClick('Citas')}>Citas</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Convenios')}>Convenios</Button>
+                                    <Button variant="outline-secondary" size="2" onClick={() => handleClick('Convenios')}>Convenios</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Servicios')}>Servicios</Button>
+                                    <Button variant="outline-secondary" size="2" onClick={() => handleClick('Servicios')}>Servicios</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Productos')}>Productos</Button>
+                                    <Button variant="outline-secondary" size="2" onClick={() => handleClick('Productos')}>Productos</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Especialistas')}>Kinesiólogos</Button>
+                                    <Button variant="outline-secondary" size="2" onClick={() => handleClick('Especialistas')}>Kinesiólogos</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Especialidades')}>Especialidades</Button>
+                                    <Button variant="outline-secondary" size="2" onClick={() => handleClick('Especialidades')}>Especialidades</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Redes Sociales')}>Redes Sociales</Button>
+                                    <Button variant="outline-secondary" size="2" onClick={() => handleClick('Redes Sociales')}>Redes Sociales</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('CategoriasCatalogo')}>Categorías de Productos</Button>
+                                    <Button variant="outline-secondary" size="2" onClick={() => handleClick('CategoriasCatalogo')}>Categorías de Productos</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                         </ul>
@@ -67,6 +73,7 @@ function MenuNavService({setSelectedComponent}) {
 
 MenuNavService.propTypes = {
     setSelectedComponent: PropTypes.func.isRequired,
+    setSelectedComponent2: PropTypes.func.isRequired,
 };
 
 export default MenuNavService;

@@ -1,26 +1,43 @@
+
 import EspecialistaItem from '../components/PanelEspecialistaItem.jsx';
 import useGetEspecialista from '../hooks/useGetEspecialista.jsx';
 import "../styles/PanelEspecialistaList.css";
-import { Link } from 'react-router-dom';
 import iconAgregar from '../assets/icon/boton-agregar.png';
-const PanelEspecialistaList = () => {
+import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
+
+const PanelEspecialistaList = ({setSelectedForm, setSelectedEspecialista}) => {
+// ...
     const especialistas = useGetEspecialista();
+    const handleClick = () => {
+        setSelectedEspecialista(null);
+        setSelectedForm('FormularioEspecialista');
+    
+    }
 
     return (
         <div className="panel-especialista-list-container">
             <div className="borde-boton-especialista">
-                <Link to="/MenuAdministrador/formularioEspecialista">
-                <img src={iconAgregar} className='imagen-boton-agregarEspecialista-container'/>
-                </Link>
+                <Button onClick={handleClick}>
+                    <img src={iconAgregar} className='imagen-boton-agregarEspecialista-container'/>
+                </Button>
+                
             </div>
             {especialistas.map(especialista => (
                 <EspecialistaItem 
                 key={especialista.id} 
                 especialista={especialista}
+                setSelectedForm={setSelectedForm}
+                setSelectedEspecialista={setSelectedEspecialista}
                 />
             ))}
         </div>
     );
 }
+
+PanelEspecialistaList.propTypes = {
+    setSelectedEspecialista: PropTypes.func.isRequired,
+    setSelectedForm: PropTypes.func.isRequired
+};
 
 export default PanelEspecialistaList;

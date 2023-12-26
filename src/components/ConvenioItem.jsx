@@ -1,8 +1,11 @@
 import "../styles/ConvenioItem.css";
 import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
-const ConvenioItem = ({nombreConvenio, descripcionConvenio, imagenConvenio,enlaceConvenio }) => {
+const ConvenioItem = ({ nombreConvenio, descripcionConvenio, imagenConvenio,enlaceConvenio }) => {
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${imagenConvenio}`
+    
+    
+
     return (
         <div className="convenio-card">
             <div className="convenio-card-texto">{nombreConvenio}</div>

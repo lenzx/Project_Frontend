@@ -19,12 +19,7 @@ const PanelConvenioList = () => {
                 convenio={convenio}
                 />
             ))}
-            {convenios.map(convenio => (
-                <ConvenioItem 
-                key={convenio.id} 
-                convenio={convenio}
-                />
-            ))}
+            
         </div>
     );
 }

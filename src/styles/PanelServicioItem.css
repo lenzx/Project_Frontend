@@ -14,3 +14,13 @@
     text-align: center;
 }
 
+.boton-eliminar-servicio{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+}
+.img-eliminar-servicio{
+    width: 30px ;
+    height: auto;
+}
