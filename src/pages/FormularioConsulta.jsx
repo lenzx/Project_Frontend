@@ -38,7 +38,7 @@ const FormularioConsulta = () => {
           <Form.Control as="textarea" rows={3} placeholder="Motivo de la Consulta" value={motivo_consulta} onChange={e => setMotivo_consulta(e.target.value)} />
         </Form.Group>
 
-        <button type="submit" className="btn btn-primary">Enviar Consulta</button>
+        <button type="submit" className="btn btn-primary">Confirmar</button>
       </Form>
     </div>
   );

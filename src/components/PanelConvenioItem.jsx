@@ -4,7 +4,6 @@ import { Card, Button } from 'react-bootstrap';
 import '../styles/PanelConvenioItem.css';
 import {useNavigate } from 'react-router-dom';
 
-
 const PanelConvenioItem = ({ convenio }) => {
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${convenio.imagen}`
     const navegador = useNavigate();

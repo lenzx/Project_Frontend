@@ -1,22 +1,44 @@
 import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import usePostServicio from "../hooks/usePostServicio";
+import usePutServicio from '../hooks/usePutServicio';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+
 
 const FormularioServicios = () => {
-  const [nombre, setNombre] = useState("");
-  const [descripcion, setDescripcion] = useState("");
-  const [imagen, setImagen] = useState(null);
 
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const servicio = location.state ? location.state.servicio : null;
+  const id= servicio ?  servicio.id : null;
+  const title = servicio ? "Modificar servicio" : "Añadir servicio";
+  const [nombre, setNombre] = useState(servicio ?  servicio.nombre:"");
+  const [descripcion, setDescripcion] = useState(servicio ?  servicio.descripcion:"");
+  const [imagen, setImagen] = useState(servicio ?  servicio.imagen:null);
   const postData = usePostServicio();
-
-  const handleSubmit = (e) => {
+  const putData = usePutServicio();
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    postData(nombre, descripcion, imagen);
-  };
+    try {
+        if (servicio) {
+          await putData(id, nombre,descripcion,imagen);
+        } else {
+          await postData( nombre,descripcion,imagen);
+        } 
+        alert('Datos enviados con éxito');
+        navigate(-1);
+    } catch (error) {
+        const errorMessage = error.response ? error.response.data : error.message;
+        console.error('Error al enviar datos:', errorMessage);
+        alert('Error al enviar datos: ' + errorMessage);
+    }
+};
 
   return (
     <div className="container">
-      <h1 className="title">React &amp; Cloudinary</h1>
+      <h1 className="title">{title}</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Nombre</Form.Label>
@@ -32,7 +54,7 @@ const FormularioServicios = () => {
         </Form.Group>
         
 
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">Confirmar</button>
       </Form>
     </div>
   );

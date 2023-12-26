@@ -53,7 +53,7 @@ const TestPostConvenios = () => {
                         <Form.Control type="text" placeholder="Link" value={link} onChange={e => setLink(e.target.value)} />
                     </Form.Group>
         
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">Confirmar</button>
                 </Form>
             </div>
         </div>

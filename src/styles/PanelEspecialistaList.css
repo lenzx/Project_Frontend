@@ -1,6 +1,30 @@
 .panel-especialista-list-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
     grid-gap: 2rem;
+    place-items: center;
+}
+
+
+.imagen-boton-agregarEspecialista-container {
+    width: 40%; 
+    height: 40%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; 
+    
+}
+.borde-boton-especialista {
+    color: var(--crema);
+    border: 2px solid rgb(218, 218, 218);
+    margin: auto;
+    width: 320px;
+    height: 343px;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 1rem;
+    transition: all 0.5s ease;
+    display: grid;
     place-items: center;
 }

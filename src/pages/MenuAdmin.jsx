@@ -2,32 +2,37 @@ import { useState } from 'react';
 import MenuNavService from "../components/MenuNavLeft";
 import Convenios from "../containers/PanelConvenioList";
 import Especialistas from "../containers/PanelEspecialistaList";
+import Especialidad from "../containers/PanelEspecialidadList";
+import Producto from "../containers/PanelProducto";
+import RedSocial from "../containers/PanelRedSocialList";
+import Consultas from "../containers/PanelConsultaList.jsx";
+import Servicios from "../containers/PanelServicioList.jsx";
+import CategoriaCatalogo from '../containers/PanelCategoriaCatalogoList.jsx';
 import '../styles/MenuAdmin.css';
 
-
 const MenuAdmin = () => {
-    const [selectedComponent, setSelectedComponent] = useState('');
+    const [selectedComponent, setSelectedComponent] = useState('Citas');
 
     const renderComponent = () => {
         switch(selectedComponent) {
             case 'Convenios':
                 return <Convenios/>;
             case 'Citas':
-                return <div/>;
+                return <Consultas/>;
             case 'Servicios':
-                return <div/>;
+                return <Servicios/>;
             case 'Productos':
-                return <div/>;
+                return <Producto/>;
             case 'Especialistas':
                 return <Especialistas/>;
             case 'Especialidades':
-                return <div/>;
+                return <Especialidad/>;
             case 'Redes Sociales':
-                return <div/>;
+                return <RedSocial/>;
             case 'CategoriasCatalogo':
-                return <div/>;
+                return <CategoriaCatalogo/>;
             default:
-                return <Convenios/>;
+                return <Consultas/>;
         }
     }
 

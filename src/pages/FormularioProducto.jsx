@@ -1,25 +1,64 @@
-import  { useState } from 'react';
+import  { useState,useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import usePostProducto from '../hooks/usePostProducto';
+import usePutProducto from '../hooks/usePutProducto';
+import axios from 'axios';
+import { useLocation, useNavigate } from 'react-router-dom';
+import {API_BASE_URL} from '../markay/api/endpoint.js';
 
 
 const FormularioProducto = () => {
-  const [nombre, setNombre] = useState("");
-  const [descripcion, setDescripcion] = useState("");
-  const [valor, setValor] = useState(0);
-  const [necesitaReceta, setNecesitaReceta] = useState(1);
-  const [imagen, setImagen] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const producto = location.state ? location.state.producto : null;
+
+  const [tipoCategoriaOptions, setTipoCategoriaOptions] = useState([]);
+  const [selectedCategoria, setSelectedCategoria] = useState([]);
+  const title = producto ? "Modificar Producto" : "Añadir Producto";
+  const id= producto ?  producto.id : null;
+  const [nombre, setNombre] = useState(producto ? producto.nombre:"");
+  const [descripcion, setDescripcion] = useState(producto ? producto.descripcion : "");
+  const [valor, setValor] = useState(producto ? producto.valor : "");
+  const [necesitaReceta, setNecesitaReceta] = useState(producto ? producto.necesitaReceta:1);
+  const [imagen, setImagen] = useState(producto ? producto.imagen:null);
+  
 
   const postData = usePostProducto();
+  const putData = usePutProducto();
 
-  const handleSubmit = (e) => {
+  
+  useEffect(() => {
+    axios.get(`${API_BASE_URL}/api/v1/producto/categoria/`)
+        .then(response => {
+            setTipoCategoriaOptions(response.data);
+        })
+        .catch(error => {
+            console.error('Error al obtener los tipos de categoria:', error.response ? error.response.data : error.message);
+        });
+}, []);
+  
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    postData(nombre, descripcion,valor,necesitaReceta, imagen);
-  };
+    try {
+        if (producto) {
+          await putData(id, nombre, descripcion,valor,necesitaReceta, imagen, selectedCategoria);
+        } else {
+          await postData(nombre, descripcion,valor,necesitaReceta, imagen, selectedCategoria);
+        } 
+        alert('Datos enviados con éxito');
+        navigate(-1);
+    } catch (error) {
+        const errorMessage = error.response ? error.response.data : error.message;
+        console.error('Error al enviar datos:', errorMessage);
+        alert('Error al enviar datos: ' + errorMessage);
+    }
+};
+
+
 
   return (
     <div className="container">
-      <h1 className="title">Añadir producto</h1>
+      <h1 className="title">{title}</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Nombre</Form.Label>
@@ -38,23 +77,27 @@ const FormularioProducto = () => {
                     <Form.Label>Necesita Receta?</Form.Label>
                     <Form.Check
                         type="checkbox"
-                        label="Administrador"
+                        label="necesita receta"
                         checked={necesitaReceta}
                         onChange={(e) => setNecesitaReceta(e.target.checked)}
                     />
                 </Form.Group>
-
-
-
-
-        
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Imagen</Form.Label>
           <Form.Control type="file" onChange={e => setImagen(e.target.files[0])} />
         </Form.Group>
-        
+                <Form.Group className="mb-3" controlId="formCategoriaId">
+                    <Form.Label>Categoria</Form.Label>
+                    <Form.Control as="select" multiple value={selectedCategoria} onChange={e => setSelectedCategoria(Array.from(e.target.selectedOptions, option => option.value))}>
+                        {tipoCategoriaOptions.map(option => (
+                            <option key={option.id} value={option.id}>
+                                {option.nombre}
+                            </option>
+                        ))}
+                    </Form.Control>
+                </Form.Group>
 
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">Confirmar</button>
       </Form>
     </div>
   );

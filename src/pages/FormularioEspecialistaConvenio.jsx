@@ -22,7 +22,7 @@ const FormularioEspecialistaConvenio= () => {
                     <Form.Label>Convenio ID</Form.Label>
                     <Form.Control type="text" placeholder="Convenio ID" value={convenioId} onChange={(e) => setConvenioId(e.target.value)} />
                 </Form.Group>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Confirmar</button>
             </Form>
         </div>
       );

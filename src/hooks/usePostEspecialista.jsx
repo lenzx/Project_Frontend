@@ -9,12 +9,12 @@ const usePostEspecialista = () => {
     const [num_telefono, setNum_telefono] = useState("")
     const [descripcion, setDescripcion] = useState("")
     const [horarios, setHorarios] = useState("")
-    const [administrador, setAdministrador] = useState("")
+    
     const [imagen, setImagen] = useState(null);
     
     
     
-    const postData = async (nombre,rut, num_telefono, descripcion,horarios,administrador,imagen) => {
+    const postData = async (nombre,rut, num_telefono, descripcion,horarios,imagen) => {
         try {
         const data = new FormData();
         
@@ -23,7 +23,7 @@ const usePostEspecialista = () => {
         data.append("num_telefono", num_telefono);
         data.append("descripcion", descripcion);
         data.append("horarios", horarios);
-        data.append("administrador", administrador);
+        
         data.append("imagen", imagen);
 
         const response = await axios.post(`${API_BASE_URL}/api/v1/servicio/especialista/`, data);

@@ -1,10 +1,9 @@
-.panel-convenio-list-container {
+.panel-especialista-list-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
     grid-gap: 2rem;
     place-items: center;
 }
-
 
 
 .imagen-boton-agregarEspecialista-container {
@@ -16,7 +15,7 @@
     margin: auto; 
     
 }
-.borde-boton-convenio{
+.borde-boton-especialidad {
     color: var(--crema);
     border: 2px solid rgb(218, 218, 218);
     margin: auto;

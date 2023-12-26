@@ -20,14 +20,14 @@ const PanelEspecialistaItem = ({ especialista }) => {
 
     return (
         
-        <Card className='panel-especialista-item-container' style={{ width: '24rem', height:'50rem'}}>
-            <Card.Img className='panel-especialista-item-img' variant="top" src={imagen} style={{height:'24rem'}}/>
-            <Card.Body className='panel-especialista-item-body'>
+        <Card style={{ width: '32rem' }}>
+            <Card.Img variant="top" src={imagen} style={{ height: '20rem' }} />
+            <Card.Body >
                 <Card.Title>{especialista.nombre}</Card.Title>
-                <Card.Text className='panel-especialista-item-descripcion'>
-                    {especialista.descripcion}
+                <Card.Text >{especialista.descripcion}</Card.Text>
+                <Card.Text>
+                    <Button onClick={handleClick} className='panel-especialista-item-btn' variant="primary">Modificar</Button>
                 </Card.Text>
-                <Button variant="primary" className='panel-especialista-item-detalle' onClick={handleClick}>Detalles</Button>
             </Card.Body>
         </Card>
     );

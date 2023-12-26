@@ -1,4 +1,4 @@
-.panel-convenio-list-container {
+.panel-servicio-list-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
     grid-gap: 2rem;
@@ -6,8 +6,7 @@
 }
 
 
-
-.imagen-boton-agregarEspecialista-container {
+.imagen-boton-agregar-container {
     width: 40%; 
     height: 40%; 
     display: flex;
@@ -16,12 +15,14 @@
     margin: auto; 
     
 }
-.borde-boton-convenio{
+.borde-boton-redSocial {
     color: var(--crema);
     border: 2px solid rgb(218, 218, 218);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     margin: auto;
     width: 320px;
-    height: 300px;
+    height: 305px;
     font-size: 2rem;
     font-weight: 700;
     border-radius: 1rem;
@@ -29,3 +30,5 @@
     display: grid;
     place-items: center;
 }
+
+

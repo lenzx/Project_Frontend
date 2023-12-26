@@ -9,7 +9,7 @@ function MenuNavService({setSelectedComponent}) {
             <SidebarMenu className='sidebar-menu-list'>
                 <SidebarMenu.Header>
                     <SidebarMenu.Nav.Title className='menu-sidebar-title'>
-                        Menu
+                        Menú
                     </SidebarMenu.Nav.Title>
                 </SidebarMenu.Header>
                 <SidebarMenu.Body>
@@ -37,7 +37,7 @@ function MenuNavService({setSelectedComponent}) {
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Especialistas')}>Kinesiologos</Button>
+                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Especialistas')}>Kinesiólogos</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                             <li>
@@ -52,7 +52,7 @@ function MenuNavService({setSelectedComponent}) {
                             </li>
                             <li>
                                 <SidebarMenu.Nav.Title>
-                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('Especialistas')}>Categoria de Productos</Button>
+                                    <Button variant="outline-secondary" size="2" onClick={() => setSelectedComponent('CategoriasCatalogo')}>Categorías de Productos</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
                         </ul>

@@ -22,7 +22,7 @@ const FormularioEspecialidadServicio = () => {
                     <Form.Label>Especialidad ID</Form.Label>
                     <Form.Control type="text" placeholder="Especialidad ID" value={especialidadId} onChange={(e) => setEspecialidadId(e.target.value)} />
                 </Form.Group>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Confirmar</button>
             </Form>
         </div>
       );

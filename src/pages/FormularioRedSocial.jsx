@@ -1,21 +1,43 @@
-import { useState } from "react";
+import { useState} from "react";
 import { Form } from "react-bootstrap";
 import usePostRedSocial from "../hooks/usePostRedSocial";
+import usePutRedSocial from '../hooks/usePutRedSocial';
+
+import { useLocation, useNavigate } from 'react-router-dom';
+
+
 
 const FormularioRedSocial = () => {
-  const [imagen, setImagen] = useState(null);
-  const [enlace, setEnlace] = useState("");
-  const [texto, setTexto] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const redSocial = location.state ? location.state.redSocial : null;
+  const id= redSocial ?  redSocial.id : null;
+  const title = redSocial ? "Modificar redSocial" : "Añadir redSocial";
+  const [imagen, setImagen] = useState(redSocial ?redSocial.imagen:null);
+  const [enlace, setEnlace] = useState(redSocial ? redSocial.enlace:"");
+  const [texto, setTexto] = useState((redSocial ? redSocial.texto:""));
   const postData = usePostRedSocial();
-
-  const handleSubmit = (e) => {
+  const putData = usePutRedSocial();
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    postData(imagen, enlace, texto);
-  };
+    try {
+        if (redSocial) {
+          await putData(id, imagen,enlace,texto);
+        } else {
+          await postData( imagen,enlace,texto);
+        } 
+        alert('Datos enviados con éxito');
+        navigate(-1);
+    } catch (error) {
+        const errorMessage = error.response ? error.response.data : error.message;
+        console.error('Error al enviar datos:', errorMessage);
+        alert('Error al enviar datos: ' + errorMessage);
+    }
+};
 
   return (
     <div className="container">
-      <h1 className="title">React &amp; Cloudinary</h1>
+      <h1 className="title">{title}</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Nombre con que se verá en el sitio:</Form.Label>
@@ -43,7 +65,7 @@ const FormularioRedSocial = () => {
           />
         </Form.Group>
         <button type="submit" className="btn btn-primary">
-          Enviar Red Social
+        Confirmar
         </button>
       </Form>
     </div>

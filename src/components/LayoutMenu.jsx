@@ -15,12 +15,12 @@ const LayoutMenu = ({children}) => {
                 </div>
                 <div className='menu-administracion-layout-mid'>
                     <h1>
-                        Panel de Administracion
+                        Panel de administración
                     </h1>
                 </div>
                 <div className='menu-administracion-layout-right'>
                     <a href="/logout">
-                        <Button variant="danger">Cerrar Sesión</Button>
+                        <Button variant="danger">Cerrar sesión</Button>
                     </a>
                 </div>
             </div>

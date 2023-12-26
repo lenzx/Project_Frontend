@@ -20,7 +20,7 @@ const FormularioCategoriaConvenio = () => {
             <Form.Label>Nombre</Form.Label>
             <Form.Control type="text" placeholder="Nombre" value={nombre} onChange={e => setNombre(e.target.value)} />
             </Form.Group>
-            <button type="submit" className="btn btn-primary">Enviar Consulta</button>
+            <button type="submit" className="btn btn-primary">Confirmar</button>
         </Form>
         </div>
     );

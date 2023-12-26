@@ -88,8 +88,9 @@ const FormularioConvenio = () => {
                     </Form.Control>
                 </Form.Group>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Confirmar</button>
             </Form>
+
         </div>
     );
 };

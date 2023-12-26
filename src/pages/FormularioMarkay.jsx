@@ -25,7 +25,7 @@ const FormularioMarkay = () => {
                 <Form.Label>Descripción</Form.Label>
                 <Form.Control as="textarea" rows={3} placeholder="Descripción" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} />
             </Form.Group>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">Confirmar</button>
         </Form>
         </div>
     );

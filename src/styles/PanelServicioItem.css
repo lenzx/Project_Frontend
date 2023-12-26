@@ -1,4 +1,4 @@
-.panel-especialista-item-descripcion {
+.panel-servicio-item-btn {
     background-color: var(--naranjo-secondary);
     color: var(--crema);
     border: 2px solid var(--crema);
@@ -12,6 +12,5 @@
     border-radius: 1rem;
     transition: all 0.5s ease;
     text-align: center;
-    
 }
 

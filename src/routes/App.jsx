@@ -43,7 +43,7 @@ const routes = (
         <Route exact path="/MenuAdministrador/formularioProducto" element={<FormularioProducto/>} />
         <Route exact path="/MenuAdministrador/formularioServicios" element={<FormularioServicios/>} />
         <Route exact path="/MenuAdministrador/formularioEspecialista" element={<FormularioEspecialista/>} />
-        <Route exact path="/MenuAdministrador/formularioConsulta/:id" element={<FormularioConsulta/>} />
+        <Route exact path="/MenuAdministrador/formularioConsulta/:id" element={<FormularioConsulta/>}/>
         <Route exact path="/MenuAdministrador/formularioCategoriaConvenio" element={<FormularioCategoriaConvenio/>} />
         <Route exact path="/MenuAdministrador/formularioEspecialidad" element={<FormularioEspecialidad/>} />
         <Route exact path="/MenuAdministrador/formularioEspecialistaEspecialidad" element={<FormularioEspecialistaEspecialidad/>} />
