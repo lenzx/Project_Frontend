@@ -1,16 +1,17 @@
+import PropTypes from 'prop-types';
 import  { useState,useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import usePostProducto from '../hooks/usePostProducto';
 import usePutProducto from '../hooks/usePutProducto';
 import axios from 'axios';
-import { useLocation, useNavigate } from 'react-router-dom';
+
 import {API_BASE_URL} from '../markay/api/endpoint.js';
 
 
-const FormularioProducto = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const producto = location.state ? location.state.producto : null;
+const FormularioProducto = ({object}) => {
+  
+
+  const producto = object ? object : null;
 
   const [tipoCategoriaOptions, setTipoCategoriaOptions] = useState([]);
   const [selectedCategoria, setSelectedCategoria] = useState([]);
@@ -46,7 +47,6 @@ const FormularioProducto = () => {
           await postData(nombre, descripcion,valor,necesitaReceta, imagen, selectedCategoria);
         } 
         alert('Datos enviados con éxito');
-        navigate(-1);
     } catch (error) {
         const errorMessage = error.response ? error.response.data : error.message;
         console.error('Error al enviar datos:', errorMessage);
@@ -101,6 +101,10 @@ const FormularioProducto = () => {
       </Form>
     </div>
   );
+};
+
+FormularioProducto.propTypes = {
+  object: PropTypes.object.isRequired
 };
 
 export default FormularioProducto;

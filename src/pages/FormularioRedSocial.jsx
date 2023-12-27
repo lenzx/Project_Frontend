@@ -2,15 +2,14 @@ import { useState} from "react";
 import { Form } from "react-bootstrap";
 import usePostRedSocial from "../hooks/usePostRedSocial";
 import usePutRedSocial from '../hooks/usePutRedSocial';
-
-import { useLocation, useNavigate } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 
 
-const FormularioRedSocial = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const redSocial = location.state ? location.state.redSocial : null;
+
+
+const FormularioRedSocial = ({object}) => {
+  
+  const redSocial = object ? object : null;
   const id= redSocial ?  redSocial.id : null;
   const title = redSocial ? "Modificar redSocial" : "Añadir redSocial";
   const [imagen, setImagen] = useState(redSocial ?redSocial.imagen:null);
@@ -27,7 +26,7 @@ const FormularioRedSocial = () => {
           await postData( imagen,enlace,texto);
         } 
         alert('Datos enviados con éxito');
-        navigate(-1);
+        
     } catch (error) {
         const errorMessage = error.response ? error.response.data : error.message;
         console.error('Error al enviar datos:', errorMessage);
@@ -72,4 +71,7 @@ const FormularioRedSocial = () => {
   );
 };
 
+FormularioRedSocial.propTypes = {
+  object : PropTypes.object.isRequired
+};
 export default FormularioRedSocial;

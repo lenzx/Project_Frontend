@@ -1,23 +1,21 @@
 import PropTypes from "prop-types";
 import { Card, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+
 import "../styles/PanelEspecialidadItem.css";
 
 import useDeleteEspecialidad from '../hooks/useDeleteEspecialidad';
 import iconAgregar from '../assets/icon/boton-agregar.png';
 
 
-const PanelEspecialidadItem = ({ especialidad }) => {  
+const PanelEspecialidadItem = ({ especialidad, setSelectedForm, setSelectedObject }) => {  
+
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${especialidad.imagen}`
-    const navegador = useNavigate();
+    
     const eliminarEspecialidad = useDeleteEspecialidad();
+    
     const handleClick = () => {
-        navegador(`/MenuAdministrador/formularioEspecialidad/`,
-        {
-            state: {
-                especialidad: especialidad
-            }
-        });
+        setSelectedObject(especialidad);
+        setSelectedForm('Especialidades');
     }
 
 
@@ -50,5 +48,7 @@ const PanelEspecialidadItem = ({ especialidad }) => {
 
 PanelEspecialidadItem.propTypes = {
     especialidad: PropTypes.object.isRequired,
+    setSelectedForm: PropTypes.func.isRequired,
+    setSelectedObject: PropTypes.func.isRequired
 };
 export default PanelEspecialidadItem;

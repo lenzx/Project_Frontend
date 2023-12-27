@@ -1,24 +1,19 @@
 
 import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 import '../styles/PanelServicioItem.css';
 import useDeleteServicio from '../hooks/useDeleteServicio';
 import iconAgregar from '../assets/icon/boton-agregar.png';
 
 
-const PanelServicioItem = ({ servicio }) => {
+const PanelServicioItem = ({ servicio , setSelectedForm, setSelectedObject}) => {
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${servicio.imagen}`
-    const navegador = useNavigate();
+
     const eliminarServicio = useDeleteServicio();
     
     const handleClick = () => {
-        navegador(`/MenuAdministrador/formularioServicios/`,
-        {
-            state: {
-                servicio: servicio
-            }
-        });
+        setSelectedObject(servicio);
+        setSelectedForm('Servicios');
     }
 
     const handleDelete = async () => {
@@ -50,6 +45,8 @@ const PanelServicioItem = ({ servicio }) => {
 
 PanelServicioItem.propTypes = {
     servicio: PropTypes.object.isRequired,
+    setSelectedObject: PropTypes.func.isRequired,
+    setSelectedForm: PropTypes.func.isRequired,
 };
 
 export default PanelServicioItem;

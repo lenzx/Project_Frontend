@@ -1,19 +1,15 @@
 import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 import '../styles/PanelCategoriaCatalogoItem.css';
 import useDeleteCategoriaProductos from '../hooks/useDeleteCategoriaProductos';
 import iconAgregar from '../assets/icon/boton-agregar.png';
-const PanelCategoriaCatalogoItem = ({ categoria }) => {
+const PanelCategoriaCatalogoItem = ({ categoria, setSelectedForm, setSelectedObject }) => {
 
-    const navegador = useNavigate();
     const eliminarCategoriaProductos = useDeleteCategoriaProductos();
+    
     const handleClick = () => {
-        navegador(`/MenuAdministrador/formularioCategoriaProducto/`, {
-            state: {
-                categoria: categoria
-            }
-        });
+        setSelectedForm('CategoriasCatalogo');
+        setSelectedObject(categoria);
     }
     
     const handleDelete = async () => {
@@ -43,6 +39,8 @@ const PanelCategoriaCatalogoItem = ({ categoria }) => {
 
 PanelCategoriaCatalogoItem.propTypes = {
     categoria: PropTypes.object.isRequired, 
+    setSelectedForm: PropTypes.func.isRequired,
+    setSelectedObject: PropTypes.func.isRequired
 };
 
 export default PanelCategoriaCatalogoItem;

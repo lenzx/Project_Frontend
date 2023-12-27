@@ -1,17 +1,16 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import usePostServicio from "../hooks/usePostServicio";
 import usePutServicio from '../hooks/usePutServicio';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
-const FormularioServicios = () => {
 
 
-  const location = useLocation();
-  const navigate = useNavigate();
-  const servicio = location.state ? location.state.servicio : null;
+const FormularioServicios = ({object}) => {
+
+  const servicio = object ? object: null;
   const id= servicio ?  servicio.id : null;
   const title = servicio ? "Modificar servicio" : "Añadir servicio";
   const [nombre, setNombre] = useState(servicio ?  servicio.nombre:"");
@@ -28,7 +27,7 @@ const FormularioServicios = () => {
           await postData( nombre,descripcion,imagen);
         } 
         alert('Datos enviados con éxito');
-        navigate(-1);
+        
     } catch (error) {
         const errorMessage = error.response ? error.response.data : error.message;
         console.error('Error al enviar datos:', errorMessage);
@@ -60,4 +59,7 @@ const FormularioServicios = () => {
   );
 };
 
+FormularioServicios.propTypes = {
+  object: PropTypes.object.isrequired
+}
 export default FormularioServicios;

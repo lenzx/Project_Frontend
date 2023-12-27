@@ -2,13 +2,11 @@
 import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import '../styles/PanelConvenioItem.css';
-import {useNavigate } from 'react-router-dom';
 import useDeleteConvenio from "../hooks/useDeleteConvenio";
 import iconAgregar from '../assets/icon/boton-agregar.png';
 
-const PanelConvenioItem = ({ convenio }) => {
+const PanelConvenioItem = ({ convenio, setSelectedForm, setSelectedObject }) => {
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${convenio.imagen}`
-    const navegador = useNavigate();
     const deleteData = useDeleteConvenio();
 
     const handleDelete = async () => {
@@ -22,15 +20,10 @@ const PanelConvenioItem = ({ convenio }) => {
     };
     
     
-    
     const handleClick = () => {
-        navegador(`/MenuAdministrador/formularioConvenio/`,
-        {
-            state: {
-                convenio: convenio
-            }
-        });
-    }
+        setSelectedObject(convenio);
+        setSelectedForm('Convenios');
+    };
 
     return (
         <Card style={{ width: '32rem' }}>
@@ -51,6 +44,8 @@ const PanelConvenioItem = ({ convenio }) => {
 
 PanelConvenioItem.propTypes = {
     convenio: PropTypes.object.isRequired,
+    setSelectedObject: PropTypes.func.isRequired,
+    setSelectedForm: PropTypes.func.isRequired,
 };
 
 export default PanelConvenioItem;

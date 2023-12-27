@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
-import { useLocation, useNavigate } from 'react-router-dom';
+
 import usePostConvenio from "../hooks/usePostConvenio";
 import usePutConvenio from "../hooks/usePutConvenio";
 import axios from 'axios';
 import {API_BASE_URL} from '../markay/api/endpoint.js';
+import PropTypes from 'prop-types'
 
-
-const FormularioConvenio = () => {
+const FormularioConvenio = ({object}) => {
     
-    const location = useLocation();
-    const navigate = useNavigate();
-    const convenio = location.state ? location.state.convenio : null;
+
+    const convenio = object ? object: null;
 
     const [tipoConvenioOptions, setTipoConvenioOptions] = useState([]);
     const title = convenio ? "Modificar Convenio" : "Añadir Convenio";
@@ -45,7 +44,7 @@ const FormularioConvenio = () => {
                 await postData(nombre, descripcion, enlace, imagen, num_telefono, tipo_convenio_id, convenio ? convenio.id : null);
             }
             alert('Datos enviados con éxito');
-            navigate(-1);
+            
         } catch (error) {
             const errorMessage = error.response ? error.response.data : error.message;
             console.error('Error al enviar datos:', errorMessage);
@@ -93,6 +92,10 @@ const FormularioConvenio = () => {
 
         </div>
     );
+};
+
+FormularioConvenio.propTypes = {
+    object: PropTypes.object.isRequired
 };
 
 export default FormularioConvenio;

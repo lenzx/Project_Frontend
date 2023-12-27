@@ -5,13 +5,14 @@ import '../styles/PanelEspecialistaItem.css';
 import useDeleteEspecialista from '../hooks/useDeleteEspecialista';
 import iconAgregar from '../assets/icon/boton-agregar.png';
 
-const PanelEspecialistaItem = ({ especialista, setSelectedForm,setSelectedEspecialista }) => {
+const PanelEspecialistaItem = ({ especialista, setSelectedForm, setSelectedObject }) => {
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${especialista.imagen}`
+
     const eliminarEspecialista = useDeleteEspecialista();
+
     const handleClick = () => {
-        setSelectedEspecialista(especialista);
-        setSelectedForm('FormularioEspecialista');
-    
+        setSelectedObject(especialista);
+        setSelectedForm('Especialistas');
     };
 
 
@@ -44,7 +45,7 @@ const PanelEspecialistaItem = ({ especialista, setSelectedForm,setSelectedEspeci
 
 PanelEspecialistaItem.propTypes = {
     especialista: PropTypes.object.isRequired,
-    setSelectedEspecialista: PropTypes.func.isRequired,
+    setSelectedObject: PropTypes.func.isRequired,
     setSelectedForm: PropTypes.func.isRequired,
 
 };

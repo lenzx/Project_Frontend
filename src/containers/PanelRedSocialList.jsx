@@ -1,22 +1,30 @@
+import PropTypes from 'prop-types';
 import RedSocialItem from "../components/PanelRedSocialItem";
 import iconAgregar from '../assets/icon/boton-agregar.png';
 import useGetRedSocial from "../hooks/useGetRedSocial";
-import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import "../styles/PanelRedSocialList.css";
-const PanelRedSocialList = () => {
+const PanelRedSocialList = ({setSelectedForm, setSelectedObject}) => {
+    
     const redSociales = useGetRedSocial();
 
+    const handleClick = () => {
+        setSelectedObject(null);
+        setSelectedForm('Redes Sociales');
+    }
     return (
         <div className="panel-redSocial-list-container">
             <div className="borde-boton-redSocial">
-                <Link to="/MenuAdministrador/formularioRedSocial">
+                <Button onClick={handleClick}>
                 <img src={iconAgregar} className='imagen-boton-agregar-container'/>
-                </Link>
+                </Button>
             </div>
             {redSociales.map(redSocial => (
                 <RedSocialItem
                 key={redSocial.id}
                 redSocial = {redSocial}
+                setSelectedForm={setSelectedForm}
+                setSelectedObject={setSelectedObject}
                 />
             ))}
 
@@ -24,4 +32,8 @@ const PanelRedSocialList = () => {
     );
 }
 
+PanelRedSocialList.propTypes = {
+    setSelectedObject: PropTypes.func.isRequired,
+    setSelectedForm: PropTypes.func.isRequired
+}
 export default PanelRedSocialList;

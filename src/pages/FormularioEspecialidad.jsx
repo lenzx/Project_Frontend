@@ -1,7 +1,7 @@
 import  PropTypes from 'prop-types'
 import { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+
 import usePostEspecialidad from "../hooks/usePostEspecialidad";
 import usePutEspecialidad from "../hooks/usePutEspecialidad";
 import axios from 'axios';
@@ -10,7 +10,7 @@ import {API_BASE_URL} from '../markay/api/endpoint.js';
 const FormularioEspecialidad = ({object}) => {
     
     
-    const navigate = useNavigate();
+    
     const especialidad = object ? object : null;
 
     const [servicioOptions, setServicioOptions] = useState([]);
@@ -46,7 +46,7 @@ const FormularioEspecialidad = ({object}) => {
                 await postData(nombre, descripcion, imagen,  selectedServicio);
             }
             alert('Datos enviados con éxito');
-            navigate(-1);
+
         } catch (error) {
             const errorMessage = error.response ? error.response.data : error.message;
             console.error('Error al enviar datos:', errorMessage);

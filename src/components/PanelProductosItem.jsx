@@ -3,20 +3,15 @@
 import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import '../styles/PanelProductoItem.css';
-import { useNavigate } from 'react-router-dom';
 import useDeleteProducto from '../hooks/useDeleteProducto';
 import iconAgregar from '../assets/icon/boton-agregar.png';
-const PanelProductoItem = ({ producto }) => {
+const PanelProductoItem = ({ producto, setSelectedForm, setSelectedObject }) => {
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${producto.imagen}`
-    const navegador = useNavigate();
     const eliminarProducto = useDeleteProducto();
 
     const handleClick = () => {
-        navegador(`/MenuAdministrador/formularioProducto/`, {
-            state: {
-                producto: producto,
-            },
-        });
+        setSelectedObject(producto);
+        setSelectedForm('Productos');
     };
 
     const handleDelete = async () => {
@@ -51,6 +46,8 @@ const PanelProductoItem = ({ producto }) => {
 
 PanelProductoItem.propTypes = {
     producto: PropTypes.object.isRequired, 
+    setSelectedForm: PropTypes.func.isRequired,
+    setSelectedObject: PropTypes.func.isRequired
 };
 
 export default PanelProductoItem;

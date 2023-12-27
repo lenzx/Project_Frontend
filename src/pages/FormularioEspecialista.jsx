@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
-import {  useNavigate } from 'react-router-dom';
+
 import usePostEspecialista from "../hooks/usePostEspecialista";
 import usePutEspecialista from "../hooks/usePutEspecialista";
 import axios from 'axios';
 import {API_BASE_URL} from '../markay/api/endpoint.js';
 import PropTypes from 'prop-types'
+
 const FormularioEspecialista = ({object}) => {
     
-    const navigate = useNavigate();
     const especialista = object ? object : null;
 
     const [convenioOptions, setConvenioOptions] = useState([]);
@@ -59,7 +59,7 @@ const FormularioEspecialista = ({object}) => {
                 await postData(nombre, rut, num_telefono, descripcion, horarios,  imagen, selectedConvenios, selectedEspecialidades);
             }
             alert('Datos enviados con éxito');
-            navigate(-1);
+            
         } catch (error) {
             const errorMessage = error.response ? error.response.data : error.message;
             console.error('Error al enviar datos:', errorMessage);

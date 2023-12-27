@@ -6,12 +6,13 @@ import iconAgregar from '../assets/icon/boton-agregar.png';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 
-const PanelEspecialistaList = ({setSelectedForm, setSelectedEspecialista}) => {
+const PanelEspecialistaList = ({setSelectedForm, setSelectedObject}) => {
 // ...
     const especialistas = useGetEspecialista();
+    
     const handleClick = () => {
-        setSelectedEspecialista(null);
-        setSelectedForm('FormularioEspecialista');
+        setSelectedObject(null);
+        setSelectedForm('Especialistas');
     
     }
 
@@ -28,7 +29,7 @@ const PanelEspecialistaList = ({setSelectedForm, setSelectedEspecialista}) => {
                 key={especialista.id} 
                 especialista={especialista}
                 setSelectedForm={setSelectedForm}
-                setSelectedEspecialista={setSelectedEspecialista}
+                setSelectedObject={setSelectedObject}
                 />
             ))}
         </div>
@@ -36,7 +37,7 @@ const PanelEspecialistaList = ({setSelectedForm, setSelectedEspecialista}) => {
 }
 
 PanelEspecialistaList.propTypes = {
-    setSelectedEspecialista: PropTypes.func.isRequired,
+    setSelectedObject: PropTypes.func.isRequired,
     setSelectedForm: PropTypes.func.isRequired
 };
 

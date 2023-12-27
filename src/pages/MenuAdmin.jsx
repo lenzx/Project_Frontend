@@ -14,7 +14,8 @@ import FormularioServicio from '../pages/FormularioServicios.jsx';
 import FormularioProducto from '../pages/FormularioProducto.jsx';
 import FormularioRedSocial from '../pages/FormularioRedSocial.jsx';
 import FormularioEspecialidad from '../pages/FormularioEspecialidad.jsx';
-import FormularioCategoriaCatalogo from '../pages/FormularioCategoriaCatalogo.jsx';
+import FormularioCategoriaCatalogo from '../pages/FormularioCategoriaProducto.jsx';
+
 import '../styles/MenuAdmin.css';
 
 const MenuAdmin = () => {
@@ -22,31 +23,40 @@ const MenuAdmin = () => {
     const [selectedForm, setSelectedForm] = useState('');
     const [object, setObject] = useState(null);
 
+    const formMap = {
+        'Convenios': <FormularioConvenio object={object} />,
+        'Citas': <FormularioEspecialista object={object} />,
+        'Servicios': <FormularioServicio object={object} />,
+        'Productos': <FormularioProducto object={object} />,
+        'Especialistas': <FormularioEspecialista object={object} />,
+        'Especialidades': <FormularioEspecialidad object={object} />,
+        'Redes Sociales': <FormularioRedSocial object={object} />,
+        'CategoriasCatalogo': <FormularioCategoriaCatalogo object={object} />,
+    };
 
     const renderComponent = () => {
         if (selectedForm) {
-            console.log(object);
-            return <FormularioEspecialista object = {object}/>;
+            return formMap[selectedForm];
         }
         switch(selectedComponent) {
             case 'Convenios':
-                return <Convenios />;
+                return <Convenios setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             case 'Citas':
-                return <Consultas/>;
+                return <Consultas setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             case 'Servicios':
-                return <Servicios/>;
+                return <Servicios setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             case 'Productos':
-                return <Producto/>;
+                return <Producto setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             case 'Especialistas':
-                return <Especialistas setSelectedForm={setSelectedForm} setSelectedEspecialista = {setObject}/>;
+                return <Especialistas setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             case 'Especialidades':
-                return <Especialidad/>;
+                return <Especialidad setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             case 'Redes Sociales':
-                return <RedSocial/>;
+                return <RedSocial setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             case 'CategoriasCatalogo':
-                return <CategoriaCatalogo/>;
+                return <CategoriaCatalogo setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             default:
-                return <Consultas/>;
+                return <Consultas setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
         }
     }
 

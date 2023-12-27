@@ -1,28 +1,41 @@
+import PropTypes from 'prop-types';
 import EspecialidadItem from '../components/PanelEspecialidadItem.jsx';
 import useGetEspecialidades from '../hooks/useGetEspecialidades.jsx';
 import "../styles/PanelEspecialidadList.css";
-import { Link } from 'react-router-dom';
 import iconAgregar from '../assets/icon/boton-agregar.png';
-const PanelEspecialidadList = () => {
+import { Button } from 'react-bootstrap';
+const PanelEspecialidadList = ({setSelectedForm,setSelectedObject}) => {
+    
     const especialidades = useGetEspecialidades();
-
+    
+    const handleClick = () => {
+        setSelectedObject(null);
+        setSelectedForm('Especialidades');
+    };
 
 
     return (
         <div className="panel-convenio-list-container">
             <div className="borde-boton-especialidad">
-                <Link to="/MenuAdministrador/formularioEspecialidad">
+                <Button onClick= {handleClick}>
                 <img src={iconAgregar} className='imagen-boton-agregar-container'/>
-                </Link>
+                </Button>
             </div>
             {especialidades.map(especialidad => (
                 <EspecialidadItem 
                 key={especialidad.id} 
                 especialidad={especialidad}
+                setSelectedForm={setSelectedForm}
+                setSelectedObject={setSelectedObject}
                 />
             ))}
         </div>
     );
+}
+
+PanelEspecialidadList.propTypes = {
+    setSelectedObject: PropTypes.func.isRequired,
+    setSelectedForm: PropTypes.func.isRequired
 }
 
 export default PanelEspecialidadList;
