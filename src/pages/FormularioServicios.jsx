@@ -33,6 +33,7 @@ const FormularioServicios = ({object, setSelectedForm}) => {
           await postData( nombre,descripcion,imagen);
         } 
         alert('Datos enviados con éxito');
+        handleChanges();
         
     } catch (error) {
         const errorMessage = error.response ? error.response.data : error.message;
