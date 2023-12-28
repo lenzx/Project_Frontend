@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import { API_BASE_URL } from '../markay/api/endpoint';
 
 const useDeleteProducto = () => {
@@ -8,7 +9,17 @@ const useDeleteProducto = () => {
             if (!confirmDelete) {
                 return; 
             }
-            const response = await axios.delete(`${API_BASE_URL}/api/v1/producto/producto/${id}/`);
+
+            // Obtén el token de las cookies
+            const token = Cookies.get('jwt');
+
+            const response = await axios.delete(`${API_BASE_URL}/api/v1/producto/producto/${id}/`, {
+                headers: {
+                    // Incluye el token en las cabeceras de la solicitud
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }
