@@ -2,8 +2,7 @@
 import '../styles/Servicio.css'
 
 const PaginaPrincipalItem = ({ seccion }) => {
-    const imagen = `https://res.cloudinary.com/dn1gcn5rm/${seccion.imagen}`
-
+    const imagen = seccion.imagen !='image/upload/null' ? `https://res.cloudinary.com/dn1gcn5rm/${seccion.imagen}`:null;
     if (!seccion) {
         return <div>...</div>;
     }
@@ -15,17 +14,30 @@ const PaginaPrincipalItem = ({ seccion }) => {
         </>
         )
     }
+    if(imagen){
+        return (
+            <div className="row rowspan-2 card-servicio">
+                <div className="col-6">
+                    <img src={imagen} alt="" />
+                </div>
+                <div className="col-6">
+                    <p className="card-text">{seccion.descripcion}</p>
+                </div>
+        </div>
+        );
+        
+    } else{
+        return(
+            <>
+        <p className="descripcion-item">{seccion.descripcion}
+        </p>
+        </>
+        )
+        
+        
+    }
 
-    return (
-        <div className="row rowspan-2 card-servicio">
-            <div className="col-6">
-                <img src={imagen} alt="" />
-            </div>
-            <div className="col-6">
-                <p className="card-text">{seccion.descripcion}</p>
-            </div>
-    </div>
-    );
+    
 };
 
 export default PaginaPrincipalItem;

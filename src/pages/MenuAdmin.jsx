@@ -41,6 +41,8 @@ const MenuAdmin = () => {
         'Seccion': <FormularioSeccion object={object} />,
         'CategoriasConvenio': <FormularioCategoriaConvenio object={object} />,
         'PaginaPrincipal': <FormularioMarkay object={object}/>,
+        'ReturnConvenios':<Convenios object ={null}/>,
+        
     };
 
     const renderComponent = () => {
@@ -51,7 +53,7 @@ const MenuAdmin = () => {
             case 'Convenios':
                 return <Convenios setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             case'ReturnConvenios':    
-                return <Convenios setSelectedForm={null} setSelectedObject = {null}/>;
+                return <Convenios setSelectedForm={null} setSelectedObject = {'Convenios1'}/>;
 
             case 'Citas':
                 return <Consultas setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;

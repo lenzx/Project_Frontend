@@ -1,5 +1,6 @@
+import Cookies from 'js-cookie';
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import { CATEGORIACONVENIO } from '../markay/api/endpoint';
 
 const usePutCategoriaConvenio = () => {
     
@@ -7,7 +8,16 @@ const usePutCategoriaConvenio = () => {
         try {
             const data = new FormData();
             data.append("nombre", nombre);
-            const response = await axios.put(`${API_BASE_URL}/api/v1/servicio/categoriaConvenio/${id}/`, data);
+            const token = Cookies.get('jwt');
+
+
+
+            const response = await axios.put(`${CATEGORIACONVENIO}${id}/`, data,{
+                headers: {
+                    // Incluye el token en las cabeceras de la solicitud
+                    'Authorization': `Bearer ${token}`
+                }
+            });
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }

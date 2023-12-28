@@ -5,7 +5,7 @@ import "../styles/SeccionItem.css"
 
 
 const SeccionList = () => {
-    const secciones = useGetMarkay();
+    const secciones = useGetMarkay({});
 
   return (
       

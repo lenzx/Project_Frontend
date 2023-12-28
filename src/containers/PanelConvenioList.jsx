@@ -8,6 +8,7 @@ import iconAgregar from '../assets/icon/boton-agregar.png';
 const PanelConvenioList = ({setSelectedForm, setSelectedObject}) => {
 
     const convenios = useGetConvenios();
+    
 
     const handleClick = () => {
         setSelectedObject(null);
@@ -38,6 +39,7 @@ const PanelConvenioList = ({setSelectedForm, setSelectedObject}) => {
 PanelConvenioList.propTypes = {
     setSelectedObject: PropTypes.func.isRequired,
     setSelectedForm: PropTypes.func.isRequired
+    
 }
 
 

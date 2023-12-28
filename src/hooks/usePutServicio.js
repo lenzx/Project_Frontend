@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import { SERVICIO } from '../markay/api/endpoint';
 
-const usePutRedSocial = () => {
+const usePutServicio = () => {
     
     const putData = async (id,nombre,descripcion, imagen) => {
         try {
@@ -9,7 +9,7 @@ const usePutRedSocial = () => {
             data.append("nombre", nombre);
             data.append("descripcion", descripcion);
             data.append("imagen", imagen);
-            const response = await axios.put(`${API_BASE_URL}/api/v1/servicio/servicio/${id}/`, data);
+            const response = await axios.put(`${SERVICIO}${id}/`, data);
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }
@@ -23,4 +23,4 @@ const usePutRedSocial = () => {
     return putData;
 };
 
-export default usePutRedSocial;
+export default usePutServicio;

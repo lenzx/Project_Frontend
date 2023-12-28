@@ -1,8 +1,11 @@
 import "../styles/Header.css";
 import logo from "../assets/logomarkay.png"
 import { Link } from "react-router-dom";
+import useGetMarkay from "../hooks/useGetMarkay.jsx"
 
 const Header = () => {
+    const eslogan = useGetMarkay({id:1});
+    
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -10,7 +13,7 @@ const Header = () => {
                     <figure>
                         <img src={logo} alt="Markay" className="logo" />
                     </figure>
-                    <h1 className="links-header">Somos especialistas en rehabilitación</h1>
+                    <h1 className="links-header">{eslogan.descripcion}</h1>
                     <Link to="/login" className="footer-content links-header">Iniciar sesión</Link>
                 </div>
             </nav>

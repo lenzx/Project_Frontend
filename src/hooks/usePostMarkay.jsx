@@ -12,7 +12,7 @@ const usePostMarkay = () => {
     try {
       const data = new FormData();
       data.append("descripcion", descripcion);
-      data.append("imagen", imagen);
+      data.append("imagen", imagen ? imagen:null);
 
       const response = await axios.post(`${API_BASE_URL}/api/v1/web/markay/`, data);
       console.log('Datos enviados con éxito:', response.data);

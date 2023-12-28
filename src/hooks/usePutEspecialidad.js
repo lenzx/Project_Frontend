@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import {  ESPECIALIDAD } from '../markay/api/endpoint';
+import Cookies from 'js-cookie';
 
 const usePutEspecialidad = () => {
     
@@ -11,7 +12,18 @@ const usePutEspecialidad = () => {
             data.append("imagen", imagen);
             servicios_id.forEach(id => data.append("servicios", id));
     
-            const response = await axios.put(`${API_BASE_URL}/api/v1/servicio/especialidad/${id}/`, data);
+
+             // Obtén el token de las cookies
+             const token = Cookies.get('jwt');
+
+             const response = await axios.put(`${ESPECIALIDAD}${id}/`, data, {
+                 headers: {
+                     // Incluye el token en las cabeceras de la solicitud
+                     'Authorization': `Bearer ${token}`
+                 }
+             });
+
+           
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }

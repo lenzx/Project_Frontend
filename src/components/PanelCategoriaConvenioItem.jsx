@@ -16,6 +16,7 @@ const PanelCategoriaConvenioItem = ({ convenio, setSelectedForm, setSelectedObje
         try {
             await eliminarCategoriaConvenio(convenio.id);
             console.log('Categoría eliminada con éxito');
+
         } catch (error) {
             console.error('Error al eliminar categoría:', error.message);
         }

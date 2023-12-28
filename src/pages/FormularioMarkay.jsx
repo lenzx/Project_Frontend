@@ -20,7 +20,7 @@ const FormularioMarkay = ({object}) => {
         if (markay ) {
           await putData(id, imagen, descripcion );
         } else {
-          await postData( descripcion,imagen);
+          await postData( imagen, descripcion);
         } 
         alert('Datos enviados con éxito');
         
