@@ -24,13 +24,13 @@ function Login() {
     
         const data = await response.json();
         
-        console.log("asdasd"+data);
+        console.log(data);
 
         try {
             await login(data.access_token); 
             navigate('/test');
         } catch (error) {
-            console.error('Error al iniciarasdadasdasdasd sesión:', error);
+            console.error('Error al iniciar sesión:', error);
         }
     };
 

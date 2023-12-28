@@ -1,23 +1,31 @@
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
+import PropTypes from 'prop-types';
 
 function PrivateRoute({ children }) {
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, loading } = useContext(AuthContext); 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!isAuthenticated && !loading) { 
       navigate('/login');
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, navigate, loading]); 
 
-  // Elimina la llamada a navigate fuera del useEffect
-  if (!isAuthenticated) {
+  if (loading) { 
+    return null;
+  }
+
+  if (!isAuthenticated) { 
     return null;
   }
 
   return children;
+}
+
+PrivateRoute.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default PrivateRoute;
