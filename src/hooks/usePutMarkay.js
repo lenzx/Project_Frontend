@@ -1,5 +1,6 @@
+import Cookies from 'js-cookie';
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import { MARKAY } from '../markay/api/endpoint';
 
 const usePutMarkay = () => {
     
@@ -8,7 +9,16 @@ const usePutMarkay = () => {
             const data = new FormData();
             data.append("imagen", imagen);
             data.append("descripcion", descripcion);
-            const response = await axios.put(`${API_BASE_URL}/api/v1/web/markay/${id}/`, data);
+
+            // Obtén el token de las cookies
+            const token = Cookies.get('jwt');
+
+            const response = await axios.put(`${MARKAY}${id}/`, data,{
+                headers: {
+                    // Incluye el token en las cabeceras de la solicitud
+                    'Authorization': `Bearer ${token}`
+                }
+            });
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }

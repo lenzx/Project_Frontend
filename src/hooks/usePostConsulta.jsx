@@ -1,14 +1,10 @@
-/* eslint-disable no-unused-vars */
-import { useState } from 'react';
+
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import { CONSULTA  } from '../markay/api/endpoint';
+import Cookies from 'js-cookie';
 
 const usePostConsulta = () => {
-  const [nombre, setNombre] = useState("");
-  const [correo_electronico, setCorreo_electronico] = useState("");
-  const [num_telefono, setNum_telefono]= useState("");
-  const [motivo_consulta, setMotivo_consulta] = useState("");
-
+  
   const postData = async (nombre, correo_electronico, num_telefono, motivo_consulta, especialistaId) => {
     try {
       const idEntero = parseInt(especialistaId, 10);
@@ -19,7 +15,15 @@ const usePostConsulta = () => {
       data.append("motivo_consulta", motivo_consulta);
       data.append("especialista_id", idEntero);
 
-      const response = await axios.post(`${API_BASE_URL}/api/v1/servicio/consulta/`, data);
+      // Obtén el token de las cookies
+      const token = Cookies.get('jwt');
+
+      const response = await axios.post(`${CONSULTA}`, data, {
+        headers: {
+            // Incluye el token en las cabeceras de la solicitud
+            'Authorization': `Bearer ${token}`
+        }
+    });
       console.log('Datos enviados con éxito:', response.data);
     } catch (error) {
       console.error('Error al enviar datos:', error.response ? error.response.data : error.message);

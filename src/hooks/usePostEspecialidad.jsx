@@ -1,12 +1,9 @@
-/* eslint-disable no-unused-vars */
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
 
+import axios from 'axios';
+import { ESPECIALIDAD  } from '../markay/api/endpoint';
+import Cookies from 'js-cookie';
 const usePostEspecialidad = () => {
-    const [nombre, setNombre] = useState("");
-    const [descripcion, setDescripcion] = useState("")
-    const [imagen, setImagen] = useState(null);
+    
     
     const postData = async (nombre,descripcion,imagen) => {
         try {
@@ -16,7 +13,15 @@ const usePostEspecialidad = () => {
         data.append("descripcion", descripcion);
         data.append("imagen", imagen);
 
-        const response = await axios.post(`${API_BASE_URL}/api/v1/servicio/especialidad/`, data);
+        // Obtén el token de las cookies
+      const token = Cookies.get('jwt');
+
+      const response = await axios.post(`${ESPECIALIDAD}`, data, {
+        headers: {
+            // Incluye el token en las cabeceras de la solicitud
+            'Authorization': `Bearer ${token}`
+        }
+    });
         console.log('Datos enviados con éxito:', response.data);
         } catch (error) {
         console.error('Error al enviar datos:', error.response ? error.response.data : error.message);

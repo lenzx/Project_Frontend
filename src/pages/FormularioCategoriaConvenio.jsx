@@ -35,7 +35,7 @@ const FormularioCategoriaConvenio = ({object}) => {
         <h1 className="title">{title}</h1>
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formNombre">
-            <Form.Label>Nombre</Form.Label>
+            <Form.Label>Nombre de la categoría: </Form.Label>
             <Form.Control type="text" placeholder="Nombre" value={nombre} onChange={e => setNombre(e.target.value)} />
             </Form.Group>
             <button type="submit" className="btn btn-primary">Confirmar</button>

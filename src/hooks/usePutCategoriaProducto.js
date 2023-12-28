@@ -9,14 +9,14 @@ const usePutCategoriaProducto = () => {
             data.append("nombre", nombre);
 
              // Obtén el token de las cookies
-             const token = Cookies.get('jwt');
+            const token = Cookies.get('jwt');
 
-             const response = await axios.put(`${CATEGORIAPRODUCTO }${id}/`, data, {
-                 headers: {
-                     // Incluye el token en las cabeceras de la solicitud
-                     'Authorization': `Bearer ${token}`
-                 }
-             });
+            const response = await axios.put(`${CATEGORIAPRODUCTO }${id}/`, data, {
+                headers: {
+                    // Incluye el token en las cabeceras de la solicitud
+                    'Authorization': `Bearer ${token}`
+                }
+            });
 
     
             if (!response.status.toString().startsWith('2')) {

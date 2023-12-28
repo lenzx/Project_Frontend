@@ -1,5 +1,6 @@
+import Cookies from 'js-cookie';
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import { ESPECIALISTA } from '../markay/api/endpoint';
 
 const useDeleteEspecialista = () => {
     const deleteData = async (id) => {
@@ -8,7 +9,12 @@ const useDeleteEspecialista = () => {
             if (!confirmDelete) {
                 return; 
             }
-            const response = await axios.delete(`${API_BASE_URL}/api/v1/servicio/especialista/${id}/`);
+            const token = Cookies.get('jwt');
+
+            const response = await axios.delete(`${ESPECIALISTA}${id}/`,{
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }});
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }

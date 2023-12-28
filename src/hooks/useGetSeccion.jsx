@@ -1,7 +1,7 @@
 
 
 // useGetSeccion.jsx
-import { API_BASE_URL } from '../markay/api/endpoint.js';
+import { SECCION } from '../markay/api/endpoint.js';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -14,7 +14,7 @@ const useGetSeccion = ({ id }) => {
         setIsLoading(true);
 
         try {
-            const response = await axios.get(id ? `${API_BASE_URL}/api/v1/web/seccion/${id}/` : `${API_BASE_URL}/api/v1/web/seccion/`);
+            const response = await axios.get(id ? `${SECCION}${id}/` : `${SECCION}`);
             setSeccion(response.data);
         } catch (error) {
             setError(error);

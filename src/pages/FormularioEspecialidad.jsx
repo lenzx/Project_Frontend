@@ -5,7 +5,7 @@ import { Form } from 'react-bootstrap';
 import usePostEspecialidad from "../hooks/usePostEspecialidad";
 import usePutEspecialidad from "../hooks/usePutEspecialidad";
 import axios from 'axios';
-import {API_BASE_URL} from '../markay/api/endpoint.js';
+import {SERVICIO} from '../markay/api/endpoint.js';
 
 const FormularioEspecialidad = ({object}) => {
     
@@ -24,7 +24,7 @@ const FormularioEspecialidad = ({object}) => {
     const [imagen, setImagen] = useState(especialidad ? especialidad.imagen : null);
 
     useEffect(() => {
-        axios.get(`${API_BASE_URL}/api/v1/servicio/servicio/`)
+        axios.get(`${SERVICIO}`)
             .then(response => {
                 setServicioOptions(response.data);
             })
@@ -59,19 +59,19 @@ const FormularioEspecialidad = ({object}) => {
             <h1 className="title">{title}</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formNombre">
-                    <Form.Label>Nombre</Form.Label>
+                    <Form.Label>Nombre de la especialidad: </Form.Label>
                     <Form.Control type="text" placeholder="Nombre" value={nombre} onChange={e => setNombre(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formDescripcion">
-                    <Form.Label>Descripción</Form.Label>
+                    <Form.Label>Descripción; </Form.Label>
                     <Form.Control type="text" placeholder="Descripción" value={descripcion} onChange={e => setDescripcion(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formImagen">
-                    <Form.Label>Imagen</Form.Label>
+                    <Form.Label>Imagen representativa: </Form.Label>
                     <Form.Control type="file" onChange={e => setImagen(e.target.files[0])} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formServicioId">
-                    <Form.Label>Especialidad</Form.Label>
+                    <Form.Label>Servicios ofrecidos por esta especialidad: </Form.Label>
                     <Form.Control as="select" multiple value={selectedServicio} onChange={e => setSelectedServicio(Array.from(e.target.selectedOptions, option => option.value))}>
                         {servicioOptions.map(option => (
                             <option key={option.id} value={option.id}>

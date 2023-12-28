@@ -4,7 +4,7 @@ import usePostMarkay from '../hooks/usePostMarkay';
 import PropTypes from 'prop-types';
 import usePutMarkay from '../hooks/usePutMarkay';
 
-const FormularioMarkay = ({object}) => {
+const FormularioMarkay = ({object, setSelectedForm}) => {
     
     const markay = object ? object: null;
     const id= markay ?  markay.id : null;
@@ -14,6 +14,12 @@ const FormularioMarkay = ({object}) => {
 
   const postData = usePostMarkay();
   const putData = usePutMarkay();
+
+
+  const handleChanges = () => {
+    setSelectedForm('');
+    }
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -23,6 +29,7 @@ const FormularioMarkay = ({object}) => {
           await postData( imagen, descripcion);
         } 
         alert('Datos enviados con éxito');
+        handleChanges();
         
     } catch (error) {
         const errorMessage = error.response ? error.response.data : error.message;
@@ -37,7 +44,7 @@ const FormularioMarkay = ({object}) => {
             <h1 className="title">{title}</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formDescripcion">
-                    <Form.Label>Eslogan</Form.Label>
+                    <Form.Label>Modifique el eslogan de su empresa: </Form.Label>
                     <Form.Control as="textarea" rows={3} placeholder="Descripción" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} />
                 </Form.Group>
                 <button type="submit" className="btn btn-primary">Confirmar</button>
@@ -51,11 +58,11 @@ const FormularioMarkay = ({object}) => {
             <h1 className="title">{title}</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formImagen">
-                    <Form.Label>Imagen</Form.Label>
+                    <Form.Label>Seleccione una imagen para la sección (Si no lo requiere, déjela en blanco):</Form.Label>
                     <Form.Control type="file" onChange={(e) => setImagen(e.target.files[0])} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formDescripcion">
-                    <Form.Label>Descripción</Form.Label>
+                    <Form.Label>Descripción de la sección: </Form.Label>
                     <Form.Control as="textarea" rows={3} placeholder="Descripción" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} />
                 </Form.Group>
                 <button type="submit" className="btn btn-primary">Confirmar</button>

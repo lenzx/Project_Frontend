@@ -4,14 +4,13 @@ import { Form } from 'react-bootstrap';
 import usePostConvenio from "../hooks/usePostConvenio";
 import usePutConvenio from "../hooks/usePutConvenio";
 import axios from 'axios';
-import {API_BASE_URL} from '../markay/api/endpoint.js';
+import {CATEGORIACONVENIO} from '../markay/api/endpoint.js';
 import PropTypes from 'prop-types'
 
-const FormularioConvenio = ({object}) => {
-    
+
+const FormularioConvenio = ({object, setSelectedForm}) => {
 
     const convenio = object ? object: null;
-
     const [tipoConvenioOptions, setTipoConvenioOptions] = useState([]);
     const title = convenio ? "Modificar Convenio" : "Añadir Convenio";
     const id = convenio ? convenio.id : null;
@@ -22,12 +21,15 @@ const FormularioConvenio = ({object}) => {
     const [imagen, setImagen] = useState(convenio ? convenio.imagen : null);
     const [num_telefono, setNum_telefono] = useState(convenio ? convenio.num_telefono : "");
     const [tipo_convenio_id, setTipo_convenio_id] = useState(convenio ? convenio.tipo_convenio_id : "");
-    
     const postData = usePostConvenio();
     const putData = usePutConvenio();
 
+    const handleChanges = () => {
+        setSelectedForm('');
+    }
+
     useEffect(() => {
-        axios.get(`${API_BASE_URL}/api/v1/servicio/categoriaConvenio/`)
+        axios.get(`${CATEGORIACONVENIO}`)
             .then(response => {
                 setTipoConvenioOptions(response.data);
             })
@@ -40,12 +42,13 @@ const FormularioConvenio = ({object}) => {
         e.preventDefault();
         try {
             if (convenio) {
-                await putData(id, nombre, descripcion, enlace, imagen, num_telefono, tipo_convenio_id, convenio ? convenio.id : null);
+                await putData(id, nombre, descripcion, enlace,direccion, imagen, num_telefono, tipo_convenio_id );
+                
             } else {
-                await postData(nombre, descripcion, enlace,direccion,  imagen, num_telefono, tipo_convenio_id, convenio ? convenio.id : null);
+                await postData(nombre, descripcion, enlace,direccion,  imagen, num_telefono, tipo_convenio_id); 
             }
-            
             alert('Datos enviados con éxito');
+            handleChanges();
             
         } catch (error) {
             const errorMessage = error.response ? error.response.data : error.message;
@@ -59,31 +62,31 @@ const FormularioConvenio = ({object}) => {
             <h1 className="title">{title}</h1>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formNombre">
-                    <Form.Label>Nombre</Form.Label>
+                    <Form.Label>Nombre del convenio: </Form.Label>
                     <Form.Control type="text" placeholder="Nombre" value={nombre} onChange={e => setNombre(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formDescripcion">
-                    <Form.Label>Descripción</Form.Label>
+                    <Form.Label>Descripción del convenio: </Form.Label>
                     <Form.Control type="text" placeholder="Descripción" value={descripcion} onChange={e => setDescripcion(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formEnlace">
-                    <Form.Label>Enlace</Form.Label>
+                    <Form.Label>Enlace al sitio web del convenio: </Form.Label>
                     <Form.Control type="text" placeholder="Enlace" value={enlace} onChange={e => setEnlace(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formDireccion">
-                    <Form.Label>Dirección</Form.Label>
+                    <Form.Label>Dirección del convenio: </Form.Label>
                     <Form.Control type="text" placeholder="Direccion" value={direccion} onChange={e => setDireccion(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formImagen">
-                    <Form.Label>Imagen</Form.Label>
+                    <Form.Label>Seleccione la imagen:</Form.Label>
                     <Form.Control type="file" onChange={e => setImagen(e.target.files[0])} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formNumTelefono">
-                    <Form.Label>Número de Teléfono</Form.Label>
+                    <Form.Label>Número de teléfono para el contacto: </Form.Label>
                     <Form.Control type="text" placeholder="Número de Teléfono" value={num_telefono} onChange={e => setNum_telefono(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formTipoConvenioId">
-                    <Form.Label>Tipo de Convenio ID</Form.Label>
+                    <Form.Label>Tipo de convenio: </Form.Label>
                     <Form.Control as="select" value={tipo_convenio_id} onChange={e => setTipo_convenio_id(e.target.value)}>
                         {tipoConvenioOptions.map(option => (
                             <option key={option.id} value={option.id}>
@@ -101,7 +104,9 @@ const FormularioConvenio = ({object}) => {
 };
 
 FormularioConvenio.propTypes = {
-    object: PropTypes.object
+    object: PropTypes.object,
+    
+    
 };
 
 export default FormularioConvenio;

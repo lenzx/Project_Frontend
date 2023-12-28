@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import { PRODUCTO } from '../markay/api/endpoint';
 
 const useDeleteProducto = () => {
     const deleteData = async (id) => {
@@ -13,7 +13,7 @@ const useDeleteProducto = () => {
             // Obtén el token de las cookies
             const token = Cookies.get('jwt');
 
-            const response = await axios.delete(`${API_BASE_URL}/api/v1/producto/producto/${id}/`, {
+            const response = await axios.delete(`${PRODUCTO}${id}/`, {
                 headers: {
                     // Incluye el token en las cabeceras de la solicitud
                     'Authorization': `Bearer ${token}`

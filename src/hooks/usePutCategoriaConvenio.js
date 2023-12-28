@@ -8,9 +8,8 @@ const usePutCategoriaConvenio = () => {
         try {
             const data = new FormData();
             data.append("nombre", nombre);
+            
             const token = Cookies.get('jwt');
-
-
 
             const response = await axios.put(`${CATEGORIACONVENIO}${id}/`, data,{
                 headers: {

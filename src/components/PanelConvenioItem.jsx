@@ -15,7 +15,6 @@ const PanelConvenioItem = ({ convenio, setSelectedForm, setSelectedObject }) => 
             await deleteData(convenio.id);
             console.log('Producto eliminado con éxito');
             
-            setSelectedForm('ReturnConvenios')
             
         } catch (error) {
             console.error('Error al eliminar producto:', error.message);

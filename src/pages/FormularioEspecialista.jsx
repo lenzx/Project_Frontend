@@ -4,7 +4,7 @@ import { Form } from 'react-bootstrap';
 import usePostEspecialista from "../hooks/usePostEspecialista";
 import usePutEspecialista from "../hooks/usePutEspecialista";
 import axios from 'axios';
-import {API_BASE_URL} from '../markay/api/endpoint.js';
+import { CONVENIO, ESPECIALIDAD} from '../markay/api/endpoint.js';
 import PropTypes from 'prop-types'
 
 const FormularioEspecialista = ({object}) => {
@@ -31,7 +31,7 @@ const FormularioEspecialista = ({object}) => {
     const putData = usePutEspecialista();
 
     useEffect(() => {
-        axios.get(`${API_BASE_URL}/api/v1/servicio/especialidad/`)
+        axios.get(`${ESPECIALIDAD}`)
             .then(response => {
                 setEspecialidadOptions(response.data);
             })
@@ -41,7 +41,7 @@ const FormularioEspecialista = ({object}) => {
     }, []);
 
     useEffect(() => {
-        axios.get(`${API_BASE_URL}/api/v1/servicio/convenios/`)
+        axios.get(`${CONVENIO}`)
             .then(response => {
                 setConvenioOptions(response.data);
             })

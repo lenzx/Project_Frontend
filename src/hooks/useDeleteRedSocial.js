@@ -1,5 +1,6 @@
+import Cookies from 'js-cookie';
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import { REDSOCIAL } from '../markay/api/endpoint';
 
 const useDeleteRedSocial = () => {
     const deleteData = async (id) => {
@@ -9,8 +10,14 @@ const useDeleteRedSocial = () => {
             if (!confirmDelete) {
                 return; 
             }
+            const token = Cookies.get('jwt');
 
-            const response = await axios.delete(`${API_BASE_URL}/api/v1/web/redSocial/${id}/`);
+            const response = await axios.delete(`${REDSOCIAL}${id}/`, {
+                headers: {
+                    // Incluye el token en las cabeceras de la solicitud
+                    'Authorization': `Bearer ${token}`
+                }
+            });
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }

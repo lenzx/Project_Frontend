@@ -5,10 +5,10 @@ import usePostProducto from '../hooks/usePostProducto';
 import usePutProducto from '../hooks/usePutProducto';
 import axios from 'axios';
 
-import {API_BASE_URL} from '../markay/api/endpoint.js';
+import {CATEGORIAPRODUCTO} from '../markay/api/endpoint.js';
 
 
-const FormularioProducto = ({object}) => {
+const FormularioProducto = ({object, setSelectedForm}) => {
   
 
   const producto = object ? object : null;
@@ -27,9 +27,12 @@ const FormularioProducto = ({object}) => {
   const postData = usePostProducto();
   const putData = usePutProducto();
 
+  const handleChanges = () => {
+    setSelectedForm('');
+  }
   
   useEffect(() => {
-    axios.get(`${API_BASE_URL}/api/v1/producto/categoria/`)
+    axios.get(`${CATEGORIAPRODUCTO}`)
         .then(response => {
             setTipoCategoriaOptions(response.data);
         })
@@ -47,6 +50,7 @@ const FormularioProducto = ({object}) => {
           await postData(nombre, descripcion,valor,necesitaReceta, imagen, selectedCategoria);
         } 
         alert('Datos enviados con éxito');
+        handleChanges();
     } catch (error) {
         const errorMessage = error.response ? error.response.data : error.message;
         console.error('Error al enviar datos:', errorMessage);
@@ -61,20 +65,20 @@ const FormularioProducto = ({object}) => {
       <h1 className="title">{title}</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Nombre</Form.Label>
+          <Form.Label>Nombre del producto: </Form.Label>
           <Form.Control type="text" placeholder="Nombre" value={nombre} onChange={e => setNombre(e.target.value)} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Descripción Corta</Form.Label>
+          <Form.Label>Descripción del producto: </Form.Label>
           <Form.Control type="text" placeholder="Descripción" value={descripcion} onChange={e => setDescripcion(e.target.value)} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Valor</Form.Label>
+          <Form.Label>Valor de venta: </Form.Label>
           <Form.Control type="text" placeholder="Valor" value={valor} onChange={e => setValor(e.target.value)} />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formAdministrador">
-                    <Form.Label>Necesita Receta?</Form.Label>
+                    <Form.Label>¿Necesita receta médica?</Form.Label>
                     <Form.Check
                         type="checkbox"
                         label="necesita receta"
@@ -83,11 +87,11 @@ const FormularioProducto = ({object}) => {
                     />
                 </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Imagen</Form.Label>
+          <Form.Label>Seleccione una imagen descriptiva: </Form.Label>
           <Form.Control type="file" onChange={e => setImagen(e.target.files[0])} />
         </Form.Group>
                 <Form.Group className="mb-3" controlId="formCategoriaId">
-                    <Form.Label>Categoria</Form.Label>
+                    <Form.Label>Seleccione las categorías del producto: </Form.Label>
                     <Form.Control as="select" multiple value={selectedCategoria} onChange={e => setSelectedCategoria(Array.from(e.target.selectedOptions, option => option.value))}>
                         {tipoCategoriaOptions.map(option => (
                             <option key={option.id} value={option.id}>

@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
-
+import {  CONVENIO } from '../markay/api/endpoint';
+import Cookies from 'js-cookie';
 const usePutConvenio = () => {
     
     const putData = async (id, nombre, descripcion, enlace,direccion, imagen, num_telefono, tipo_convenio_id) => {
@@ -13,7 +13,21 @@ const usePutConvenio = () => {
             data.append("imagen", imagen);
             data.append("num_telefono", num_telefono);
             data.append("tipo_convenio_id", tipo_convenio_id);
-            const response = await axios.put(`${API_BASE_URL}/api/v1/servicio/convenios/${id}/`, data);
+
+
+
+            // Obtén el token de las cookies
+            const token = Cookies.get('jwt');
+            console.log(data);
+            console.log('ID del convenio:', id);
+            const response = await axios.put(`${CONVENIO}${id}/`, data, {
+                headers: {
+                    // Incluye el token en las cabeceras de la solicitud
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+                        
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }

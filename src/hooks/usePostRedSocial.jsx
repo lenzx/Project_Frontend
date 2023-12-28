@@ -1,13 +1,10 @@
-/* eslint-disable no-unused-vars */
-import { useState, useEffect } from 'react';
+
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import { REDSOCIAL  } from '../markay/api/endpoint';
+import Cookies from 'js-cookie';
 
 const usePostRedSocial = () => {
-    const [imagen, setImagen] = useState(null);
-    const [enlace, setEnlace] = useState("");
-    const [texto, setTexto] = useState("");
-    
+ 
     
   const postData = async (imagen, enlace, texto) => {
     try {
@@ -16,7 +13,15 @@ const usePostRedSocial = () => {
       data.append("enlace", enlace);
       data.append("texto", texto);
 
-      const response = await axios.post(`${API_BASE_URL}/api/v1/web/redSocial/`, data);
+      // Obtén el token de las cookies
+      const token = Cookies.get('jwt');
+
+      const response = await axios.post(`${REDSOCIAL}`, data, {
+        headers: {
+            // Incluye el token en las cabeceras de la solicitud
+            'Authorization': `Bearer ${token}`
+        }
+    });
       console.log('Datos enviados con éxito:', response.data);
     } catch (error) {
       console.error('Error al enviar datos:', error.response ? error.response.data : error.message);

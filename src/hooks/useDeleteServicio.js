@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import Cookies from 'js-cookie';
+import { SERVICIO } from '../markay/api/endpoint';
 
 const useDeleteServicio = () => {
     const deleteData = async (id) => {
@@ -9,8 +10,13 @@ const useDeleteServicio = () => {
             if (!confirmDelete) {
                 return; 
             }
-
-            const response = await axios.delete(`${API_BASE_URL}/api/v1/servicio/servicio/${id}/`);
+            const token = Cookies.get('jwt');
+            const response = await axios.delete(`${SERVICIO}${id}/`, {
+                headers: {
+                    // Incluye el token en las cabeceras de la solicitud
+                    'Authorization': `Bearer ${token}`
+                }
+            });
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }

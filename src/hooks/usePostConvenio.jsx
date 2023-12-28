@@ -1,7 +1,7 @@
-/* eslint-disable no-unused-vars */
-import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
 
+import axios from 'axios';
+import { CONVENIO  } from '../markay/api/endpoint';
+import Cookies from 'js-cookie';
 const usePostConvenio = () => {
 
 
@@ -15,8 +15,19 @@ const usePostConvenio = () => {
       data.append("imagen", imagen);
       data.append("num_telefono", num_telefono);
       data.append("tipo_convenio_id",tipo_convenio_id)
+      for (var pair of data.entries()) {
+        console.log(pair[0]+ ', ' + pair[1]); 
+    }
 
-      const response = await axios.post(`${API_BASE_URL}/api/v1/servicio/convenios/`, data);
+      // Obtén el token de las cookies
+      const token = Cookies.get('jwt');
+      
+      const response = await axios.post(`${CONVENIO}`, data, {
+        headers: {
+            // Incluye el token en las cabeceras de la solicitud
+            'Authorization': `Bearer ${token}`
+        }
+    });
       console.log('Datos enviados con éxito:', response.data);
     } catch (error) {
       console.error('Error al enviar datos:', error.response ? error.response.data : error.message);

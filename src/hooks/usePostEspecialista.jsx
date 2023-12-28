@@ -1,16 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import { ESPECIALISTA  } from '../markay/api/endpoint';
+import Cookies from 'js-cookie';
 
 const usePostEspecialista = () => {
-    const [nombre, setNombre] = useState("");
-    const [rut, setRut] = useState("");
-    const [num_telefono, setNum_telefono] = useState("")
-    const [descripcion, setDescripcion] = useState("")
-    const [horarios, setHorarios] = useState("")
     
-    const [imagen, setImagen] = useState(null);
     
     
     
@@ -26,7 +21,15 @@ const usePostEspecialista = () => {
         
         data.append("imagen", imagen);
 
-        const response = await axios.post(`${API_BASE_URL}/api/v1/servicio/especialista/`, data);
+        // Obtén el token de las cookies
+      const token = Cookies.get('jwt');
+
+      const response = await axios.post(`${ESPECIALISTA}`, data, {
+        headers: {
+            // Incluye el token en las cabeceras de la solicitud
+            'Authorization': `Bearer ${token}`
+        }
+    });
         console.log('Datos enviados con éxito:', response.data);
         } catch (error) {
         console.error('Error al enviar datos:', error.response ? error.response.data : error.message);

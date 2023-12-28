@@ -30,18 +30,18 @@ const MenuAdmin = () => {
     const [object, setObject] = useState(null);
 
     const formMap = {
-        'Convenios': <FormularioConvenio object={object}  />,  // <FormularioConvenio object={object} setSelectComponen("Convenios"), setSelectForm (null)/>
+        'Convenios': <FormularioConvenio object={object} setSelectedForm = {setSelectedForm} />,  // <FormularioConvenio object={object} setSelectComponen("Convenios"), setSelectForm (null)/>
         'Citas': <FormularioEspecialista object={object} />, // <FormularioEspecialista object={object} setSelectComponen("Citas"), setSelectForm (null), setSelectObject(n)/>  
-        'Servicios': <FormularioServicio object={object} />,
-        'Productos': <FormularioProducto object={object} />,
-        'Especialistas': <FormularioEspecialista object={object} />,
-        'Especialidades': <FormularioEspecialidad object={object} />,
-        'Redes Sociales': <FormularioRedSocial object={object} />,
-        'CategoriasCatalogo': <FormularioCategoriaCatalogo object={object} />,
+        'Servicios': <FormularioServicio object={object} setSelectedForm = {setSelectedForm}/>,
+        'Productos': <FormularioProducto object={object} setSelectedForm = {setSelectedForm} />,
+        'Especialistas': <FormularioEspecialista object={object} setSelectedForm = {setSelectedForm}/>,
+        'Especialidades': <FormularioEspecialidad object={object} setSelectedForm = {setSelectedForm} />,
+        'Redes Sociales': <FormularioRedSocial object={object} setSelectedForm = {setSelectedForm}/>,
+        'CategoriasCatalogo': <FormularioCategoriaCatalogo object={object} setSelectedForm = {setSelectedForm}/>,
         'Seccion': <FormularioSeccion object={object} />,
-        'CategoriasConvenio': <FormularioCategoriaConvenio object={object} />,
-        'PaginaPrincipal': <FormularioMarkay object={object}/>,
-        'ReturnConvenios':<Convenios object ={null}/>,
+        'CategoriasConvenio': <FormularioCategoriaConvenio object={object} setSelectedForm = {setSelectedForm} />,
+        'PaginaPrincipal': <FormularioMarkay object={object} setSelectedForm = {setSelectedForm}/>,
+        // 'ReturnConvenios':<Convenios object ={null}/>,
         
     };
 
@@ -52,9 +52,6 @@ const MenuAdmin = () => {
         switch(selectedComponent) {
             case 'Convenios':
                 return <Convenios setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
-            case'ReturnConvenios':    
-                return <Convenios setSelectedForm={null} setSelectedObject = {'Convenios1'}/>;
-
             case 'Citas':
                 return <Consultas setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             case 'Servicios':

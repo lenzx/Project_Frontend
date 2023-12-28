@@ -8,7 +8,7 @@ import usePutServicio from '../hooks/usePutServicio';
 
 
 
-const FormularioServicios = ({object}) => {
+const FormularioServicios = ({object, setSelectedForm}) => {
 
   const servicio = object ? object: null;
   const id= servicio ?  servicio.id : null;
@@ -18,6 +18,12 @@ const FormularioServicios = ({object}) => {
   const [imagen, setImagen] = useState(servicio ?  servicio.imagen:null);
   const postData = usePostServicio();
   const putData = usePutServicio();
+
+  const handleChanges = () => {
+    setSelectedForm('');
+  }
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

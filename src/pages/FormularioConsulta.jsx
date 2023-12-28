@@ -22,19 +22,19 @@ const FormularioConsulta = () => {
       <h1 className="title">Formulario de Consulta</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formNombre">
-          <Form.Label>Nombre</Form.Label>
+          <Form.Label>Ingrese su nombre ocmpleto: </Form.Label>
           <Form.Control type="text" placeholder="Nombre" name="subject" value={nombre} onChange={e => setNombre(e.target.value)} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCorreoElectronico">
-          <Form.Label>Correo Electrónico</Form.Label>
+          <Form.Label>Correo electrónico de contacto: </Form.Label>
           <Form.Control type="text" placeholder="Correo Electrónico" value={correo_electronico} onChange={e => setCorreo_electronico(e.target.value)} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formNumTelefono">
-          <Form.Label>Número de Teléfono</Form.Label>
+          <Form.Label>Número de contacto: </Form.Label>
           <Form.Control type="text" placeholder="Número de Teléfono" value={num_telefono} onChange={e => setNum_telefono(e.target.value)} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formMotivoConsulta">
-          <Form.Label>Motivo de la Consulta</Form.Label>
+          <Form.Label>Motivo de su consulta: </Form.Label>
           <Form.Control as="textarea" rows={3} name="message" placeholder="Motivo de la Consulta" value={motivo_consulta} onChange={e => setMotivo_consulta(e.target.value)} />
         </Form.Group>
 

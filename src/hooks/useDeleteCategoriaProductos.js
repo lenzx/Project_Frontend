@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import { CATEGORIAPRODUCTO } from '../markay/api/endpoint';
+import Cookies from 'js-cookie';
 
 const useDeleteCategoriaProductos = () => {
     const deleteData = async (id) => {
@@ -8,7 +9,13 @@ const useDeleteCategoriaProductos = () => {
             if (!confirmDelete) {
                 return;
             }
-            const response = await axios.delete(`${API_BASE_URL}/api/v1/producto/categoria/${id}/`);
+
+            const token = Cookies.get('jwt');
+            const response = await axios.delete(`${CATEGORIAPRODUCTO}${id}/`,{
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }});
+
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }

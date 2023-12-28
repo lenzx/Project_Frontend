@@ -1,5 +1,6 @@
+import Cookies from 'js-cookie';
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import { CONVENIO } from '../markay/api/endpoint';
 
 const useDeleteConvenio = () => {
     const deleteData = async (id) => {
@@ -8,7 +9,11 @@ const useDeleteConvenio = () => {
             if (!confirmDelete) {
                 return; 
             }
-            const response = await axios.delete(`${API_BASE_URL}/api/v1/servicio/convenios/${id}/`);
+            const token = Cookies.get('jwt');
+            const response = await axios.delete(`${CONVENIO}${id}/`,{
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }});
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }

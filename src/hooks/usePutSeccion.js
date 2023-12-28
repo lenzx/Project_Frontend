@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { API_BASE_URL } from '../markay/api/endpoint';
+import { SECCION } from '../markay/api/endpoint';
+import Cookies from 'js-cookie';
 
 const usePutRedSocial = () => {
     
@@ -9,7 +10,17 @@ const usePutRedSocial = () => {
             data.append("titulo", titulo);
             data.append("descripcion", descripcion);
 
-            const response = await axios.put(`${API_BASE_URL}/api/v1/web/seccion/${id}/`, data);
+            const token = Cookies.get('jwt');
+
+            const response = await axios.put(`${SECCION}${id}/`, data, {
+                headers: {
+                    // Incluye el token en las cabeceras de la solicitud
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+
+            
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }
