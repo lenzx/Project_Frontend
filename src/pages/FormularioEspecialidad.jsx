@@ -88,6 +88,6 @@ const FormularioEspecialidad = ({object}) => {
 };
 
 FormularioEspecialidad.propTypes = {
-    object: PropTypes.object.isRequired,
+    object: PropTypes.object
 }
 export default FormularioEspecialidad;

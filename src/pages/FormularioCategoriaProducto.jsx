@@ -9,13 +9,13 @@ const FormularioCategoriaProductos = ({object}) => {
 
 
 
-  const categoriaProducto = object ? object : null;
-  const title = categoriaProducto ? "Modificar Categoría" : "Añadir Categoría";
-  const id= categoriaProducto ?  categoriaProducto.id : null;
-  const [nombre, setNombre] = useState(categoriaProducto ? categoriaProducto.nombre: "");
-  const postData =  usePostCategoriaProductos();
-  const putData = usePutCategoriaProducto();
-  const handleSubmit = async (e) => {
+    const categoriaProducto = object ? object : null;
+    const title = categoriaProducto ? "Modificar Categoría" : "Añadir Categoría";
+    const id= categoriaProducto ?  categoriaProducto.id : null;
+    const [nombre, setNombre] = useState(categoriaProducto ? categoriaProducto.nombre: "");
+    const postData =  usePostCategoriaProductos();
+    const putData = usePutCategoriaProducto();
+    const handleSubmit = async (e) => {
     e.preventDefault();
     try {
         if (categoriaProducto) {
@@ -45,7 +45,7 @@ const FormularioCategoriaProductos = ({object}) => {
     );
     };
 FormularioCategoriaProductos.propTypes = {
-    object: PropTypes.object.isRequired
+    object: PropTypes.object
 };
 
 export default FormularioCategoriaProductos ;

@@ -11,7 +11,6 @@ const PanelCategoriaCatalogoItem = ({ categoria, setSelectedForm, setSelectedObj
         setSelectedForm('CategoriasCatalogo');
         setSelectedObject(categoria);
     }
-    
     const handleDelete = async () => {
         try {
             await eliminarCategoriaProductos(categoria.id);
@@ -21,10 +20,11 @@ const PanelCategoriaCatalogoItem = ({ categoria, setSelectedForm, setSelectedObj
         }
     };
     return (
-        <Card style={{ width: '32rem' }}>
+        <Card style={{ width: '32rem' , height:'24rem' }}>
             <button className='boton-eliminar-categoriaProducto' onClick={handleDelete} >
                 <img className='img-eliminar-categoriaProducto' src={iconAgregar} alt="Eliminar" />
             </button>
+            <br /><br /><br /><br />
             <Card.Body>
                 <Card.Title>{categoria.nombre}</Card.Title> 
                 <Card.Text>

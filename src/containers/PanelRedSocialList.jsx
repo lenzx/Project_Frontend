@@ -2,11 +2,12 @@ import PropTypes from 'prop-types';
 import RedSocialItem from "../components/PanelRedSocialItem";
 import iconAgregar from '../assets/icon/boton-agregar.png';
 import useGetRedSocial from "../hooks/useGetRedSocial";
-import { Button } from 'react-bootstrap';
+
 import "../styles/PanelRedSocialList.css";
+import "../styles/BtnAdd.css";
 const PanelRedSocialList = ({setSelectedForm, setSelectedObject}) => {
     
-    const redSociales = useGetRedSocial();
+    const redSociales = useGetRedSocial({});
 
     const handleClick = () => {
         setSelectedObject(null);
@@ -15,9 +16,9 @@ const PanelRedSocialList = ({setSelectedForm, setSelectedObject}) => {
     return (
         <div className="panel-redSocial-list-container">
             <div className="borde-boton-redSocial">
-                <Button onClick={handleClick}>
+                <button onClick={handleClick} className="btn-add">
                 <img src={iconAgregar} className='imagen-boton-agregar-container'/>
-                </Button>
+                </button>
             </div>
             {redSociales.map(redSocial => (
                 <RedSocialItem

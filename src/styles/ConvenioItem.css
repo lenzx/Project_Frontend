@@ -5,7 +5,7 @@
 }
 
 .convenio-img {
-    width: 32rem;
+    min-width: 30rem;
     height: 20rem;
     margin: 1rem 4rem;
     border-radius: 10px;
@@ -15,7 +15,6 @@
     font-size: 4rem;
     font-style: italic;
     margin: 0 1.6rem;
-    color: rgba(253, 126, 8, 0.938);
     font-weight: 900;
     font-style: italic;
 }
@@ -27,23 +26,29 @@
 
 .convenio-card {
 
-    background-color: var(--crema);
     border-radius: 10px;
-    border: 0.2rem solid var(--naranjo-secondary);
     padding: 1.6rem 0 2.8rem 0;
     margin: 0 2.4rem;
     margin-top: 1rem;
     
 }
 
+.convenio-card > .convenio-card-texto{
+    background-color: rgba(255, 93, 56, 0.937);
+    color: var(--crema);
+
+}
+
 .convenio-card:nth-child(2n)  {
-    background-color: var(--naranjo-secondary);
-    border: 0.2rem solid white;
+    
+
 }
 
 .convenio-card:nth-child(2n) > .convenio-card-texto  {
     text-align: end;
-    color: white;
+    background-color: #fae9e0ba;
+    color: rgb(255, 93, 56);
+
 }
 
 .convenio-card:nth-child(2n) > .convenio-card-container{

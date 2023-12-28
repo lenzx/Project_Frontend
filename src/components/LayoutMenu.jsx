@@ -1,10 +1,21 @@
-
 import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import icon from '../assets/logomarkay.png';
 import "../styles/LayoutMenu.css";
+import { useContext } from 'react';
+import AuthContext from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const LayoutMenu = ({children}) => {
+    const { logout } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogout = (event) => {
+        event.preventDefault();
+        logout();
+        navigate('/');
+    };
+
     return (
         <div>
             <div className='menu-administracion-layout'>
@@ -19,9 +30,9 @@ const LayoutMenu = ({children}) => {
                     </h1>
                 </div>
                 <div className='menu-administracion-layout-right'>
-                    <a href="/logout">
-                        <Button variant="danger">Cerrar sesión</Button>
-                    </a>
+                    
+                        <Button onClick={handleLogout} variant="danger" className='cerrar-sesion'>Cerrar sesión</Button>
+                    
                 </div>
             </div>
             {children}

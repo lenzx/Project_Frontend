@@ -3,12 +3,13 @@ import { API_BASE_URL } from '../markay/api/endpoint';
 
 const usePutConvenio = () => {
     
-    const putData = async (id, nombre, descripcion, enlace, imagen, num_telefono, tipo_convenio_id) => {
+    const putData = async (id, nombre, descripcion, enlace,direccion, imagen, num_telefono, tipo_convenio_id) => {
         try {
             const data = new FormData();
             data.append("nombre", nombre);
             data.append("descripcion", descripcion);
             data.append("enlace", enlace);
+            data.append("direccion", direccion)
             data.append("imagen", imagen);
             data.append("num_telefono", num_telefono);
             data.append("tipo_convenio_id", tipo_convenio_id);

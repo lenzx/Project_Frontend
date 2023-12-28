@@ -15,6 +15,7 @@ const ConvenioList = () => {
                 descripcionConvenio={convenio.descripcion}
                 imagenConvenio={convenio.imagen}
                 enlaceConvenio={convenio.enlace}
+                enlaceDireccion={convenio.direccion}
                 key={convenio.id}
                 />
             ))}

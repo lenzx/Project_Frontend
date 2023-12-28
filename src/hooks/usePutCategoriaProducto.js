@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API_BASE_URL } from '../markay/api/endpoint';
 
-const usePutRedSocial = () => {
+const usePutCategoriaProducto = () => {
     
     const putData = async (id,nombre) => {
         try {
@@ -21,4 +21,4 @@ const usePutRedSocial = () => {
     return putData;
 };
 
-export default usePutRedSocial;
+export default usePutCategoriaProducto;

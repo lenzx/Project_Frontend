@@ -23,7 +23,8 @@
 }
 
 .menu-administracion-layout-right {
-    width: 10rem;
+    height: 4.5rem;
+    width: 15rem;
     text-align: center;
 }
 
@@ -37,4 +38,9 @@
     color: var(--gris-oscuro);
     margin-bottom: 0;
     
+}
+.cerrar-sesion{
+    height: 4.5rem;
+    width: 10rem;
+    font-size: 1.25rem;
 }

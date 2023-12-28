@@ -1,5 +1,5 @@
 import LoginList from "../containers/LoginList.jsx";
-import FooterWave from "../components/FooterWave.jsx";
+import FooterWave from '../containers/FooterWave';
 import '../styles/Login.css';
 const Login = () => { 
     return (

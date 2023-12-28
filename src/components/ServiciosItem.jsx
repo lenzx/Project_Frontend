@@ -3,7 +3,6 @@ import '../styles/Servicio.css'
 const Servicio = ({item}) => {
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${item.imagen}`
 
-
     return (
         <div className="row rowspan-2 card-servicio">
             <div className="col-6">

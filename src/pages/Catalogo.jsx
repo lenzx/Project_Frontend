@@ -1,13 +1,15 @@
 import ProductoList from "../containers/CatalogoList.jsx"
 import '../styles/Catalogo.css'
+import SeccionList from "../containers/SeccionList.jsx"
+import FooterWave from '../containers/FooterWave';
 
-import FooterWave from "../components/FooterWave.jsx";
 
 const Catalogo = () => { 
     return (
         <>
         <div className="container">
-            <h2 className="catalogo-titulo text-center">Nuestros Productos</h2>
+            <SeccionList idSeccion={4} />
+
             <ProductoList/>
         </div>
         <FooterWave/>

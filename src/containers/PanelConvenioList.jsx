@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import ConvenioItem from '../components/PanelConvenioItem.jsx';
 import useGetConvenios from '../hooks/useGetConvenios.jsx';
 import "../styles/PanelConvenioList.css";
+import "../styles/BtnAdd.css";
+
 import iconAgregar from '../assets/icon/boton-agregar.png';
-import { Button } from 'react-bootstrap';
 const PanelConvenioList = ({setSelectedForm, setSelectedObject}) => {
 
     const convenios = useGetConvenios();
@@ -17,9 +18,9 @@ const PanelConvenioList = ({setSelectedForm, setSelectedObject}) => {
     return (
         <div className="panel-convenio-list-container">
             <div className="borde-boton-convenio">
-                <Button onClick={handleClick}>
+                <button onClick={handleClick} className='btn-add'>
                     <img src={iconAgregar} className='imagen-boton-agregar-container'/>
-                </Button>
+                </button>
             </div>
             {convenios.map(convenio => (
                 <ConvenioItem 

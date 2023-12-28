@@ -1,20 +1,38 @@
 import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import usePostCategoriaConvenio from "../hooks/usePostCategoriaConvenio";
+import usePutCategoriaConvenio from '../hooks/usePutCategoriaConvenio';
+import PropTypes from 'prop-types'
+
+const FormularioCategoriaConvenio = ({object}) => {
+
+  const categoriaConvenio = object ? object : null;
+  const title = categoriaConvenio ? "Modificar Categoria de Convenio" : "Añadir Categoria de Convenio";
+  const id= categoriaConvenio ?  categoriaConvenio.id : null;
 
 
-const FormularioCategoriaConvenio = () => {
-    const [nombre, setNombre] = useState("");
+  const [nombre, setNombre] = useState(categoriaConvenio ?  categoriaConvenio.nombre: "");
   const postData =  usePostCategoriaConvenio();
-
-  const handleSubmit = (e) => {
+  const putData = usePutCategoriaConvenio();
+    const handleSubmit = async (e) => {
     e.preventDefault();
-    postData(nombre);
+    try {
+        if (categoriaConvenio) {
+          await putData(id, nombre);
+        } else {
+          await postData( nombre);
+        } 
+        alert('Datos enviados con éxito');
+  
+    } catch (error) {
+        const errorMessage = error.response ? error.response.data : error.message;
+        console.error('Error al enviar datos:', errorMessage);
+        alert('Error al enviar datos: ' + errorMessage);
+    }
   };
-
     return (
         <div className="container">
-        <h1 className="title">React &amp; Cloudinary</h1>
+        <h1 className="title">{title}</h1>
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formNombre">
             <Form.Label>Nombre</Form.Label>
@@ -25,5 +43,8 @@ const FormularioCategoriaConvenio = () => {
         </div>
     );
     };
+FormularioCategoriaConvenio.propTypes = {
+  object: PropTypes.object
+};
 
 export default FormularioCategoriaConvenio ;

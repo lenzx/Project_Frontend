@@ -4,17 +4,24 @@
     font-weight: 500;
     margin-bottom: 5rem;
     margin-top: 3rem;
+    
 }
 
 .catalogo-card{
     background-color: var(--crema);
     border-radius: 10px;
     padding-bottom: 10px;
+    
 }
 
+.catalogo-title {
+    margin-top: 7rem;
+}
 
+.catalogo-title.expanded {
 
-
+    margin-top: 2rem;
+}
 
 .btn-primary{
     width: 20rem;
@@ -36,9 +43,25 @@
     background-color: var(--naranjo-main);
 }
 .img-catalogo{
-    height: 20rem;
+    height: 85%;
     width: 100%;
 }
+
+
+.img-catalogo.expanded-img {
+    margin-left: 6rem;
+}
+
+.text-valor.expanded-text {
+    margin-left:6rem;
+    border-radius: 5px;
+    width: 43.5rem;
+    color:var(--crema);
+    background-color: var(--naranjo-main);
+}
+
+
+
 .btn-producto{
     display: flex;
     justify-content: center;
@@ -47,13 +70,10 @@
 
 
 
+
 /* ################ */
 
-.img-expanded{
-    height: 50rem;
-    width: 40rem;
 
-}
 
 .bg-expanded{
     border-radius: 3rem;
@@ -65,8 +85,10 @@
     height: fit-content;
     background-color: var(--crema);
 }
+
+
 .content-expanded{
-    margin-top: 5rem;
+    margin-top: 50rem;
 
 }
 .contacto-icon{
@@ -90,23 +112,17 @@
 }
 
 .card-telefono{
-    margin-top: 100px;
+    
     font-style: italic;
     color: var(--gris-oscuro);
     font-size: 2rem;
+    margin-bottom: 30rem;
     
 }
-.text-number{
-    margin-top: 2.5rem;
-}
+
 
 .card-bg{
     background-color: var(--crema);
-}
-.btn-volver{
-    background-color:var(--naranjo-secondary);
-    color: var(--crema);
-    border: 2px solid var(--crema);
 }
 
 .display-item-expanded{
@@ -118,11 +134,35 @@
     
 }
 
-.icon-social{
+.icon-social-producto{
     height: 7rem;
     width: 7rem;
-    
 }
+
+
+.text-descripcion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-left: 13rem;
+}
+
+.text-center-descripcion{
+    margin-top: 1rem;
+    width: 300px;
+}
+.center-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 27rem;
+}
+
+
+
+
+
 
 
 

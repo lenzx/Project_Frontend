@@ -18,6 +18,7 @@ const FormularioConvenio = ({object}) => {
     const [nombre, setNombre] = useState(convenio ? convenio.nombre : "");
     const [descripcion, setDescripcion] = useState(convenio ? convenio.descripcion : "");
     const [enlace, setEnlace] = useState(convenio ? convenio.enlace : "");
+    const [direccion,setDireccion] = useState(convenio ? convenio.direccion:"")
     const [imagen, setImagen] = useState(convenio ? convenio.imagen : null);
     const [num_telefono, setNum_telefono] = useState(convenio ? convenio.num_telefono : "");
     const [tipo_convenio_id, setTipo_convenio_id] = useState(convenio ? convenio.tipo_convenio_id : "");
@@ -41,8 +42,9 @@ const FormularioConvenio = ({object}) => {
             if (convenio) {
                 await putData(id, nombre, descripcion, enlace, imagen, num_telefono, tipo_convenio_id, convenio ? convenio.id : null);
             } else {
-                await postData(nombre, descripcion, enlace, imagen, num_telefono, tipo_convenio_id, convenio ? convenio.id : null);
+                await postData(nombre, descripcion, enlace,direccion,  imagen, num_telefono, tipo_convenio_id, convenio ? convenio.id : null);
             }
+            
             alert('Datos enviados con éxito');
             
         } catch (error) {
@@ -67,6 +69,10 @@ const FormularioConvenio = ({object}) => {
                 <Form.Group className="mb-3" controlId="formEnlace">
                     <Form.Label>Enlace</Form.Label>
                     <Form.Control type="text" placeholder="Enlace" value={enlace} onChange={e => setEnlace(e.target.value)} />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formDireccion">
+                    <Form.Label>Dirección</Form.Label>
+                    <Form.Control type="text" placeholder="Direccion" value={direccion} onChange={e => setDireccion(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formImagen">
                     <Form.Label>Imagen</Form.Label>
@@ -95,7 +101,7 @@ const FormularioConvenio = ({object}) => {
 };
 
 FormularioConvenio.propTypes = {
-    object: PropTypes.object.isRequired
+    object: PropTypes.object
 };
 
 export default FormularioConvenio;

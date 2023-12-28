@@ -8,25 +8,12 @@ import Catalogo from '../pages/Catalogo';
 import Servicio from '../pages/Servicio';
 import Login from '../pages/Login';
 import Formulario from '../pages/Formulario';
-import FormularioServicios from '../pages/FormularioServicios';
-import FormularioProducto from '../pages/FormularioProducto';
-import FormularioConvenio from '../pages/FormularioConvenio';
-import FormularioEspecialista from '../pages/FormularioEspecialista';
-import FormularioConsulta from '../pages/FormularioConsulta';
-import FormularioCategoriaConvenio from '../pages/FormularioCategoriaConvenio';
-import FormularioEspecialidad from '../pages/FormularioEspecialidad';
-import FormularioEspecialistaEspecialidad from '../pages/FormularioEspecialistaEspecialidad';
-import FormularioEspecialidadServicio from '../pages/FormularioEspecialidadServicio';
-import FormularioCategoriaProducto from '../pages/FormularioCategoriaProducto';
-import FormularioProductoCategoria from '../pages/FormularioProductoCategoria';
-import FormularioEspecialistaConvenio from '../pages/FormularioEspecialistaConvenio';
-import FormularioSeccion from '../pages/FormularioSeccion';
-import FormularioMarkay from '../pages/FormularioMarkay';
-import FormularioRedSocial from '../pages/FormularioRedSocial';
 import ProductoExpanded from '../components/CatalogoItemExpanded';
-import TestPostConvenios from '../pages/testpostconvenios';
+import PrivateRoute from '../auth/ProtectedRoute';
 import '../styles/Globals.css';
 import MenuAdmin from '../pages/MenuAdmin';
+import AuthContext from '../context/AuthContext';
+import useAuthProvider from '../hooks/useAuthProvider';
 
 const routes = (
     <Routes>
@@ -36,26 +23,11 @@ const routes = (
         <Route exact path="/catalogo" element={<Catalogo/>} />
         <Route exact path="/servicios" element={<Servicio/>} />
         <Route exact path="/expanded" element={<ProductoExpanded/>} />
-        <Route exact path="/test" element={<TestPostConvenios/>} />
         <Route exact path="/login" element={<Login/>} />
         <Route exact path="/formulario" element={<Formulario/>} />
-        <Route exact path="/MenuAdministrador/formularioConvenio" element={<FormularioConvenio/>} />
-        <Route exact path="/MenuAdministrador/formularioProducto" element={<FormularioProducto/>} />
-        <Route exact path="/MenuAdministrador/formularioServicios" element={<FormularioServicios/>} />
-        <Route exact path="/MenuAdministrador/formularioEspecialista" element={<FormularioEspecialista/>} />
-        <Route exact path="/MenuAdministrador/formularioConsulta/:id" element={<FormularioConsulta/>}/>
-        <Route exact path="/MenuAdministrador/formularioCategoriaConvenio" element={<FormularioCategoriaConvenio/>} />
-        <Route exact path="/MenuAdministrador/formularioEspecialidad" element={<FormularioEspecialidad/>} />
-        <Route exact path="/MenuAdministrador/formularioEspecialistaEspecialidad" element={<FormularioEspecialistaEspecialidad/>} />
-        <Route exact path="/MenuAdministrador/formularioEspecialidadServicio" element={<FormularioEspecialidadServicio/>} />
-        <Route exact path="/MenuAdministrador/formularioCategoriaProducto" element={<FormularioCategoriaProducto/>} />
-        <Route exact path="/MenuAdministrador/formularioProductoCategoria" element={<FormularioProductoCategoria/>} />
-        <Route exact path="/MenuAdministrador/formularioEspecialistaConvenio" element={<FormularioEspecialistaConvenio/>} />
-        <Route exact path="/MenuAdministrador/formularioSeccion" element={<FormularioSeccion/>} />
-        <Route exact path="/MenuAdministrador/formularioMarkay" element={<FormularioMarkay/>} />
-        <Route exact path="/MenuAdministrador/formularioRedSocial" element={<FormularioRedSocial/>} />
-
         <Route exact path='/MenuAdministrador' element={<MenuAdmin />} />
+        {/* <Route exact path='/test/' element={<PrivateRoute><MenuAdmin /></PrivateRoute>} /> */}
+        <Route path="/test/" element={<PrivateRoute><MenuAdmin/></PrivateRoute>} />
 
         <Route path="*" element={<h1>404 Not Found</h1>} />
     </Routes>
@@ -64,7 +36,7 @@ const routes = (
 const Navigation = () => {
     const location = useLocation();
 
-    if (location.pathname.startsWith('/MenuAdministrador')) {
+    if (location.pathname.startsWith('/MenuAdministrador') || location.pathname.startsWith('/test')) {
         return (
             <LayoutMenu>
                 {routes}
@@ -81,10 +53,13 @@ const Navigation = () => {
 }
 
 function App() {
+    const auth = useAuthProvider();
     return (
-        <BrowserRouter>
-            <Navigation />
-        </BrowserRouter>
+    <AuthContext.Provider value={auth}>
+            <BrowserRouter>
+                <Navigation />
+            </BrowserRouter>
+    </AuthContext.Provider>
     );
 }
 

@@ -60,6 +60,6 @@ const FormularioServicios = ({object}) => {
 };
 
 FormularioServicios.propTypes = {
-  object: PropTypes.object.isrequired
+  object: PropTypes.object
 }
 export default FormularioServicios;

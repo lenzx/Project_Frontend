@@ -72,6 +72,6 @@ const FormularioRedSocial = ({object}) => {
 };
 
 FormularioRedSocial.propTypes = {
-  object : PropTypes.object.isRequired
+  object : PropTypes.object
 };
 export default FormularioRedSocial;

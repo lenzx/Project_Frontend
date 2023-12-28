@@ -1,17 +1,17 @@
-import ConvenioList from "../containers/ConvenioList";
-import FooterWave from "../components/FooterWave";
-import "../styles/Convenios.css";
-const Convenios = () => { 
+import ConvenioList from '../containers/ConvenioList';
+import FooterWave from '../containers/FooterWave';
+import '../styles/Convenios.css';
+import SeccionList from '../containers/SeccionList.jsx';
+
+const Convenios = () => {
     return (
         <>
-        <div className="convenio-container container">
-            <h2 className="convenio-titulo text-center">Nuestros Convenios</h2>
-            <ConvenioList/>
-        </div>
-        <FooterWave/>
-
+            <div className="convenio-container container">
+                <SeccionList idSeccion={3} />
+                <ConvenioList />
+            </div>
+            <FooterWave />
         </>
-        
     );
 }
 

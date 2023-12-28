@@ -3,7 +3,7 @@ import EspecialidadItem from '../components/PanelEspecialidadItem.jsx';
 import useGetEspecialidades from '../hooks/useGetEspecialidades.jsx';
 import "../styles/PanelEspecialidadList.css";
 import iconAgregar from '../assets/icon/boton-agregar.png';
-import { Button } from 'react-bootstrap';
+
 const PanelEspecialidadList = ({setSelectedForm,setSelectedObject}) => {
     
     const especialidades = useGetEspecialidades();
@@ -17,9 +17,9 @@ const PanelEspecialidadList = ({setSelectedForm,setSelectedObject}) => {
     return (
         <div className="panel-convenio-list-container">
             <div className="borde-boton-especialidad">
-                <Button onClick= {handleClick}>
+                <button onClick= {handleClick} className="btn-add">
                 <img src={iconAgregar} className='imagen-boton-agregar-container'/>
-                </Button>
+                </button>
             </div>
             {especialidades.map(especialidad => (
                 <EspecialidadItem 

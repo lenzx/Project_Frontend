@@ -3,7 +3,7 @@ import ProductoItem from '../components/PanelProductosItem.jsx';
 import useGetProducto from '../hooks/useGetCatalogo.jsx';
 import iconAgregar from '../assets/icon/boton-agregar.png';
 import "../styles/PanelProductoList.css";
-import { Button } from 'react-bootstrap';
+import "../styles/BtnAdd.css";
 const PanelProductoList = ({setSelectedForm, setSelectedObject}) => {
     const productos = useGetProducto();
 
@@ -16,9 +16,9 @@ const PanelProductoList = ({setSelectedForm, setSelectedObject}) => {
     return (
         <div className="panel-producto-list-container">
             <div className="borde-boton-producto">
-                <Button onClick={handleClick}>
+                <button onClick={handleClick} className="btn-add">
                     <img src={iconAgregar} className='imagen-boton-agregar-container'/>
-                </Button>
+                </button>
             </div>
             {productos.map(producto => (
                 <ProductoItem 

@@ -2,9 +2,10 @@
 import EspecialistaItem from '../components/PanelEspecialistaItem.jsx';
 import useGetEspecialista from '../hooks/useGetEspecialista.jsx';
 import "../styles/PanelEspecialistaList.css";
+import "../styles/BtnAdd.css";
+
 import iconAgregar from '../assets/icon/boton-agregar.png';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
 
 const PanelEspecialistaList = ({setSelectedForm, setSelectedObject}) => {
 // ...
@@ -19,9 +20,9 @@ const PanelEspecialistaList = ({setSelectedForm, setSelectedObject}) => {
     return (
         <div className="panel-especialista-list-container">
             <div className="borde-boton-especialista">
-                <Button onClick={handleClick}>
+                <button onClick={handleClick}  className="btn-add">
                     <img src={iconAgregar} className='imagen-boton-agregarEspecialista-container'/>
-                </Button>
+                </button>
                 
             </div>
             {especialistas.map(especialista => (

@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import useGetServicio from "../hooks/useGetServicio"
 import ServicioItem from "../components/PanelServicioItem.jsx";
-import { Button } from 'react-bootstrap';
 import iconAgregar from '../assets/icon/boton-agregar.png';
 import "../styles/PanelServicioList.css";
 const PanelServicioList = ({setSelectedForm, setSelectedObject}) => {
@@ -14,9 +13,9 @@ const handleClick = () => {
     return (
         <div className="panel-servicio-list-container">
             <div className="borde-boton-servicio">
-                <Button onClick={handleClick}>
+                <button onClick={handleClick} className="btn-add">
                     <img src={iconAgregar} className='imagen-boton-agregar-container'/>
-                </Button>
+                </button>
             </div>
             {servicios.map(servicio => (
                 <ServicioItem 

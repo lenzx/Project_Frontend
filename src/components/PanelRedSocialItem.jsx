@@ -21,22 +21,38 @@ const PanelRedSocialItem = ({ redSocial, setSelectedForm, setSelectedObject }) =
             console.error('Error al eliminar RedSocial:', error.message);
         }
     };
+    if (redSocial.id == 4){
+        return (
+            <Card style={{ width: '32rem' }}>
+                <Card.Img variant="top" src={imagen} style={{ height: '20rem' }} />
+                <Card.Body>
+                    <Card.Title>{redSocial.texto}</Card.Title> 
+                    <Card.Text>
+                        <Button onClick={handleClick} className='panel-redSocial-item-btn' variant="primary">Modificar</Button>
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        );
 
-    return (
+    } else{
+        return (
         
-        <Card style={{ width: '32rem' }}>
-            <Card.Img variant="top" src={imagen} style={{ height: '20rem' }} />
-            <button className='boton-eliminar-redSocial' onClick={handleDelete} >
-                <img className='img-eliminar-redSocial' src={iconAgregar} alt="Eliminar" />
-            </button>
-            <Card.Body>
-                <Card.Title>{redSocial.texto}</Card.Title> 
-                <Card.Text>
-                    <Button onClick={handleClick} className='panel-redSocial-item-btn' variant="primary">Modificar</Button>
-                </Card.Text>
-            </Card.Body>
-        </Card>
-    );
+            <Card style={{ width: '32rem' }}>
+                <Card.Img variant="top" src={imagen} style={{ height: '20rem' }} />
+                <button className='boton-eliminar-redSocial' onClick={handleDelete} >
+                    <img className='img-eliminar-redSocial' src={iconAgregar} alt="Eliminar" />
+                </button>
+                <Card.Body>
+                    <Card.Title>{redSocial.texto}</Card.Title> 
+                    <Card.Text>
+                        <Button onClick={handleClick} className='panel-redSocial-item-btn' variant="primary">Modificar</Button>
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        );
+    }
+
+    
 };
 
 PanelRedSocialItem.propTypes = {

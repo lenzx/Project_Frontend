@@ -1,12 +1,13 @@
-import FooterWave from "../components/FooterWave.jsx";
+import FooterWave from '../containers/FooterWave';
 import ServiciosCaroussel from "../containers/ServiciosCaroussel.jsx";
+import SeccionList from "../containers/SeccionList.jsx";
 
 
 const Servicios = () => { 
     return (
         <>
         <div className="container">
-            <h2 className="servicio-titulo text-center">Servicios</h2>
+            <SeccionList idSeccion={1} />
             <ServiciosCaroussel/>
             
         </div>

@@ -8,6 +8,9 @@ import RedSocial from "../containers/PanelRedSocialList";
 import Consultas from "../containers/PanelConsultaList.jsx";
 import Servicios from "../containers/PanelServicioList.jsx";
 import CategoriaCatalogo from '../containers/PanelCategoriaCatalogoList.jsx';
+import Seccion from '../containers/PanelSeccionList.jsx';
+import Markay from '../containers/PanelMarkayList.jsx';
+import CategoriaConvenio from '../containers/PanelCategoriaConvenioList.jsx';
 import FormularioEspecialista from '../pages/FormularioEspecialista.jsx';
 import FormularioConvenio from '../pages/FormularioConvenio.jsx';
 import FormularioServicio from '../pages/FormularioServicios.jsx';
@@ -15,6 +18,9 @@ import FormularioProducto from '../pages/FormularioProducto.jsx';
 import FormularioRedSocial from '../pages/FormularioRedSocial.jsx';
 import FormularioEspecialidad from '../pages/FormularioEspecialidad.jsx';
 import FormularioCategoriaCatalogo from '../pages/FormularioCategoriaProducto.jsx';
+import FormularioSeccion from '../pages/FormularioSeccion.jsx';
+import FormularioCategoriaConvenio from '../pages/FormularioCategoriaConvenio.jsx';
+import FormularioMarkay from './FormularioMarkay.jsx';
 
 import '../styles/MenuAdmin.css';
 
@@ -24,14 +30,17 @@ const MenuAdmin = () => {
     const [object, setObject] = useState(null);
 
     const formMap = {
-        'Convenios': <FormularioConvenio object={object} />,
-        'Citas': <FormularioEspecialista object={object} />,
+        'Convenios': <FormularioConvenio object={object}  />,  // <FormularioConvenio object={object} setSelectComponen("Convenios"), setSelectForm (null)/>
+        'Citas': <FormularioEspecialista object={object} />, // <FormularioEspecialista object={object} setSelectComponen("Citas"), setSelectForm (null), setSelectObject(n)/>  
         'Servicios': <FormularioServicio object={object} />,
         'Productos': <FormularioProducto object={object} />,
         'Especialistas': <FormularioEspecialista object={object} />,
         'Especialidades': <FormularioEspecialidad object={object} />,
         'Redes Sociales': <FormularioRedSocial object={object} />,
         'CategoriasCatalogo': <FormularioCategoriaCatalogo object={object} />,
+        'Seccion': <FormularioSeccion object={object} />,
+        'CategoriasConvenio': <FormularioCategoriaConvenio object={object} />,
+        'PaginaPrincipal': <FormularioMarkay object={object}/>,
     };
 
     const renderComponent = () => {
@@ -41,6 +50,9 @@ const MenuAdmin = () => {
         switch(selectedComponent) {
             case 'Convenios':
                 return <Convenios setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
+            case'ReturnConvenios':    
+                return <Convenios setSelectedForm={null} setSelectedObject = {null}/>;
+
             case 'Citas':
                 return <Consultas setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             case 'Servicios':
@@ -55,6 +67,12 @@ const MenuAdmin = () => {
                 return <RedSocial setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             case 'CategoriasCatalogo':
                 return <CategoriaCatalogo setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
+            case 'Seccion':
+                return <Seccion setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
+            case 'CategoriasConvenio':
+                return <CategoriaConvenio setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
+            case 'PaginaPrincipal':
+                return <Markay setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
             default:
                 return <Consultas setSelectedForm={setSelectedForm} setSelectedObject = {setObject}/>;
         }

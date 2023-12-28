@@ -1,9 +1,7 @@
 import '../styles/Home.css';
-import FooterWave from '../components/FooterWave';
+import FooterWave from '../containers/FooterWave';
 import HomeMain from '../components/HomeMain';
-import ServiciosCaroussel from '../containers/ServiciosCaroussel';
-import camara from "../assets/Productos/camara hiperbarica.png"
-import DescripcionItem from '../components/DescripcionItem';
+import PaginaPrincipalList from '../containers/PaginaPrincipalList'
 
 const Home = () => {
     return (<>
@@ -11,15 +9,8 @@ const Home = () => {
             <div className="container">
 
                 <HomeMain/>
-                <DescripcionItem
-                contenido={"Somos especialistas en rehabilitación"}
-                
-                />
+                <PaginaPrincipalList/>
 
-                <ServiciosCaroussel
-                tipo='Servicios'
-                imagen={camara}/>
-                
             </div>
             <FooterWave/>
 

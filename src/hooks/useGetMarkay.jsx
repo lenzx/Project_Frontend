@@ -12,6 +12,8 @@ const useGetMarkay = () => {
         }
         getSeccion();
     }, []);
+
     return markay;
+    
 }
 export default useGetMarkay;

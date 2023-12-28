@@ -104,7 +104,7 @@ const FormularioProducto = ({object}) => {
 };
 
 FormularioProducto.propTypes = {
-  object: PropTypes.object.isRequired
+  object: PropTypes.object
 };
 
 export default FormularioProducto;

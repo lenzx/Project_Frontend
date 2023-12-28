@@ -1,12 +1,13 @@
 import EspecialistasList from "../containers/EspecialistasList";
 import '../styles/Especialistas.css'
-import FooterWave from "../components/FooterWave";
+import FooterWave from '../containers/FooterWave';
+import SeccionList from "../containers/SeccionList.jsx"
 
 const Especialistas = () => { 
     return (
         <>
         <div className="container">
-            <h2 className="especialista-titulo text-center">Nuestros Especialistas</h2>
+            <SeccionList idSeccion={2} />
             <EspecialistasList />
         </div>
         <FooterWave/>

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import useGetCategoriaProductos from "../hooks/useGetCategoriaProductos"
 import CategoriaCatalogo from "../components/PanelCategoriaCatalogoItem.jsx";
 import "../styles/PanelCategoriaCatalogoList.css";
-import { Button } from 'react-bootstrap';
+import "../styles/BtnAdd.css";
 import iconAgregar from '../assets/icon/boton-agregar.png';
 const PanelCategoriaCatalogoList = ({setSelectedForm, setSelectedObject}) => {
     const categoriasCatalogos = useGetCategoriaProductos();
@@ -16,9 +16,9 @@ const PanelCategoriaCatalogoList = ({setSelectedForm, setSelectedObject}) => {
     return (    
         <div className="panel-categoria-catalogo-list-container">
             <div className="borde-boton-categoriaCatalogo">
-                <Button onClick={handleClick}>
+                <button onClick={handleClick} className="btn-add">
                 <img src={iconAgregar} className='imagen-boton-agregar-container'/>
-                </Button>
+                </button>
             </div>
             {categoriasCatalogos.map(categoria => (
                 <CategoriaCatalogo 

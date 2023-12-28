@@ -27,7 +27,7 @@ const Especialistas = ({especialista}) => {
                   </p>
                   <div className="btn-especialista">
                     <div className="btn-producto">
-                    <Link to={`/formularioConsulta/${especialista.id}`}>
+                    <Link to={`/MenuAdministrador/formularioConsulta/${especialista.id}`}>
                       <button type="button" className="btn-primary btn-lg">
                         Ver más
                       </button>
