@@ -26,10 +26,12 @@ function Login() {
         
         console.log("asdasd"+data);
 
-        login(data.access_token); // Utiliza la función login del hook useAuthProvider
-
-        // Redirigir a /test
-        navigate('/test');
+        try {
+            await login(data.access_token); 
+            navigate('/test');
+        } catch (error) {
+            console.error('Error al iniciarasdadasdasdasd sesión:', error);
+        }
     };
 
     return (

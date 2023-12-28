@@ -26,8 +26,9 @@ const routes = (
         <Route exact path="/login" element={<Login/>} />
         <Route exact path="/formulario" element={<Formulario/>} />
         <Route exact path='/MenuAdministrador' element={<MenuAdmin />} />
-        {/* <Route exact path='/test/' element={<PrivateRoute><MenuAdmin /></PrivateRoute>} /> */}
-        <Route path="/test/" element={<PrivateRoute><MenuAdmin/></PrivateRoute>} />
+        <Route exact path='/test/' element={<PrivateRoute><MenuAdmin /></PrivateRoute>} /> 
+        {/* <Route path="/test/" element={<PrivateRoute><MenuAdmin/></PrivateRoute>} /> */}
+        {/* <PrivateRoute path={"/test/"} element={<MenuAdmin/>} /> */}
 
         <Route path="*" element={<h1>404 Not Found</h1>} />
     </Routes>
