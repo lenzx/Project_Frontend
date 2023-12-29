@@ -42,9 +42,11 @@ const Navigation = () => {
 		
     } else {
         return (
-            <NavBar>
-                {routes}
-            </NavBar>
+            
+                <NavBar>
+                    {routes}
+                </NavBar>
+            
         );
     }
 }
@@ -53,7 +55,7 @@ function App() {
     const auth = useAuthProvider();
     return (
     <AuthContext.Provider value={auth}>
-            <BrowserRouter>
+            <BrowserRouter >
                 <Navigation />
             </BrowserRouter>
     </AuthContext.Provider>

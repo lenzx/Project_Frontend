@@ -21,7 +21,7 @@ const usePostConsulta = () => {
 
       const response = await axios.post(`${CONSULTA}`, data);
       console.log('Datos enviados con éxito:', response.data);
-      alert('Datos enviados con éxito');
+      alert('Consulta enviada con éxito');
 
     } catch (error) {
       console.error('Error al enviar datos:', error.response ? error.response.data : error.message);

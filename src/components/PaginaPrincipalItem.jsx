@@ -18,7 +18,7 @@ const PaginaPrincipalItem = ({ seccion }) => {
         return (
             <div className="row rowspan-2 card-servicio">
                 <div className="col-6">
-                    <img src={imagen} alt="" />
+                    <img src={imagen} alt="" className='main-image'/>
                 </div>
                 <div className="col-6">
                     <p className="card-text">{seccion.descripcion}</p>

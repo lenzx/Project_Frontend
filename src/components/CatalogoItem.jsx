@@ -26,6 +26,7 @@ const Producto = ({ item }) => {
                     <div className="col-md-8">
                         <div className={`card-body catalogo-title ${mostrarItemExpanded ? 'expanded' : ''}`}>
                             <h5 className="card-title">{item.nombre}</h5>
+                            {item.necesita_receta == true && <p className="card-text">Necesita receta</p>}
                             {mostrarItemExpanded && <CatalogoItemExpanded item={item} />}
                             <div className="btn-producto">
                                 <button

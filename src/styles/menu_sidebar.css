@@ -55,7 +55,8 @@
     margin: 2rem 0rem 0rem 2rem;
 }
 
-.sidebar-menu-list {
-    position: sticky;
-    top: 2rem;
+.sidebar-menu-header > img {
+    width: 5rem;
+    height: 80vh
+    
 }

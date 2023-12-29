@@ -21,13 +21,15 @@ import FormularioCategoriaCatalogo from '../pages/FormularioCategoriaProducto.js
 import FormularioSeccion from '../pages/FormularioSeccion.jsx';
 import FormularioCategoriaConvenio from '../pages/FormularioCategoriaConvenio.jsx';
 import FormularioMarkay from './FormularioMarkay.jsx';
-
+// import Scroll from '../animation/scroll.js';
 import '../styles/MenuAdmin.css';
 
 const MenuAdmin = () => {
     const [selectedComponent, setSelectedComponent] = useState('Citas');
     const [selectedForm, setSelectedForm] = useState('');
     const [object, setObject] = useState(null);
+
+    // const scroll = Scroll();
 
     const formMap = {
         'Convenios': <FormularioConvenio object={object} setSelectedForm = {setSelectedForm} />,  // <FormularioConvenio object={object} setSelectComponen("Convenios"), setSelectForm (null)/>

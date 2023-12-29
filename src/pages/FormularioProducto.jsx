@@ -20,7 +20,7 @@ const FormularioProducto = ({object, setSelectedForm}) => {
   const [nombre, setNombre] = useState(producto ? producto.nombre:"");
   const [descripcion, setDescripcion] = useState(producto ? producto.descripcion : "");
   const [valor, setValor] = useState(producto ? producto.valor : "");
-  const [necesitaReceta, setNecesitaReceta] = useState(producto ? producto.necesitaReceta:1);
+  const [necesitaReceta, setNecesitaReceta] = useState(producto ? producto.necesita_receta:1);
   const [imagen, setImagen] = useState(producto ? producto.imagen:null);
   
 

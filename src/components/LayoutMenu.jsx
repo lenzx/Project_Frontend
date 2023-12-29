@@ -10,6 +10,11 @@ const LayoutMenu = ({children}) => {
     const { logout } = useContext(AuthContext);
     const navigate = useNavigate();
 
+    const handleClick = (event) =>{
+        event.preventDefault();
+        navigate('/');
+    }
+
     const handleLogout = (event) => {
         event.preventDefault();
         logout();
@@ -17,7 +22,7 @@ const LayoutMenu = ({children}) => {
     };
 
     return (
-        <div>
+        <div className='main-container'>
             <div className='menu-administracion-layout'>
                 <div className='menu-administracion-layout-left'>
                     <figure className='menu-administracion-layout-icon'>
@@ -31,9 +36,15 @@ const LayoutMenu = ({children}) => {
                 </div>
                 <div className='menu-administracion-layout-right'>
                     
+                        <Button onClick={handleClick} variant="warning" className='cerrar-sesion'>Ir a la página</Button>
+                    
+                </div>
+                <div className='menu-administracion-layout-right'>
+                    
                         <Button onClick={handleLogout} variant="danger" className='cerrar-sesion'>Cerrar sesión</Button>
                     
                 </div>
+                
             </div>
             {children}
         </div>

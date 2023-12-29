@@ -9,12 +9,12 @@ const Header = () => {
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                <div className="container-fluid">
-                    <figure>
+                <div className=" header-header">
+                    <figure >
                         <img src={logo} alt="Markay" className="logo" />
                     </figure>
                     <h1 className="links-header">{eslogan.descripcion}</h1>
-                    <Link to="/login" className="footer-content links-header">Iniciar sesión</Link>
+                    <Link to="/MenuAdministrador" className="footer-content links-header-a">Iniciar sesión</Link>
                 </div>
             </nav>
 

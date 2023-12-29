@@ -39,7 +39,14 @@ figure  {
 
 
 .links-header{
-    color: var(--naranjo-main);;
+    color: var(--naranjo-main);
+    text-align: center;
+    
+}
+
+.links-header-a{
+    color: var(--naranjo-main);
+    text-align: end;
 }
 
 .navbar-collapse{
@@ -53,4 +60,16 @@ figure  {
     align-items: center;
 }
 
+.header-header {
+    display: grid;
+    grid-template-columns: 0.3fr auto 0.3fr;
+    width: 100%;
+}
 
+.header-header .child-1 {
+    justify-self: start;
+}
+
+.header-header .child-3 {
+    justify-self: end;
+}

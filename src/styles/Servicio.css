@@ -11,6 +11,12 @@
     margin-top: 5rem;
 
 }
+.main-image{
+    max-height: 30rem;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
 
 
 .card-servicio:nth-child(2n){

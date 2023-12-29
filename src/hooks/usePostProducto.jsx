@@ -10,7 +10,7 @@ const usePostProducto = () => {
             data.append("nombre", nombre);
             data.append("descripcion", descripcion);
             data.append("valor", valor);
-            data.append("necesitaReceta", necesitaReceta);
+            data.append("necesita_receta", necesitaReceta);
             data.append("imagen", imagen);
             categoria.forEach(id => data.append("categoria", id));
 

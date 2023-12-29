@@ -28,12 +28,12 @@ const PanelConsultaItem= ({ consulta }) => {
             </button>
             <Card.Body>
                 <Card.Title>Consulta N°{consulta.id}</Card.Title>
-                <Card.Text>Especialista : {consulta.especialista_id}</Card.Text>
+                <Card.Text>Especialista : {consulta.especialista_id.nombre}</Card.Text>
                 <Card.Text>Paciente : {consulta.nombre} </Card.Text>
                 <Card.Text>Correo electrónico : {consulta.correo_electronico} </Card.Text>
                 <Card.Text>Teléfono : {consulta.num_telefono} </Card.Text>
                 <Card.Text>Motivo : {consulta.motivo_consulta} </Card.Text>
-                <Card.Text>Eviado el : {fecha} a las {hora} </Card.Text>
+                <Card.Text>Enviado el : {fecha} a las {hora} </Card.Text>
                 
             </Card.Body>
         </Card>
