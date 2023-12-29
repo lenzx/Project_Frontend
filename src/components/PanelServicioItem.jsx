@@ -19,7 +19,6 @@ const PanelServicioItem = ({ servicio , setSelectedForm, setSelectedObject}) => 
     const handleDelete = async () => {
         try {
             await eliminarServicio(servicio.id);
-            console.log('servicio eliminado con éxito');
         } catch (error) {
             console.error('Error al eliminar servicio:', error.message);
         }

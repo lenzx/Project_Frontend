@@ -20,7 +20,7 @@ const PanelMarkayItem = ({ markay, setSelectedForm, setSelectedObject }) => {
     const handleDelete = async () => {
         try {
             await eliminarMarkay(markay.id);
-            console.log('Producto eliminado con éxito');
+            
         } catch (error) {
             console.error('Error al eliminar producto:', error.message);
         }

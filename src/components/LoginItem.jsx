@@ -25,7 +25,7 @@ function Login() {
     
         const data = await response.json();
         
-        console.log(data);
+       
 
         try {
             await login(data.access_token); 

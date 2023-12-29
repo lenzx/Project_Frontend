@@ -19,7 +19,7 @@ const PanelEspecialistaItem = ({ especialista, setSelectedForm, setSelectedObjec
     const handleDelete = async () => {
         try {
             await eliminarEspecialista(especialista.id);
-            console.log('Especialista eliminado con éxito');
+            
         } catch (error) {
             console.error('Error al eliminar Especialista:', error.message);
         }

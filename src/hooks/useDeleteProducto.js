@@ -23,7 +23,7 @@ const useDeleteProducto = () => {
             if (!response.status.toString().startsWith('2')) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }
-            console.log('Datos eliminados con éxito:', response.data);
+    
             window.location.reload(true)
             
         } catch (error) {

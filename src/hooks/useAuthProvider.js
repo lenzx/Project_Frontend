@@ -30,7 +30,7 @@ const useAuthProvider = () => {
         } catch (error) {
             console.error('Error:', error);
             setIsAuthenticated(false);
-            console.log(error.response.data);
+            
         } finally {
             setLoading(false); 
         }

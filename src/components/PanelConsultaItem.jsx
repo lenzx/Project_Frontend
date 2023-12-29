@@ -14,7 +14,7 @@ const PanelConsultaItem= ({ consulta }) => {
     const handleDelete = async () => {
         try {
             await eliminarConsulta(consulta.id);
-            console.log('Consulta eliminado con éxito');
+            
             
         } catch (error) {
             console.error('Error al eliminar producto:', error.message);

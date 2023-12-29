@@ -6,7 +6,7 @@ import "../styles/PanelProductoList.css";
 import "../styles/BtnAdd.css";
 const PanelMarkayList = ({setSelectedForm, setSelectedObject}) => {
     const markay = useGetMarkay({});
-    console.log("IN")
+
 
 
     const handleClick = () => {

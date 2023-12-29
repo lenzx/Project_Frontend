@@ -16,7 +16,7 @@ const PanelRedSocialItem = ({ redSocial, setSelectedForm, setSelectedObject }) =
     const handleDelete = async () => {
         try {
             await eliminarRedSocial(redSocial.id);
-            console.log('RedSocial eliminado con éxito');
+
         } catch (error) {
             console.error('Error al eliminar RedSocial:', error.message);
         }

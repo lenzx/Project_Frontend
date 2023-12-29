@@ -14,7 +14,7 @@ const PanelCategoriaCatalogoItem = ({ categoria, setSelectedForm, setSelectedObj
     const handleDelete = async () => {
         try {
             await eliminarCategoriaProductos(categoria.id);
-            console.log('Producto eliminado con éxito');
+            
         } catch (error) {
             console.error('Error al eliminar producto:', error.message);
         }
