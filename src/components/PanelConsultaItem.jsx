@@ -28,7 +28,7 @@ const PanelConsultaItem= ({ consulta }) => {
             </button>
             <Card.Body>
                 <Card.Title>Consulta N°{consulta.id}</Card.Title>
-                <Card.Text>Especialista : {consulta.especialista_id.nombre}</Card.Text>
+                <Card.Text>Especialista : {consulta.especialista_id ? consulta.especialista_id.nombre : 'Markay'}</Card.Text>
                 <Card.Text>Paciente : {consulta.nombre} </Card.Text>
                 <Card.Text>Correo electrónico : {consulta.correo_electronico} </Card.Text>
                 <Card.Text>Teléfono : {consulta.num_telefono} </Card.Text>

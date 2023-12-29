@@ -4,10 +4,6 @@ import axios from 'axios';
 import { CONSULTA  } from '../markay/api/endpoint';
 
 const usePostConsulta = () => {
-  const [nombre, setNombre] = useState("");
-  const [correo_electronico, setCorreo_electronico] = useState("");
-  const [num_telefono, setNum_telefono]= useState("");
-  const [motivo_consulta, setMotivo_consulta] = useState("");
 
   const postData = async (nombre, correo_electronico, num_telefono, motivo_consulta, especialistaId) => {
     try {
