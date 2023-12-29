@@ -8,8 +8,7 @@ import "../styles/BtnAdd.css";
 import iconAgregar from '../assets/icon/boton-agregar.png';
 const PanelConvenioList = ({setSelectedForm, setSelectedObject}) => {
     const convenios = useGetConvenios({});
-    // const conveniosIniciales = useGetConvenios({});
-    // const [convenios, setConvenios] = useState(conveniosIniciales);
+    
 
     
 
