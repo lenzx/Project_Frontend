@@ -7,8 +7,7 @@
     width: 26rem;
     background-color: rgba(236, 236, 236, 0.89);
     border-radius: 0.8rem;
-    height: calc(100vh - 7.8rem);
-    position: sticky;
+    height: calc(100vh - 7.8rem); /* Reemplaza X con la altura del otro elemento */
     top: 0rem;
     overflow: auto;
 }
@@ -20,6 +19,6 @@
     flex: 1;
     align-items: top;
     padding: 2rem;
+    height: calc(100vh - 7.8rem);
     overflow: auto;
-    
 }
