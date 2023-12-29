@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import ConvenioItem from '../components/PanelConvenioItem.jsx';
 import useGetConvenios from '../hooks/useGetConvenios.jsx';
+
 import "../styles/PanelConvenioList.css";
 import "../styles/BtnAdd.css";
 
 import iconAgregar from '../assets/icon/boton-agregar.png';
 const PanelConvenioList = ({setSelectedForm, setSelectedObject}) => {
+    const convenios = useGetConvenios({});
+    // const conveniosIniciales = useGetConvenios({});
+    // const [convenios, setConvenios] = useState(conveniosIniciales);
 
-    const convenios = useGetConvenios();
     
 
     const handleClick = () => {
@@ -44,3 +47,63 @@ PanelConvenioList.propTypes = {
 
 
 export default PanelConvenioList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

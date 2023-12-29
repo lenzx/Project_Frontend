@@ -7,7 +7,7 @@ import Especialistas from '../pages/Especialistas';
 import Catalogo from '../pages/Catalogo';
 import Servicio from '../pages/Servicio';
 import Login from '../pages/Login';
-import Formulario from '../pages/Formulario';
+import Formulario from '../pages/FormularioConsulta';
 import ProductoExpanded from '../components/CatalogoItemExpanded';
 import PrivateRoute from '../auth/ProtectedRoute';
 import '../styles/Globals.css';
@@ -24,12 +24,8 @@ const routes = (
         <Route exact path="/servicios" element={<Servicio/>} />
         <Route exact path="/expanded" element={<ProductoExpanded/>} />
         <Route exact path="/login" element={<Login/>} />
-        <Route exact path="/formulario" element={<Formulario/>} />
-        <Route exact path='/MenuAdministrador' element={<MenuAdmin />} />
-        <Route exact path='/test/' element={<PrivateRoute><MenuAdmin /></PrivateRoute>} /> 
-        {/* <Route path="/test/" element={<PrivateRoute><MenuAdmin/></PrivateRoute>} /> */}
-        {/* <PrivateRoute path={"/test/"} element={<MenuAdmin/>} /> */}
-
+        <Route exact path="/formularioConsulta/:id" element={<Formulario/>} />
+        <Route exact path='/MenuAdministrador' element={<PrivateRoute><MenuAdmin /></PrivateRoute>} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
     </Routes>
 );

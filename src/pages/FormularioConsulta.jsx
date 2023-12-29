@@ -14,15 +14,18 @@ const FormularioConsulta = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Especialista ID:', especialistaId);
+    
     postData(nombre, correo_electronico, num_telefono, motivo_consulta, especialistaId);
+    
   };
 
   return (
     <div className="container">
-      <h1 className="title">Formulario de Consulta</h1>
+      <h1 className="title">Formulario de consulta</h1>
+      <h2 className="title">Todos los datos entregados son confidenciales y serán revisados solo por los especialistas</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formNombre">
-          <Form.Label>Ingrese su nombre ocmpleto: </Form.Label>
+          <Form.Label>Ingrese su nombre completo: </Form.Label>
           <Form.Control type="text" placeholder="Nombre" name="subject" value={nombre} onChange={e => setNombre(e.target.value)} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCorreoElectronico">

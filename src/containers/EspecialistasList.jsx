@@ -1,7 +1,7 @@
 import Especialistas from "../components/EspecialistasItem.jsx"
 import useGetEspecialista from "../hooks/useGetEspecialista.jsx"
 const EspecialistasList = () => {  
-    const especialistas = useGetEspecialista();
+    const especialistas = useGetEspecialista({});
 
     return (
         <>

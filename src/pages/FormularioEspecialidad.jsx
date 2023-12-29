@@ -7,7 +7,7 @@ import usePutEspecialidad from "../hooks/usePutEspecialidad";
 import axios from 'axios';
 import {SERVICIO} from '../markay/api/endpoint.js';
 
-const FormularioEspecialidad = ({object}) => {
+const FormularioEspecialidad = ({object, setSelectedForm}) => {
     
     
     
@@ -22,6 +22,11 @@ const FormularioEspecialidad = ({object}) => {
     const [nombre, setNombre] = useState(especialidad ? especialidad.nombre : "");
     const [descripcion, setDescripcion] = useState(especialidad ? especialidad.descripcion : "");
     const [imagen, setImagen] = useState(especialidad ? especialidad.imagen : null);
+
+
+    const handleChanges = () => {
+        setSelectedForm('');
+      }
 
     useEffect(() => {
         axios.get(`${SERVICIO}`)
@@ -46,6 +51,7 @@ const FormularioEspecialidad = ({object}) => {
                 await postData(nombre, descripcion, imagen,  selectedServicio);
             }
             alert('Datos enviados con éxito');
+            handleChanges()
 
         } catch (error) {
             const errorMessage = error.response ? error.response.data : error.message;

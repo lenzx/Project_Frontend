@@ -7,9 +7,8 @@ import Cookies from 'js-cookie';
 const usePostEspecialista = () => {
     
     
-    
-    
-    const postData = async (nombre,rut, num_telefono, descripcion,horarios,imagen) => {
+
+    const postData = async (nombre,rut, num_telefono, descripcion,horarios,imagen, convenios, especialidad) => {
         try {
         const data = new FormData();
         
@@ -20,6 +19,8 @@ const usePostEspecialista = () => {
         data.append("horarios", horarios);
         
         data.append("imagen", imagen);
+        convenios.forEach(id => data.append("convenio", id));
+        especialidad.forEach(id => data.append("especialidad", id));
 
         // Obtén el token de las cookies
       const token = Cookies.get('jwt');

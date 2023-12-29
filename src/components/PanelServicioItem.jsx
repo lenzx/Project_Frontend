@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import '../styles/PanelServicioItem.css';
 import useDeleteServicio from '../hooks/useDeleteServicio';
-import iconAgregar from '../assets/icon/boton-agregar.png';
+import iconEliminar from '../assets/icon/eliminar.png';
 
 
 const PanelServicioItem = ({ servicio , setSelectedForm, setSelectedObject}) => {
@@ -30,7 +30,7 @@ const PanelServicioItem = ({ servicio , setSelectedForm, setSelectedObject}) => 
         <Card style={{ width: '32rem' }}>
             <Card.Img variant="top" src={imagen} style={{ height: '20rem' }} />
             <button className='boton-eliminar-servicio' onClick={handleDelete} >
-                <img className='img-eliminar-servicio' src={iconAgregar} alt="Eliminar" />
+                <img className='img-eliminar-servicio' src={iconEliminar} alt="Eliminar" />
             </button>
             <Card.Body >
                 <Card.Title>{servicio.nombre}</Card.Title>

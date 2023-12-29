@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import '../styles/PanelRedSocialItem.css';
 import useDeleteRedSocial from '../hooks/useDeleteRedSocial';
-import iconAgregar from '../assets/icon/boton-agregar.png';
+import iconEliminar from '../assets/icon/eliminar.png';
 const PanelRedSocialItem = ({ redSocial, setSelectedForm, setSelectedObject }) => {
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${redSocial.imagen}`
     
@@ -40,7 +40,7 @@ const PanelRedSocialItem = ({ redSocial, setSelectedForm, setSelectedObject }) =
             <Card style={{ width: '32rem' }}>
                 <Card.Img variant="top" src={imagen} style={{ height: '20rem' }} />
                 <button className='boton-eliminar-redSocial' onClick={handleDelete} >
-                    <img className='img-eliminar-redSocial' src={iconAgregar} alt="Eliminar" />
+                    <img className='img-eliminar-redSocial' src={iconEliminar} alt="Eliminar" />
                 </button>
                 <Card.Body>
                     <Card.Title>{redSocial.texto}</Card.Title> 

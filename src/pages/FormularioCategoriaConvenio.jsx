@@ -4,16 +4,23 @@ import usePostCategoriaConvenio from "../hooks/usePostCategoriaConvenio";
 import usePutCategoriaConvenio from '../hooks/usePutCategoriaConvenio';
 import PropTypes from 'prop-types'
 
-const FormularioCategoriaConvenio = ({object}) => {
+const FormularioCategoriaConvenio = ({object, setSelectedForm}) => {
 
   const categoriaConvenio = object ? object : null;
-  const title = categoriaConvenio ? "Modificar Categoria de Convenio" : "Añadir Categoria de Convenio";
+  const title = categoriaConvenio ? "Modifique la categoría de sus convenios" : "Añadir una categoría de convenios";
   const id= categoriaConvenio ?  categoriaConvenio.id : null;
 
 
   const [nombre, setNombre] = useState(categoriaConvenio ?  categoriaConvenio.nombre: "");
   const postData =  usePostCategoriaConvenio();
   const putData = usePutCategoriaConvenio();
+
+  const handleChanges = () => {
+    setSelectedForm('');
+  }
+
+
+
     const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -23,6 +30,7 @@ const FormularioCategoriaConvenio = ({object}) => {
           await postData( nombre);
         } 
         alert('Datos enviados con éxito');
+        handleChanges()
   
     } catch (error) {
         const errorMessage = error.response ? error.response.data : error.message;

@@ -4,7 +4,7 @@ import { Card, Button } from 'react-bootstrap';
 import "../styles/PanelEspecialidadItem.css";
 
 import useDeleteEspecialidad from '../hooks/useDeleteEspecialidad';
-import iconAgregar from '../assets/icon/boton-agregar.png';
+import iconEliminar from '../assets/icon/eliminar.png';
 
 
 const PanelEspecialidadItem = ({ especialidad, setSelectedForm, setSelectedObject }) => {  
@@ -33,7 +33,7 @@ const PanelEspecialidadItem = ({ especialidad, setSelectedForm, setSelectedObjec
         <Card style={{ width: '32rem' }}>
             <Card.Img variant="top" src={imagen} style={{height:'20rem'}} />
             <button className='boton-eliminar-especialidad' onClick={handleDelete} >
-                <img className='img-eliminar-especialidad' src={iconAgregar} alt="Eliminar" />
+                <img className='img-eliminar-especialidad' src={iconEliminar} alt="Eliminar" />
             </button>
             <Card.Body>
                 <Card.Title>{especialidad.nombre}</Card.Title>

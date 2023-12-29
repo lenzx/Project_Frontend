@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 
 
-const FormularioRedSocial = ({object}) => {
+const FormularioRedSocial = ({object, setSelectedForm}) => {
   
   const redSocial = object ? object : null;
   const id= redSocial ?  redSocial.id : null;
@@ -17,6 +17,12 @@ const FormularioRedSocial = ({object}) => {
   const [texto, setTexto] = useState((redSocial ? redSocial.texto:""));
   const postData = usePostRedSocial();
   const putData = usePutRedSocial();
+
+
+  const handleChanges = () => {
+    setSelectedForm('');
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -26,6 +32,7 @@ const FormularioRedSocial = ({object}) => {
           await postData( imagen,enlace,texto);
         } 
         alert('Datos enviados con éxito');
+        handleChanges()
         
     } catch (error) {
         const errorMessage = error.response ? error.response.data : error.message;

@@ -41,6 +41,16 @@ function MenuNavService({setSelectedComponent, setSelectedComponent2}) {
                                     <Button variant="outline-secondary" size="2" onClick={() => handleClick('PaginaPrincipal')}>Página principal</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
+                            <li>
+                                <SidebarMenu.Nav.Title>
+                                    <Button variant="outline-secondary" size="2" onClick={() => handleClick('Seccion')}>Secciones de páginas</Button>
+                                </SidebarMenu.Nav.Title>
+                            </li>
+                            <li>
+                                <SidebarMenu.Nav.Title>
+                                    <Button variant="outline-secondary" size="2" onClick={() => handleClick('Redes Sociales')}>Redes Sociales</Button>
+                                </SidebarMenu.Nav.Title>
+                            </li>
                             
                             <SidebarMenu.Header className='menu-sidebar-subtitle'>
                                 <SidebarMenu.Nav.Title>
@@ -88,21 +98,8 @@ function MenuNavService({setSelectedComponent, setSelectedComponent2}) {
                                     <Button variant="outline-secondary" size="2" onClick={() => handleClick('CategoriasConvenio')}>Categorías de Convenios</Button>
                                 </SidebarMenu.Nav.Title>
                             </li>
-                            <SidebarMenu.Header className='menu-sidebar-subtitle'>
-                                <SidebarMenu.Nav.Title>
-                                    General
-                                </SidebarMenu.Nav.Title>
-                            </SidebarMenu.Header>
-                            <li>
-                                <SidebarMenu.Nav.Title>
-                                    <Button variant="outline-secondary" size="2" onClick={() => handleClick('Seccion')}>Secciones de páginas</Button>
-                                </SidebarMenu.Nav.Title>
-                            </li>
-                            <li>
-                                <SidebarMenu.Nav.Title>
-                                    <Button variant="outline-secondary" size="2" onClick={() => handleClick('Redes Sociales')}>Redes Sociales</Button>
-                                </SidebarMenu.Nav.Title>
-                            </li>
+                            
+                            
                         </ul>
                     </SidebarMenu.Nav>
                     

@@ -3,7 +3,7 @@ import "../styles/ConvenioList.css";
 import useGetConvenios from "../hooks/useGetConvenios.jsx";
 
 const ConvenioList = () => {
-    const convenios = useGetConvenios();
+    const convenios = useGetConvenios({});
 
 
     return (

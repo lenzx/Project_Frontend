@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import '../styles/PanelProductoItem.css';
 import useDeleteProducto from '../hooks/useDeleteProducto';
-import iconAgregar from '../assets/icon/boton-agregar.png';
+import iconEliminar from '../assets/icon/eliminar.png';
 const PanelProductoItem = ({ producto, setSelectedForm, setSelectedObject }) => {
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${producto.imagen}`
     const eliminarProducto = useDeleteProducto();
@@ -26,7 +26,7 @@ const PanelProductoItem = ({ producto, setSelectedForm, setSelectedObject }) => 
         <Card style={{ width: '32rem', position: 'relative' }}>
             <Card.Img variant="top" src={imagen} style={{ height: '20rem' }} />
             <button className='boton-eliminar-producto' onClick={handleDelete} >
-                <img className='img-eliminar-producto' src={iconAgregar} alt="Eliminar" />
+                <img className='img-eliminar-producto' src={iconEliminar} alt="Eliminar" />
             </button>
             <Card.Body>
                 <Card.Title>{producto.nombre}</Card.Title> 

@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import axios from 'axios';
+import { VERIFY } from '../markay/api/endpoint';
 
 const useAuthProvider = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -11,7 +12,7 @@ const useAuthProvider = () => {
         try {
             const response = await axios({
                 method: 'post',
-                url: 'http://localhost:8000/api/v1/custom_auth/verify/',
+                url: `${VERIFY}`,
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'

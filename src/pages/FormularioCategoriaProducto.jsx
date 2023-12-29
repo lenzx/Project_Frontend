@@ -5,16 +5,22 @@ import usePostCategoriaProductos from "../hooks/usePostCategoriaProductos";
 import usePutCategoriaProducto from '../hooks/usePutCategoriaProducto';
 
 
-const FormularioCategoriaProductos = ({object}) => {
+const FormularioCategoriaProductos = ({object, setSelectedForm}) => {
 
 
 
     const categoriaProducto = object ? object : null;
-    const title = categoriaProducto ? "Modificar Categoría" : "Añadir Categoría";
+    const title = categoriaProducto ? "Modifique la categoría de sus productos" : "Añadir una categoría de productos";
     const id= categoriaProducto ?  categoriaProducto.id : null;
     const [nombre, setNombre] = useState(categoriaProducto ? categoriaProducto.nombre: "");
     const postData =  usePostCategoriaProductos();
     const putData = usePutCategoriaProducto();
+
+    const handleChanges = () => {
+        setSelectedForm('');
+      }
+
+
     const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -24,6 +30,7 @@ const FormularioCategoriaProductos = ({object}) => {
           await postData( nombre);
         } 
         alert('Datos enviados con éxito');
+        handleChanges()
   
     } catch (error) {
         const errorMessage = error.response ? error.response.data : error.message;

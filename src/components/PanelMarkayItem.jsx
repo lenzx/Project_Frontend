@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import '../styles/PanelProductoItem.css';
 import useDeleteMarkay from '../hooks/useDeleteMarkay';
-import iconAgregar from '../assets/icon/boton-agregar.png';
+import iconEliminar from '../assets/icon/eliminar.png';
 const PanelMarkayItem = ({ markay, setSelectedForm, setSelectedObject }) => {
     
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${markay.imagen}`
@@ -48,7 +48,7 @@ const PanelMarkayItem = ({ markay, setSelectedForm, setSelectedObject }) => {
         return(
             <Card style={{ width: '32rem', position: 'relative' }}>
                 <button className='boton-eliminar-producto' onClick={handleDelete} >
-                    <img className='img-eliminar-producto' src={iconAgregar} alt="Eliminar" />
+                    <img className='img-eliminar-producto' src={iconEliminar} alt="Eliminar" />
                 </button>
                 <Card.Body>
                     <Card.Img variant="top" src={imagen} style={{ height: '20rem' }} />

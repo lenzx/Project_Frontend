@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 const PanelEspecialistaList = ({setSelectedForm, setSelectedObject}) => {
 // ...
-    const especialistas = useGetEspecialista();
+    const especialistas = useGetEspecialista({});
     
     const handleClick = () => {
         setSelectedObject(null);

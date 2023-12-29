@@ -7,18 +7,14 @@ import axios from 'axios';
 import { CONVENIO, ESPECIALIDAD} from '../markay/api/endpoint.js';
 import PropTypes from 'prop-types'
 
-const FormularioEspecialista = ({object}) => {
-    
-    const especialista = object ? object : null;
+const FormularioEspecialista = ({object, setSelectedForm}) => {
 
+    const especialista = object ? object : null;
     const [convenioOptions, setConvenioOptions] = useState([]);
     const [especialidadOptions, setEspecialidadOptions] = useState([]); 
-
     const [selectedConvenios, setSelectedConvenios] = useState([]);
     const [selectedEspecialidades, setSelectedEspecialidades] = useState([]);
-
     const title = especialista ? "Modificar Especialista" : "Añadir Especialista";
-
     const id = especialista ? especialista.id : null;
     const [nombre, setNombre] = useState(especialista ? especialista.nombre : "");
     const [rut, setRut] = useState(especialista ? especialista.rut : "");
@@ -26,9 +22,12 @@ const FormularioEspecialista = ({object}) => {
     const [descripcion, setDescripcion] = useState(especialista ? especialista.descripcion : "");
     const [horarios, setHorarios] = useState(especialista ? especialista.horarios : "");
     const [imagen, setImagen] = useState(especialista ? especialista.imagen : null);
-
     const postData = usePostEspecialista();
     const putData = usePutEspecialista();
+
+    const handleChanges = () => {
+        setSelectedForm('');
+      }
 
     useEffect(() => {
         axios.get(`${ESPECIALIDAD}`)
@@ -59,6 +58,7 @@ const FormularioEspecialista = ({object}) => {
                 await postData(nombre, rut, num_telefono, descripcion, horarios,  imagen, selectedConvenios, selectedEspecialidades);
             }
             alert('Datos enviados con éxito');
+            handleChanges()
             
         } catch (error) {
             const errorMessage = error.response ? error.response.data : error.message;

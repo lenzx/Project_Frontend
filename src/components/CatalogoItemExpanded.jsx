@@ -7,6 +7,7 @@ import useGetRedSocial from "../hooks/useGetRedSocial";
 const CatalogoItemExpanded = ({item}) => {
     const whatsapp = useGetRedSocial({id:4})
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${whatsapp.imagen}`
+    console.log(whatsapp)
 
     return (
         <>

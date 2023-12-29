@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext'; // Asegúrate de importar tu AuthContext correctamente
+import { LOGIN } from '../markay/api/endpoint';
 
 function Login() {
     const { login } = useContext(AuthContext);
@@ -11,7 +12,7 @@ function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault();
     
-        const response = await fetch('http://localhost:8000/api/v1/custom_auth/token/', {
+        const response = await fetch(`${LOGIN}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,7 +29,7 @@ function Login() {
 
         try {
             await login(data.access_token); 
-            navigate('/test');
+            navigate('/MenuAdministrador/');
         } catch (error) {
             console.error('Error al iniciar sesión:', error);
         }

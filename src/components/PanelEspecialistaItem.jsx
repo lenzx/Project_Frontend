@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import '../styles/PanelEspecialistaItem.css';
 import useDeleteEspecialista from '../hooks/useDeleteEspecialista';
-import iconAgregar from '../assets/icon/boton-agregar.png';
+import iconEliminar from '../assets/icon/eliminar.png';
 
 const PanelEspecialistaItem = ({ especialista, setSelectedForm, setSelectedObject }) => {
     const imagen = `https://res.cloudinary.com/dn1gcn5rm/${especialista.imagen}`
@@ -30,7 +30,7 @@ const PanelEspecialistaItem = ({ especialista, setSelectedForm, setSelectedObjec
         <Card style={{ width: '32rem' }}>
             <Card.Img variant="top" src={imagen} style={{ height: '20rem' }} />
             <button className='boton-eliminar-especialista' onClick={handleDelete} >
-                <img className='img-eliminar-especialista' src={iconAgregar} alt="Eliminar" />
+                <img className='img-eliminar-especialista' src={iconEliminar} alt="Eliminar" />
             </button>
             <Card.Body >
                 <Card.Title>{especialista.nombre}</Card.Title>

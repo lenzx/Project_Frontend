@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import '../styles/PanelCategoriaCatalogoItem.css';
 import useDeleteCategoriaConvenio from '../hooks/useDeleteCategoriaConvenio';
-import iconAgregar from '../assets/icon/boton-agregar.png';
+import iconEliminar from '../assets/icon/eliminar.png';
 const PanelCategoriaConvenioItem = ({ convenio, setSelectedForm, setSelectedObject }) => {
 
     const eliminarCategoriaConvenio = useDeleteCategoriaConvenio();
@@ -25,7 +25,7 @@ const PanelCategoriaConvenioItem = ({ convenio, setSelectedForm, setSelectedObje
         <Card style={{ width: '32rem', height:'20rem'  }}>
             
             <button className='boton-eliminar-categoriaProducto' onClick={handleDelete} >
-                <img className='img-eliminar-categoriaProducto' src={iconAgregar} alt="Eliminar" />
+                <img className='img-eliminar-categoriaProducto' src={iconEliminar} alt="Eliminar" />
             </button>
             <br /><br /><br />
             <Card.Body>
