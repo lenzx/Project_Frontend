@@ -20,8 +20,8 @@ const PaginaPrincipalItem = ({ seccion }) => {
                 <div className="col-6">
                     <img src={imagen} alt="" className='main-image'/>
                 </div>
-                <div className="col-6">
-                    <p className="card-text">{seccion.descripcion}</p>
+                <div className="col-6 pagina-principal-card-text">
+                    <p className="card-text pagina-principal-card-text">{seccion.descripcion}</p>
                 </div>
         </div>
         );
